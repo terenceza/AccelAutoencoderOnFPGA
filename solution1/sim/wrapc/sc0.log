@@ -1,0 +1,6 @@
+   Build using "U:/VivadoSuite-10-19-2022/Vitis_HLS/2022.1/tps/win64/msys64/mingw64/bin/g++"
+   Compiling AutoEncoder.cpp_pre.cpp.tb.cpp
+   Compiling TestAccelAutoencoder.cpp_pre.cpp.tb.cpp
+   Compiling apatb_Autoencoder.cpp
+   Compiling apatb_Autoencoder_ir.ll
+   Generating cosim.tv.exe

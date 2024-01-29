@@ -1,0 +1,185 @@
+
+
+================================================================
+== Vitis HLS Report for 'BackPropagateEncoderWeightsChanges'
+================================================================
+* Date:           Thu Jul 13 23:01:10 2023
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        HLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.102 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       60|       60|  0.600 us|  0.600 us|   60|   60|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                    |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_265_1  |       10|       10|         1|          -|          -|    10|        no|
+        |- Loop5             |       48|       48|        12|          -|          -|     4|        no|
+        | + Loop51           |       10|       10|         1|          -|          -|    10|        no|
+        +--------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 3 
+3 --> 4 
+4 --> 4 3 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%h = alloca i32 1"   --->   Operation 5 'alloca' 'h' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (1.58ns)   --->   "%store_ln265 = store i4 0, i4 %h" [HLS/src/AutoEncoder.cpp:265]   --->   Operation 6 'store' 'store_ln265' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%br_ln265 = br void %for.body" [HLS/src/AutoEncoder.cpp:265]   --->   Operation 7 'br' 'br_ln265' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 3.62>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%h_2 = load i4 %h" [HLS/src/AutoEncoder.cpp:265]   --->   Operation 8 'load' 'h_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%zext_ln265 = zext i4 %h_2" [HLS/src/AutoEncoder.cpp:265]   --->   Operation 9 'zext' 'zext_ln265' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (1.30ns)   --->   "%icmp_ln265 = icmp_eq  i4 %h_2, i4 10" [HLS/src/AutoEncoder.cpp:265]   --->   Operation 10 'icmp' 'icmp_ln265' <Predicate = true> <Delay = 1.30> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 10, i64 10, i64 10"   --->   Operation 11 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (1.73ns)   --->   "%add_ln265 = add i4 %h_2, i4 1" [HLS/src/AutoEncoder.cpp:265]   --->   Operation 12 'add' 'add_ln265' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%br_ln265 = br i1 %icmp_ln265, void %for.body.split, void %Loop51.preheader" [HLS/src/AutoEncoder.cpp:265]   --->   Operation 13 'br' 'br_ln265' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%specloopname_ln265 = specloopname void @_ssdm_op_SpecLoopName, void @empty_24" [HLS/src/AutoEncoder.cpp:265]   --->   Operation 14 'specloopname' 'specloopname_ln265' <Predicate = (!icmp_ln265)> <Delay = 0.00>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%TotalErrorDeltas_addr = getelementptr i1 %TotalErrorDeltas, i64 0, i64 %zext_ln265" [HLS/src/AutoEncoder.cpp:267]   --->   Operation 15 'getelementptr' 'TotalErrorDeltas_addr' <Predicate = (!icmp_ln265)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (2.32ns)   --->   "%store_ln267 = store i1 0, i6 %TotalErrorDeltas_addr" [HLS/src/AutoEncoder.cpp:267]   --->   Operation 16 'store' 'store_ln267' <Predicate = (!icmp_ln265)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 40> <RAM>
+ST_2 : Operation 17 [1/1] (1.58ns)   --->   "%store_ln265 = store i4 %add_ln265, i4 %h" [HLS/src/AutoEncoder.cpp:265]   --->   Operation 17 'store' 'store_ln265' <Predicate = (!icmp_ln265)> <Delay = 1.58>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%br_ln265 = br void %for.body" [HLS/src/AutoEncoder.cpp:265]   --->   Operation 18 'br' 'br_ln265' <Predicate = (!icmp_ln265)> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%d = alloca i32 1"   --->   Operation 19 'alloca' 'd' <Predicate = (icmp_ln265)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (1.58ns)   --->   "%store_ln282 = store i3 0, i3 %d" [HLS/src/AutoEncoder.cpp:282]   --->   Operation 20 'store' 'store_ln282' <Predicate = (icmp_ln265)> <Delay = 1.58>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%br_ln282 = br void %Loop51" [HLS/src/AutoEncoder.cpp:282]   --->   Operation 21 'br' 'br_ln282' <Predicate = (icmp_ln265)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.65>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%d_1 = load i3 %d"   --->   Operation 22 'load' 'd_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 23 [1/1] (1.13ns)   --->   "%icmp_ln282 = icmp_eq  i3 %d_1, i3 4" [HLS/src/AutoEncoder.cpp:282]   --->   Operation 23 'icmp' 'icmp_ln282' <Predicate = true> <Delay = 1.13> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%empty_44 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 24 'speclooptripcount' 'empty_44' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [1/1] (1.65ns)   --->   "%add_ln282 = add i3 %d_1, i3 1" [HLS/src/AutoEncoder.cpp:282]   --->   Operation 25 'add' 'add_ln282' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln282 = br i1 %icmp_ln282, void %Loop51.split, void %for.end50" [HLS/src/AutoEncoder.cpp:282]   --->   Operation 26 'br' 'br_ln282' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 27 [1/1] (0.00ns)   --->   "%specloopname_ln282 = specloopname void @_ssdm_op_SpecLoopName, void @empty_23" [HLS/src/AutoEncoder.cpp:282]   --->   Operation 27 'specloopname' 'specloopname_ln282' <Predicate = (!icmp_ln282)> <Delay = 0.00>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%empty_45 = trunc i3 %d_1"   --->   Operation 28 'trunc' 'empty_45' <Predicate = (!icmp_ln282)> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.00ns)   --->   "%tmp_1 = bitconcatenate i5 @_ssdm_op_BitConcatenate.i5.i2.i2.i1, i2 %empty_45, i2 %empty_45, i1 0"   --->   Operation 29 'bitconcatenate' 'tmp_1' <Predicate = (!icmp_ln282)> <Delay = 0.00>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%zext_ln285 = zext i5 %tmp_1" [HLS/src/AutoEncoder.cpp:285]   --->   Operation 30 'zext' 'zext_ln285' <Predicate = (!icmp_ln282)> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (1.58ns)   --->   "%br_ln285 = br void %for.body32" [HLS/src/AutoEncoder.cpp:285]   --->   Operation 31 'br' 'br_ln285' <Predicate = (!icmp_ln282)> <Delay = 1.58>
+ST_3 : Operation 32 [1/1] (0.00ns)   --->   "%ret_ln295 = ret" [HLS/src/AutoEncoder.cpp:295]   --->   Operation 32 'ret' 'ret_ln295' <Predicate = (icmp_ln282)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 4.10>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%h_1 = phi i4 0, void %Loop51.split, i4 %add_ln285, void %for.body32.split" [HLS/src/AutoEncoder.cpp:285]   --->   Operation 33 'phi' 'h_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%zext_ln285_1 = zext i4 %h_1" [HLS/src/AutoEncoder.cpp:285]   --->   Operation 34 'zext' 'zext_ln285_1' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (1.30ns)   --->   "%icmp_ln285 = icmp_eq  i4 %h_1, i4 10" [HLS/src/AutoEncoder.cpp:285]   --->   Operation 35 'icmp' 'icmp_ln285' <Predicate = true> <Delay = 1.30> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.30> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%empty_46 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 10, i64 10, i64 10"   --->   Operation 36 'speclooptripcount' 'empty_46' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (1.73ns)   --->   "%add_ln285 = add i4 %h_1, i4 1" [HLS/src/AutoEncoder.cpp:285]   --->   Operation 37 'add' 'add_ln285' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%br_ln285 = br i1 %icmp_ln285, void %for.body32.split, void %for.inc48" [HLS/src/AutoEncoder.cpp:285]   --->   Operation 38 'br' 'br_ln285' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%specloopname_ln285 = specloopname void @_ssdm_op_SpecLoopName, void @empty_22" [HLS/src/AutoEncoder.cpp:285]   --->   Operation 39 'specloopname' 'specloopname_ln285' <Predicate = (!icmp_ln285)> <Delay = 0.00>
+ST_4 : Operation 40 [1/1] (1.78ns)   --->   "%add_ln291 = add i6 %zext_ln285, i6 %zext_ln285_1" [HLS/src/AutoEncoder.cpp:291]   --->   Operation 40 'add' 'add_ln291' <Predicate = (!icmp_ln285)> <Delay = 1.78> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "%zext_ln291 = zext i6 %add_ln291" [HLS/src/AutoEncoder.cpp:291]   --->   Operation 41 'zext' 'zext_ln291' <Predicate = (!icmp_ln285)> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "%EncoderWeightChanges_addr = getelementptr i1 %EncoderWeightChanges, i64 0, i64 %zext_ln291" [HLS/src/AutoEncoder.cpp:291]   --->   Operation 42 'getelementptr' 'EncoderWeightChanges_addr' <Predicate = (!icmp_ln285)> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (2.32ns)   --->   "%store_ln291 = store i1 0, i6 %EncoderWeightChanges_addr" [HLS/src/AutoEncoder.cpp:291]   --->   Operation 43 'store' 'store_ln291' <Predicate = (!icmp_ln285)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 40> <RAM>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%br_ln285 = br void %for.body32" [HLS/src/AutoEncoder.cpp:285]   --->   Operation 44 'br' 'br_ln285' <Predicate = (!icmp_ln285)> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (1.58ns)   --->   "%store_ln282 = store i3 %add_ln282, i3 %d" [HLS/src/AutoEncoder.cpp:282]   --->   Operation 45 'store' 'store_ln282' <Predicate = (icmp_ln285)> <Delay = 1.58>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%br_ln282 = br void %Loop51" [HLS/src/AutoEncoder.cpp:282]   --->   Operation 46 'br' 'br_ln282' <Predicate = (icmp_ln285)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	'alloca' operation ('h') [3]  (0 ns)
+	'store' operation ('store_ln265', HLS/src/AutoEncoder.cpp:265) of constant 0 on local variable 'h' [4]  (1.59 ns)
+
+ <State 2>: 3.62ns
+The critical path consists of the following:
+	'load' operation ('h', HLS/src/AutoEncoder.cpp:265) on local variable 'h' [7]  (0 ns)
+	'add' operation ('add_ln265', HLS/src/AutoEncoder.cpp:265) [11]  (1.74 ns)
+	'store' operation ('store_ln265', HLS/src/AutoEncoder.cpp:265) of variable 'add_ln265', HLS/src/AutoEncoder.cpp:265 on local variable 'h' [17]  (1.59 ns)
+	blocking operation 0.301 ns on control path)
+
+ <State 3>: 1.65ns
+The critical path consists of the following:
+	'load' operation ('d') on local variable 'd' [24]  (0 ns)
+	'add' operation ('add_ln282', HLS/src/AutoEncoder.cpp:282) [27]  (1.65 ns)
+
+ <State 4>: 4.1ns
+The critical path consists of the following:
+	'phi' operation ('h', HLS/src/AutoEncoder.cpp:285) with incoming values : ('add_ln285', HLS/src/AutoEncoder.cpp:285) [36]  (0 ns)
+	'add' operation ('add_ln291', HLS/src/AutoEncoder.cpp:291) [44]  (1.78 ns)
+	'getelementptr' operation ('EncoderWeightChanges_addr', HLS/src/AutoEncoder.cpp:291) [46]  (0 ns)
+	'store' operation ('store_ln291', HLS/src/AutoEncoder.cpp:291) of constant 0 on array 'EncoderWeightChanges' [47]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

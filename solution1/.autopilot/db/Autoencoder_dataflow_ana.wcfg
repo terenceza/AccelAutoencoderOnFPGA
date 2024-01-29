@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Autoencoder.wdb" id="1">
+         <top_modules>
+            <top_module name="apa_Autoencoder_top" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0ns"></ZoomStartTime>
+      <ZoomEndTime time="2000ns"></ZoomEndTime>
+      <Cursor1Time time="0ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="257"></NameColumnWidth>
+      <ValueColumnWidth column_width="84"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="2" />
+   <wvobject type="group" fp_name="HLS Process Summary Group">
+      <obj_property name="label">HLS Process Summary</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder//AESL_inst_Autoencoder_activity">
+         <obj_property name="label">AESL_inst_Autoencoder_activity</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <obj_property name="UseFullPath">true</obj_property>
+         <obj_property name="ElementShortName">AESL_inst_Autoencoder_activity</obj_property>
+         <obj_property name="ObjectShortName">AESL_inst_Autoencoder_activity</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+         <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+         <obj_property name="CustomSignalColor">turquoise</obj_property>
+         <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+         <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder//AESL_inst_Autoencoder_activity.dataflowTxWaveData.Cycles</obj_property>
+         <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder//AESL_inst_Autoencoder_activity.dataflowTxWaveData.OutStanding</obj_property>
+         <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder//AESL_inst_Autoencoder_activity.dataflowTxTooltipData</obj_property>
+         <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_activity">
+            <obj_property name="label">grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_activity">
+            <obj_property name="label">grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_activity">
+            <obj_property name="label">grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_activity">
+            <obj_property name="label">grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_activity.dataflowTxTooltipData</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/grp_BackPropagate_fu_651_activity">
+            <obj_property name="label">grp_BackPropagate_fu_651_activity</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <obj_property name="UseFullPath">true</obj_property>
+            <obj_property name="ElementShortName">grp_BackPropagate_fu_651_activity</obj_property>
+            <obj_property name="ObjectShortName">grp_BackPropagate_fu_651_activity</obj_property>
+            <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+            <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+            <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+            <obj_property name="UseCustomSignalColor">true</obj_property>
+            <obj_property name="CustomSignalColor">turquoise</obj_property>
+            <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+            <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/grp_BackPropagate_fu_651_activity.dataflowTxWaveData.Cycles</obj_property>
+            <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/grp_BackPropagate_fu_651_activity.dataflowTxWaveData.OutStanding</obj_property>
+            <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/grp_BackPropagate_fu_651_activity.dataflowTxTooltipData</obj_property>
+            <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/BackPropagateDecoderWeightChanges_U0_activity">
+               <obj_property name="label">BackPropagateDecoderWeightChanges_U0_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">BackPropagateDecoderWeightChanges_U0_activity</obj_property>
+               <obj_property name="ObjectShortName">BackPropagateDecoderWeightChanges_U0_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/BackPropagateDecoderWeightChanges_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/BackPropagateDecoderWeightChanges_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/BackPropagateDecoderWeightChanges_U0_activity.dataflowTxTooltipData</obj_property>
+               <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_activity">
+                  <obj_property name="label">grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_activity</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <obj_property name="UseFullPath">true</obj_property>
+                  <obj_property name="ElementShortName">grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_activity</obj_property>
+                  <obj_property name="ObjectShortName">grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_activity</obj_property>
+                  <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+                  <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+                  <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+                  <obj_property name="UseCustomSignalColor">true</obj_property>
+                  <obj_property name="CustomSignalColor">turquoise</obj_property>
+                  <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+                  <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_activity.dataflowTxWaveData.Cycles</obj_property>
+                  <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_activity.dataflowTxWaveData.OutStanding</obj_property>
+                  <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_activity.dataflowTxTooltipData</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/BackPropagateEncoderWeightsChanges_U0_activity">
+               <obj_property name="label">BackPropagateEncoderWeightsChanges_U0_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">BackPropagateEncoderWeightsChanges_U0_activity</obj_property>
+               <obj_property name="ObjectShortName">BackPropagateEncoderWeightsChanges_U0_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/BackPropagateEncoderWeightsChanges_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/BackPropagateEncoderWeightsChanges_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/BackPropagateEncoderWeightsChanges_U0_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/BackPropagateEncoderWeights_U0_activity">
+               <obj_property name="label">BackPropagateEncoderWeights_U0_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">BackPropagateEncoderWeights_U0_activity</obj_property>
+               <obj_property name="ObjectShortName">BackPropagateEncoderWeights_U0_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/BackPropagateEncoderWeights_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/BackPropagateEncoderWeights_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/BackPropagateEncoderWeights_U0_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/BackPropagateDecoderWeights_U0_activity">
+               <obj_property name="label">BackPropagateDecoderWeights_U0_activity</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <obj_property name="UseFullPath">true</obj_property>
+               <obj_property name="ElementShortName">BackPropagateDecoderWeights_U0_activity</obj_property>
+               <obj_property name="ObjectShortName">BackPropagateDecoderWeights_U0_activity</obj_property>
+               <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+               <obj_property name="WaveformStyle">STYLE_ENUM_TRANSACTION</obj_property>
+               <obj_property name="EnumTransactionColorTable">0=blank ffff=blank 0bad=#FF0000</obj_property>
+               <obj_property name="UseCustomSignalColor">true</obj_property>
+               <obj_property name="CustomSignalColor">turquoise</obj_property>
+               <obj_property name="EnumTransactionValueTable">65535=blank</obj_property>
+               <obj_property name="Render_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/BackPropagateDecoderWeights_U0_activity.dataflowTxWaveData.Cycles</obj_property>
+               <obj_property name="Value_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/BackPropagateDecoderWeights_U0_activity.dataflowTxWaveData.OutStanding</obj_property>
+               <obj_property name="Detail_Data">/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/BackPropagateDecoderWeights_U0_activity.dataflowTxTooltipData</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+   <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder//AESL_inst_Autoencoder_activity">
+      <obj_property name="ElementShortName">AESL_inst_Autoencoder_activity</obj_property>
+      <obj_property name="ObjectShortName">AESL_inst_Autoencoder_activity</obj_property>
+   </wvobject>
+   <wvobject type="group" fp_name="AESL_inst_Autoencoder_group">
+      <obj_property name="label">AESL_inst_Autoencoder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_activity">
+         <obj_property name="ElementShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_activity">
+         <obj_property name="ElementShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_activity">
+         <obj_property name="ElementShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_activity">
+         <obj_property name="ElementShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_activity</obj_property>
+      </wvobject>
+      <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/grp_BackPropagate_fu_651_activity">
+         <obj_property name="ElementShortName">grp_BackPropagate_fu_651_activity</obj_property>
+         <obj_property name="ObjectShortName">grp_BackPropagate_fu_651_activity</obj_property>
+      </wvobject>
+      <wvobject type="group" fp_name="AESL_inst_Autoencoder_Handshake_group">
+         <obj_property name="label">Block-level handshake</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/ap_start">
+            <obj_property name="ElementShortName">ap_start</obj_property>
+            <obj_property name="ObjectShortName">ap_start</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/ap_ready">
+            <obj_property name="ElementShortName">ap_ready</obj_property>
+            <obj_property name="ObjectShortName">ap_ready</obj_property>
+         </wvobject>
+         <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/ap_done">
+            <obj_property name="ElementShortName">ap_done</obj_property>
+            <obj_property name="ObjectShortName">ap_done</obj_property>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_group">
+         <obj_property name="label">grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_group">
+         <obj_property name="label">grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_group">
+         <obj_property name="label">grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_group">
+         <obj_property name="label">grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="group" fp_name="grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+      <wvobject type="group" fp_name="grp_BackPropagate_fu_651_group">
+         <obj_property name="label">grp_BackPropagate_fu_651</obj_property>
+         <obj_property name="DisplayName">label</obj_property>
+         <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/BackPropagateDecoderWeightChanges_U0_activity">
+            <obj_property name="ElementShortName">BackPropagateDecoderWeightChanges_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">BackPropagateDecoderWeightChanges_U0_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/BackPropagateEncoderWeightsChanges_U0_activity">
+            <obj_property name="ElementShortName">BackPropagateEncoderWeightsChanges_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">BackPropagateEncoderWeightsChanges_U0_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/BackPropagateEncoderWeights_U0_activity">
+            <obj_property name="ElementShortName">BackPropagateEncoderWeights_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">BackPropagateEncoderWeights_U0_activity</obj_property>
+         </wvobject>
+         <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/BackPropagateDecoderWeights_U0_activity">
+            <obj_property name="ElementShortName">BackPropagateDecoderWeights_U0_activity</obj_property>
+            <obj_property name="ObjectShortName">BackPropagateDecoderWeights_U0_activity</obj_property>
+         </wvobject>
+         <wvobject type="group" fp_name="grp_BackPropagate_fu_651_Handshake_group">
+            <obj_property name="label">Block-level handshake</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/ap_start">
+               <obj_property name="ElementShortName">ap_start</obj_property>
+               <obj_property name="ObjectShortName">ap_start</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/ap_ready">
+               <obj_property name="ElementShortName">ap_ready</obj_property>
+               <obj_property name="ObjectShortName">ap_ready</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/ap_done">
+               <obj_property name="ElementShortName">ap_done</obj_property>
+               <obj_property name="ObjectShortName">ap_done</obj_property>
+            </wvobject>
+            <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/ap_continue">
+               <obj_property name="ElementShortName">ap_continue</obj_property>
+               <obj_property name="ObjectShortName">ap_continue</obj_property>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="BackPropagateDecoderWeightChanges_U0_group">
+            <obj_property name="label">BackPropagateDecoderWeightChanges_U0</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="protoinst" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_activity">
+               <obj_property name="ElementShortName">grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_activity</obj_property>
+               <obj_property name="ObjectShortName">grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_activity</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="BackPropagateDecoderWeightChanges_U0_Input_group">
+               <obj_property name="label">Input Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="BackPropagateDecoderWeightChanges_U0_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/ap_continue">
+                  <obj_property name="ElementShortName">ap_continue</obj_property>
+                  <obj_property name="ObjectShortName">ap_continue</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="BackPropagateDecoderWeightChanges_U0_Output_group">
+               <obj_property name="label">Output Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="DecoderWeightChanges_group">
+                  <obj_property name="label">DecoderWeightChanges(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/DecoderWeightChanges_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/DecoderWeightChanges_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/DecoderWeightChanges_ce0">
+                     <obj_property name="ElementShortName">DecoderWeightChanges_ce0</obj_property>
+                     <obj_property name="ObjectShortName">DecoderWeightChanges_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/DecoderWeightChanges_we0">
+                     <obj_property name="ElementShortName">DecoderWeightChanges_we0</obj_property>
+                     <obj_property name="ObjectShortName">DecoderWeightChanges_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="Deltas_group">
+                  <obj_property name="label">Deltas(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/Deltas_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/Deltas_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/Deltas_ce0">
+                     <obj_property name="ElementShortName">Deltas_ce0</obj_property>
+                     <obj_property name="ObjectShortName">Deltas_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/Deltas_we0">
+                     <obj_property name="ElementShortName">Deltas_we0</obj_property>
+                     <obj_property name="ObjectShortName">Deltas_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_group">
+               <obj_property name="label">grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46_Handshake_group">
+                  <obj_property name="label">Block-level handshake</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46/ap_start">
+                     <obj_property name="ElementShortName">ap_start</obj_property>
+                     <obj_property name="ObjectShortName">ap_start</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46/ap_ready">
+                     <obj_property name="ElementShortName">ap_ready</obj_property>
+                     <obj_property name="ObjectShortName">ap_ready</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeightChanges_U0/grp_BackPropagateDecoderWeightChanges_Pipeline_Loop31_fu_46/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="BackPropagateEncoderWeightsChanges_U0_group">
+            <obj_property name="label">BackPropagateEncoderWeightsChanges_U0</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="BackPropagateEncoderWeightsChanges_U0_Input_group">
+               <obj_property name="label">Input Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="BackPropagateEncoderWeightsChanges_U0_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/ap_continue">
+                  <obj_property name="ElementShortName">ap_continue</obj_property>
+                  <obj_property name="ObjectShortName">ap_continue</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="BackPropagateEncoderWeightsChanges_U0_Output_group">
+               <obj_property name="label">Output Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="EncoderWeightChanges_group">
+                  <obj_property name="label">EncoderWeightChanges(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/EncoderWeightChanges_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/EncoderWeightChanges_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/EncoderWeightChanges_ce0">
+                     <obj_property name="ElementShortName">EncoderWeightChanges_ce0</obj_property>
+                     <obj_property name="ObjectShortName">EncoderWeightChanges_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/EncoderWeightChanges_we0">
+                     <obj_property name="ElementShortName">EncoderWeightChanges_we0</obj_property>
+                     <obj_property name="ObjectShortName">EncoderWeightChanges_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+               <wvobject type="group" fp_name="TotalErrorDeltas_group">
+                  <obj_property name="label">TotalErrorDeltas(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/TotalErrorDeltas_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/TotalErrorDeltas_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/TotalErrorDeltas_ce0">
+                     <obj_property name="ElementShortName">TotalErrorDeltas_ce0</obj_property>
+                     <obj_property name="ObjectShortName">TotalErrorDeltas_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/TotalErrorDeltas_we0">
+                     <obj_property name="ElementShortName">TotalErrorDeltas_we0</obj_property>
+                     <obj_property name="ObjectShortName">TotalErrorDeltas_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeightsChanges_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="BackPropagateEncoderWeights_U0_group">
+            <obj_property name="label">BackPropagateEncoderWeights_U0</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="BackPropagateEncoderWeights_U0_Input_group">
+               <obj_property name="label">Input Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="BackPropagateEncoderWeights_U0_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/ap_continue">
+                  <obj_property name="ElementShortName">ap_continue</obj_property>
+                  <obj_property name="ObjectShortName">ap_continue</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="BackPropagateEncoderWeights_U0_Output_group">
+               <obj_property name="label">Output Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="PrevEncoderWeightChanges_group">
+                  <obj_property name="label">PrevEncoderWeightChanges(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/PrevEncoderWeightChanges_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/PrevEncoderWeightChanges_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/PrevEncoderWeightChanges_ce0">
+                     <obj_property name="ElementShortName">PrevEncoderWeightChanges_ce0</obj_property>
+                     <obj_property name="ObjectShortName">PrevEncoderWeightChanges_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/PrevEncoderWeightChanges_we0">
+                     <obj_property name="ElementShortName">PrevEncoderWeightChanges_we0</obj_property>
+                     <obj_property name="ObjectShortName">PrevEncoderWeightChanges_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateEncoderWeights_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+         <wvobject type="group" fp_name="BackPropagateDecoderWeights_U0_group">
+            <obj_property name="label">BackPropagateDecoderWeights_U0</obj_property>
+            <obj_property name="DisplayName">label</obj_property>
+            <wvobject type="group" fp_name="BackPropagateDecoderWeights_U0_Input_group">
+               <obj_property name="label">Input Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+            </wvobject>
+            <wvobject type="group" fp_name="BackPropagateDecoderWeights_U0_Handshake_group">
+               <obj_property name="label">Block-level handshake</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/ap_start">
+                  <obj_property name="ElementShortName">ap_start</obj_property>
+                  <obj_property name="ObjectShortName">ap_start</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/ap_ready">
+                  <obj_property name="ElementShortName">ap_ready</obj_property>
+                  <obj_property name="ObjectShortName">ap_ready</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/ap_done">
+                  <obj_property name="ElementShortName">ap_done</obj_property>
+                  <obj_property name="ObjectShortName">ap_done</obj_property>
+               </wvobject>
+               <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/ap_continue">
+                  <obj_property name="ElementShortName">ap_continue</obj_property>
+                  <obj_property name="ObjectShortName">ap_continue</obj_property>
+               </wvobject>
+            </wvobject>
+            <wvobject type="group" fp_name="BackPropagateDecoderWeights_U0_Output_group">
+               <obj_property name="label">Output Channels</obj_property>
+               <obj_property name="DisplayName">label</obj_property>
+               <wvobject type="group" fp_name="PrevDecoderWeightChanges_group">
+                  <obj_property name="label">PrevDecoderWeightChanges(PIPO)</obj_property>
+                  <obj_property name="DisplayName">label</obj_property>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/PrevDecoderWeightChanges_address0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/PrevDecoderWeightChanges_d0">
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/PrevDecoderWeightChanges_ce0">
+                     <obj_property name="ElementShortName">PrevDecoderWeightChanges_ce0</obj_property>
+                     <obj_property name="ObjectShortName">PrevDecoderWeightChanges_ce0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/PrevDecoderWeightChanges_we0">
+                     <obj_property name="ElementShortName">PrevDecoderWeightChanges_we0</obj_property>
+                     <obj_property name="ObjectShortName">PrevDecoderWeightChanges_we0</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/ap_done">
+                     <obj_property name="ElementShortName">ap_done</obj_property>
+                     <obj_property name="ObjectShortName">ap_done</obj_property>
+                     <obj_property name="label">ap_done(i_write)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+                  <wvobject type="logic" fp_name="/apatb_Autoencoder_top/AESL_inst_Autoencoder/grp_BackPropagate_fu_651/BackPropagateDecoderWeights_U0/ap_continue">
+                     <obj_property name="ElementShortName">ap_continue</obj_property>
+                     <obj_property name="ObjectShortName">ap_continue</obj_property>
+                     <obj_property name="label">ap_continue(i_full_n)</obj_property>
+                     <obj_property name="DisplayName">label</obj_property>
+                  </wvobject>
+               </wvobject>
+            </wvobject>
+         </wvobject>
+      </wvobject>
+   </wvobject>
+</wave_config>

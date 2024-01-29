@@ -1,0 +1,204 @@
+
+
+================================================================
+== Vitis HLS Report for 'BackPropagate'
+================================================================
+* Date:           Thu Jul 13 23:01:14 2023
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        HLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.692 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |       60|       60|  0.600 us|  0.600 us|   61|   61|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 1
+  DF-Pipeline-0: Size = 2, States = { 1 2 }
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.70>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%p_read_71 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read79" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 3 'read' 'p_read_71' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%p_read_72 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read78" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 4 'read' 'p_read_72' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%p_read_73 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read77" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 5 'read' 'p_read_73' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%p_read_74 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read76" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 6 'read' 'p_read_74' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%p_read_75 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read75" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 7 'read' 'p_read_75' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%p_read_76 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read74" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 8 'read' 'p_read_76' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%p_read_77 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read73" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 9 'read' 'p_read_77' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%p_read_78 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read72" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 10 'read' 'p_read_78' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%p_read_79 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read71" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 11 'read' 'p_read_79' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%p_read_80 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read70" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 12 'read' 'p_read_80' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%p_read_81 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read69" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 13 'read' 'p_read_81' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%p_read_82 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read68" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 14 'read' 'p_read_82' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%p_read_83 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read67" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 15 'read' 'p_read_83' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%p_read_84 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read66" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 16 'read' 'p_read_84' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%p_read_85 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read65" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 17 'read' 'p_read_85' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%p_read_86 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read64" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 18 'read' 'p_read_86' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%p_read_87 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read63" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 19 'read' 'p_read_87' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%p_read_88 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read62" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 20 'read' 'p_read_88' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%p_read_89 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read61" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 21 'read' 'p_read_89' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%p_read_90 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read60" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 22 'read' 'p_read_90' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%p_read_91 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read59" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 23 'read' 'p_read_91' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%p_read_92 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read58" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 24 'read' 'p_read_92' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%p_read_93 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read57" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 25 'read' 'p_read_93' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%p_read_94 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read56" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 26 'read' 'p_read_94' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%p_read_95 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read55" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 27 'read' 'p_read_95' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%p_read_96 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read54" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 28 'read' 'p_read_96' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%p_read_97 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read53" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 29 'read' 'p_read_97' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%p_read_98 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read52" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 30 'read' 'p_read_98' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%p_read_99 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read51" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 31 'read' 'p_read_99' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%p_read_100 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read50" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 32 'read' 'p_read_100' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%p_read_101 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read49" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 33 'read' 'p_read_101' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%p_read_102 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read48" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 34 'read' 'p_read_102' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%p_read_103 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read47" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 35 'read' 'p_read_103' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%p_read_104 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read46" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 36 'read' 'p_read_104' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%p_read_105 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read45" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 37 'read' 'p_read_105' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%p_read_106 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read44" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 38 'read' 'p_read_106' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%p_read_107 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read43" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 39 'read' 'p_read_107' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%p_read_108 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read42" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 40 'read' 'p_read_108' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%p_read_109 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read41" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 41 'read' 'p_read_109' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%p_read_110 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read40" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 42 'read' 'p_read_110' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%p_read_111 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read39" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 43 'read' 'p_read_111' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%p_read_112 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read38" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 44 'read' 'p_read_112' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%p_read_113 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read37" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 45 'read' 'p_read_113' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%p_read_114 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read36" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 46 'read' 'p_read_114' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%p_read_115 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read35" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 47 'read' 'p_read_115' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%p_read_116 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read34" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 48 'read' 'p_read_116' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%p_read_117 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read33" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 49 'read' 'p_read_117' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%p_read_118 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read32" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 50 'read' 'p_read_118' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%p_read_119 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read31" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 51 'read' 'p_read_119' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%p_read30110 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read30" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 52 'read' 'p_read30110' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%p_read_120 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read29" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 53 'read' 'p_read_120' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%p_read_121 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read28" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 54 'read' 'p_read_121' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%p_read_122 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read27" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 55 'read' 'p_read_122' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%p_read_123 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read26" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 56 'read' 'p_read_123' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%p_read_124 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read25" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 57 'read' 'p_read_124' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%p_read_125 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read24" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 58 'read' 'p_read_125' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%p_read_126 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read23" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 59 'read' 'p_read_126' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%p_read_127 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read22" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 60 'read' 'p_read_127' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%p_read_128 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read21" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 61 'read' 'p_read_128' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%p_read20100 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read20" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 62 'read' 'p_read20100' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%p_read_129 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read19" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 63 'read' 'p_read_129' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%p_read_130 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read18" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 64 'read' 'p_read_130' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%p_read_131 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read17" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 65 'read' 'p_read_131' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%p_read_132 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read16" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 66 'read' 'p_read_132' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%p_read_133 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read15" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 67 'read' 'p_read_133' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%p_read_134 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read14" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 68 'read' 'p_read_134' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%p_read_135 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read13" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 69 'read' 'p_read_135' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%p_read_136 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read12" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 70 'read' 'p_read_136' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%p_read_137 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read11" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 71 'read' 'p_read_137' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%p_read1090 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read10" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 72 'read' 'p_read1090' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%p_read989 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read9" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 73 'read' 'p_read989' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%p_read888 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read8" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 74 'read' 'p_read888' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%p_read787 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read7" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 75 'read' 'p_read787' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%p_read686 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read6" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 76 'read' 'p_read686' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%p_read585 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read5" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 77 'read' 'p_read585' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%p_read484 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read4" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 78 'read' 'p_read484' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%p_read383 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read3" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 79 'read' 'p_read383' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%p_read282 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read2" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 80 'read' 'p_read282' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%p_read181 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read1" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 81 'read' 'p_read181' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%p_read_138 = read i1 @_ssdm_op_Read.ap_auto.i1, i1 %p_read" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 82 'read' 'p_read_138' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [2/2] (0.00ns)   --->   "%call_ln205 = call void @BackPropagateDecoderWeightChanges, i1 %DecoderWeightChanges, i1 %Deltas" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 83 'call' 'call_ln205' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 84 [2/2] (0.00ns)   --->   "%call_ln211 = call void @BackPropagateEncoderWeightsChanges, i1 %EncoderWeightChanges, i1 %TotalErrorDeltas" [HLS/src/AutoEncoder.cpp:211]   --->   Operation 84 'call' 'call_ln211' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 85 [2/2] (1.70ns)   --->   "%call_ln218 = call void @BackPropagateEncoderWeights, i1 %p_read_138, i1 %EncoderWeights_0_out, i1 %p_read181, i1 %EncoderWeights_1_out, i1 %p_read282, i1 %EncoderWeights_2_out, i1 %p_read383, i1 %EncoderWeights_3_out, i1 %p_read484, i1 %EncoderWeights_4_out, i1 %p_read585, i1 %EncoderWeights_5_out, i1 %p_read686, i1 %EncoderWeights_6_out, i1 %p_read787, i1 %EncoderWeights_7_out, i1 %p_read888, i1 %EncoderWeights_8_out, i1 %p_read989, i1 %EncoderWeights_9_out, i1 %p_read1090, i1 %EncoderWeights_10_out, i1 %p_read_137, i1 %EncoderWeights_11_out, i1 %p_read_136, i1 %EncoderWeights_12_out, i1 %p_read_135, i1 %EncoderWeights_13_out, i1 %p_read_134, i1 %EncoderWeights_14_out, i1 %p_read_133, i1 %EncoderWeights_15_out, i1 %p_read_132, i1 %EncoderWeights_16_out, i1 %p_read_131, i1 %EncoderWeights_17_out, i1 %p_read_130, i1 %EncoderWeights_18_out, i1 %p_read_129, i1 %EncoderWeights_19_out, i1 %p_read20100, i1 %EncoderWeights_20_out, i1 %p_read_128, i1 %EncoderWeights_21_out, i1 %p_read_127, i1 %EncoderWeights_22_out, i1 %p_read_126, i1 %EncoderWeights_23_out, i1 %p_read_125, i1 %EncoderWeights_24_out, i1 %p_read_124, i1 %EncoderWeights_25_out, i1 %p_read_123, i1 %EncoderWeights_26_out, i1 %p_read_122, i1 %EncoderWeights_27_out, i1 %p_read_121, i1 %EncoderWeights_28_out, i1 %p_read_120, i1 %EncoderWeights_29_out, i1 %p_read30110, i1 %EncoderWeights_30_out, i1 %p_read_119, i1 %EncoderWeights_31_out, i1 %p_read_118, i1 %EncoderWeights_32_out, i1 %p_read_117, i1 %EncoderWeights_33_out, i1 %p_read_116, i1 %EncoderWeights_34_out, i1 %p_read_115, i1 %EncoderWeights_35_out, i1 %p_read_114, i1 %EncoderWeights_36_out, i1 %p_read_113, i1 %EncoderWeights_37_out, i1 %p_read_112, i1 %EncoderWeights_38_out, i1 %p_read_111, i1 %EncoderWeights_39_out, i1 %PrevEncoderWeightChanges" [HLS/src/AutoEncoder.cpp:218]   --->   Operation 85 'call' 'call_ln218' <Predicate = true> <Delay = 1.70> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_1 : Operation 86 [2/2] (1.70ns)   --->   "%call_ln223 = call void @BackPropagateDecoderWeights, i1 %p_read_110, i1 %DecoderWeights_0_out, i1 %p_read_109, i1 %DecoderWeights_1_out, i1 %p_read_108, i1 %DecoderWeights_2_out, i1 %p_read_107, i1 %DecoderWeights_3_out, i1 %p_read_106, i1 %DecoderWeights_4_out, i1 %p_read_105, i1 %DecoderWeights_5_out, i1 %p_read_104, i1 %DecoderWeights_6_out, i1 %p_read_103, i1 %DecoderWeights_7_out, i1 %p_read_102, i1 %DecoderWeights_8_out, i1 %p_read_101, i1 %DecoderWeights_9_out, i1 %p_read_100, i1 %DecoderWeights_10_out, i1 %p_read_99, i1 %DecoderWeights_11_out, i1 %p_read_98, i1 %DecoderWeights_12_out, i1 %p_read_97, i1 %DecoderWeights_13_out, i1 %p_read_96, i1 %DecoderWeights_14_out, i1 %p_read_95, i1 %DecoderWeights_15_out, i1 %p_read_94, i1 %DecoderWeights_16_out, i1 %p_read_93, i1 %DecoderWeights_17_out, i1 %p_read_92, i1 %DecoderWeights_18_out, i1 %p_read_91, i1 %DecoderWeights_19_out, i1 %p_read_90, i1 %DecoderWeights_20_out, i1 %p_read_89, i1 %DecoderWeights_21_out, i1 %p_read_88, i1 %DecoderWeights_22_out, i1 %p_read_87, i1 %DecoderWeights_23_out, i1 %p_read_86, i1 %DecoderWeights_24_out, i1 %p_read_85, i1 %DecoderWeights_25_out, i1 %p_read_84, i1 %DecoderWeights_26_out, i1 %p_read_83, i1 %DecoderWeights_27_out, i1 %p_read_82, i1 %DecoderWeights_28_out, i1 %p_read_81, i1 %DecoderWeights_29_out, i1 %p_read_80, i1 %DecoderWeights_30_out, i1 %p_read_79, i1 %DecoderWeights_31_out, i1 %p_read_78, i1 %DecoderWeights_32_out, i1 %p_read_77, i1 %DecoderWeights_33_out, i1 %p_read_76, i1 %DecoderWeights_34_out, i1 %p_read_75, i1 %DecoderWeights_35_out, i1 %p_read_74, i1 %DecoderWeights_36_out, i1 %p_read_73, i1 %DecoderWeights_37_out, i1 %p_read_72, i1 %DecoderWeights_38_out, i1 %p_read_71, i1 %DecoderWeights_39_out, i1 %PrevDecoderWeightChanges" [HLS/src/AutoEncoder.cpp:223]   --->   Operation 86 'call' 'call_ln223' <Predicate = true> <Delay = 1.70> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 1.13>
+ST_2 : Operation 87 [1/1] (0.00ns)   --->   "%specdataflowpipeline_ln193 = specdataflowpipeline void @_ssdm_op_SpecDataflowPipeline, i32 4294967295, i32 0, void @empty_14" [HLS/src/AutoEncoder.cpp:193]   --->   Operation 87 'specdataflowpipeline' 'specdataflowpipeline_ln193' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 88 [1/2] (0.00ns)   --->   "%call_ln205 = call void @BackPropagateDecoderWeightChanges, i1 %DecoderWeightChanges, i1 %Deltas" [HLS/src/AutoEncoder.cpp:205]   --->   Operation 88 'call' 'call_ln205' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 89 [1/2] (0.00ns)   --->   "%call_ln211 = call void @BackPropagateEncoderWeightsChanges, i1 %EncoderWeightChanges, i1 %TotalErrorDeltas" [HLS/src/AutoEncoder.cpp:211]   --->   Operation 89 'call' 'call_ln211' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 90 [1/2] (1.13ns)   --->   "%call_ln218 = call void @BackPropagateEncoderWeights, i1 %p_read_138, i1 %EncoderWeights_0_out, i1 %p_read181, i1 %EncoderWeights_1_out, i1 %p_read282, i1 %EncoderWeights_2_out, i1 %p_read383, i1 %EncoderWeights_3_out, i1 %p_read484, i1 %EncoderWeights_4_out, i1 %p_read585, i1 %EncoderWeights_5_out, i1 %p_read686, i1 %EncoderWeights_6_out, i1 %p_read787, i1 %EncoderWeights_7_out, i1 %p_read888, i1 %EncoderWeights_8_out, i1 %p_read989, i1 %EncoderWeights_9_out, i1 %p_read1090, i1 %EncoderWeights_10_out, i1 %p_read_137, i1 %EncoderWeights_11_out, i1 %p_read_136, i1 %EncoderWeights_12_out, i1 %p_read_135, i1 %EncoderWeights_13_out, i1 %p_read_134, i1 %EncoderWeights_14_out, i1 %p_read_133, i1 %EncoderWeights_15_out, i1 %p_read_132, i1 %EncoderWeights_16_out, i1 %p_read_131, i1 %EncoderWeights_17_out, i1 %p_read_130, i1 %EncoderWeights_18_out, i1 %p_read_129, i1 %EncoderWeights_19_out, i1 %p_read20100, i1 %EncoderWeights_20_out, i1 %p_read_128, i1 %EncoderWeights_21_out, i1 %p_read_127, i1 %EncoderWeights_22_out, i1 %p_read_126, i1 %EncoderWeights_23_out, i1 %p_read_125, i1 %EncoderWeights_24_out, i1 %p_read_124, i1 %EncoderWeights_25_out, i1 %p_read_123, i1 %EncoderWeights_26_out, i1 %p_read_122, i1 %EncoderWeights_27_out, i1 %p_read_121, i1 %EncoderWeights_28_out, i1 %p_read_120, i1 %EncoderWeights_29_out, i1 %p_read30110, i1 %EncoderWeights_30_out, i1 %p_read_119, i1 %EncoderWeights_31_out, i1 %p_read_118, i1 %EncoderWeights_32_out, i1 %p_read_117, i1 %EncoderWeights_33_out, i1 %p_read_116, i1 %EncoderWeights_34_out, i1 %p_read_115, i1 %EncoderWeights_35_out, i1 %p_read_114, i1 %EncoderWeights_36_out, i1 %p_read_113, i1 %EncoderWeights_37_out, i1 %p_read_112, i1 %EncoderWeights_38_out, i1 %p_read_111, i1 %EncoderWeights_39_out, i1 %PrevEncoderWeightChanges" [HLS/src/AutoEncoder.cpp:218]   --->   Operation 90 'call' 'call_ln218' <Predicate = true> <Delay = 1.13> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 91 [1/2] (1.13ns)   --->   "%call_ln223 = call void @BackPropagateDecoderWeights, i1 %p_read_110, i1 %DecoderWeights_0_out, i1 %p_read_109, i1 %DecoderWeights_1_out, i1 %p_read_108, i1 %DecoderWeights_2_out, i1 %p_read_107, i1 %DecoderWeights_3_out, i1 %p_read_106, i1 %DecoderWeights_4_out, i1 %p_read_105, i1 %DecoderWeights_5_out, i1 %p_read_104, i1 %DecoderWeights_6_out, i1 %p_read_103, i1 %DecoderWeights_7_out, i1 %p_read_102, i1 %DecoderWeights_8_out, i1 %p_read_101, i1 %DecoderWeights_9_out, i1 %p_read_100, i1 %DecoderWeights_10_out, i1 %p_read_99, i1 %DecoderWeights_11_out, i1 %p_read_98, i1 %DecoderWeights_12_out, i1 %p_read_97, i1 %DecoderWeights_13_out, i1 %p_read_96, i1 %DecoderWeights_14_out, i1 %p_read_95, i1 %DecoderWeights_15_out, i1 %p_read_94, i1 %DecoderWeights_16_out, i1 %p_read_93, i1 %DecoderWeights_17_out, i1 %p_read_92, i1 %DecoderWeights_18_out, i1 %p_read_91, i1 %DecoderWeights_19_out, i1 %p_read_90, i1 %DecoderWeights_20_out, i1 %p_read_89, i1 %DecoderWeights_21_out, i1 %p_read_88, i1 %DecoderWeights_22_out, i1 %p_read_87, i1 %DecoderWeights_23_out, i1 %p_read_86, i1 %DecoderWeights_24_out, i1 %p_read_85, i1 %DecoderWeights_25_out, i1 %p_read_84, i1 %DecoderWeights_26_out, i1 %p_read_83, i1 %DecoderWeights_27_out, i1 %p_read_82, i1 %DecoderWeights_28_out, i1 %p_read_81, i1 %DecoderWeights_29_out, i1 %p_read_80, i1 %DecoderWeights_30_out, i1 %p_read_79, i1 %DecoderWeights_31_out, i1 %p_read_78, i1 %DecoderWeights_32_out, i1 %p_read_77, i1 %DecoderWeights_33_out, i1 %p_read_76, i1 %DecoderWeights_34_out, i1 %p_read_75, i1 %DecoderWeights_35_out, i1 %p_read_74, i1 %DecoderWeights_36_out, i1 %p_read_73, i1 %DecoderWeights_37_out, i1 %p_read_72, i1 %DecoderWeights_38_out, i1 %p_read_71, i1 %DecoderWeights_39_out, i1 %PrevDecoderWeightChanges" [HLS/src/AutoEncoder.cpp:223]   --->   Operation 91 'call' 'call_ln223' <Predicate = true> <Delay = 1.13> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 92 [1/1] (0.00ns)   --->   "%ret_ln227 = ret" [HLS/src/AutoEncoder.cpp:227]   --->   Operation 92 'ret' 'ret_ln227' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.71ns
+The critical path consists of the following:
+	wire read operation ('p_read_111', HLS/src/AutoEncoder.cpp:205) on port 'p_read39' (HLS/src/AutoEncoder.cpp:205) [208]  (0 ns)
+	'call' operation ('call_ln218', HLS/src/AutoEncoder.cpp:218) to 'BackPropagateEncoderWeights' [250]  (1.71 ns)
+
+ <State 2>: 1.13ns
+The critical path consists of the following:
+	'call' operation ('call_ln218', HLS/src/AutoEncoder.cpp:218) to 'BackPropagateEncoderWeights' [250]  (1.13 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -1,0 +1,58 @@
+
+Host Name:                 DESKTOP-943LB4O
+OS Name:                   Microsoft Windows 10 Pro
+OS Version:                10.0.19044 N/A Build 19044
+OS Manufacturer:           Microsoft Corporation
+OS Configuration:          Standalone Workstation
+OS Build Type:             Multiprocessor Free
+Registered Owner:          N/A
+Registered Organization:   N/A
+Product ID:                00330-80000-00000-AA726
+Original Install Date:     7/17/2022, 10:12:45 PM
+System Boot Time:          11/25/2022, 11:42:01 AM
+System Manufacturer:       ASUSTeK COMPUTER INC.
+System Model:              K30BF_M32BF
+System Type:               x64-based PC
+Processor(s):              1 Processor(s) Installed.
+                           [01]: AMD64 Family 21 Model 16 Stepping 1 AuthenticAMD ~3200 Mhz
+BIOS Version:              American Megatrends Inc. 0302, 8/25/2014
+Windows Directory:         C:\WINDOWS
+System Directory:          C:\WINDOWS\system32
+Boot Device:               \Device\HarddiskVolume2
+System Locale:             en-us;English (United States)
+Input Locale:              en-us;English (United States)
+Time Zone:                 (UTC-07:00) Mountain Time (US & Canada)
+Total Physical Memory:     15,556 MB
+Available Physical Memory: 9,564 MB
+Virtual Memory: Max Size:  18,970 MB
+Virtual Memory: Available: 10,566 MB
+Virtual Memory: In Use:    8,404 MB
+Page File Location(s):     C:\pagefile.sys
+Domain:                    WORKGROUP
+Logon Server:              \\DESKTOP-943LB4O
+Hotfix(s):                 10 Hotfix(s) Installed.
+                           [01]: KB5020613
+                           [02]: KB5020872
+                           [03]: KB5003791
+                           [04]: KB5007401
+                           [05]: KB5012170
+                           [06]: KB5019959
+                           [07]: KB5014035
+                           [08]: KB5016705
+                           [09]: KB5018506
+                           [10]: KB5020372
+Network Card(s):           2 NIC(s) Installed.
+                           [01]: Realtek PCIe GBE Family Controller
+                                 Connection Name: Ethernet
+                                 Status:          Media disconnected
+                           [02]: Linksys WUSB6300 V2
+                                 Connection Name: Wi-Fi 2
+                                 DHCP Enabled:    Yes
+                                 DHCP Server:     192.168.0.1
+                                 IP address(es)
+                                 [01]: 192.168.0.57
+                                 [02]: fe80::8031:f7be:b2d2:c601
+Hyper-V Requirements:      VM Monitor Mode Extensions: Yes
+                           Virtualization Enabled In Firmware: Yes
+                           Second Level Address Translation: Yes
+                           Data Execution Prevention Available: Yes

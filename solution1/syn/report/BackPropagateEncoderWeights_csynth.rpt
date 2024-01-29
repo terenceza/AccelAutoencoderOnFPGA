@@ -1,0 +1,432 @@
+
+
+================================================================
+== Vitis HLS Report for 'BackPropagateEncoderWeights'
+================================================================
+* Date:           Thu Jul 13 23:01:25 2023
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        HLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.692 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       49|       49|  0.490 us|  0.490 us|   49|   49|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+        |           |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop6    |       48|       48|        12|          -|          -|     4|        no|
+        | + Loop61  |       10|       10|         1|          -|          -|    10|        no|
+        +-----------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     58|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       0|    177|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    967|    -|
+|Register         |        -|    -|      98|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|      98|   1202|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|      2|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------+---------------+---------+----+---+-----+-----+
+    |      Instance     |     Module    | BRAM_18K| DSP| FF| LUT | URAM|
+    +-------------------+---------------+---------+----+---+-----+-----+
+    |mux_406_1_1_1_U97  |mux_406_1_1_1  |        0|   0|  0|  177|    0|
+    +-------------------+---------------+---------+----+---+-----+-----+
+    |Total              |               |        0|   0|  0|  177|    0|
+    +-------------------+---------------+---------+----+---+-----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |add_ln304_fu_1361_p2   |         +|   0|  0|  11|           3|           1|
+    |add_ln307_fu_1395_p2   |         +|   0|  0|  13|           4|           1|
+    |add_ln310_fu_1401_p2   |         +|   0|  0|  14|           6|           6|
+    |icmp_ln304_fu_1355_p2  |      icmp|   0|  0|   9|           3|           4|
+    |icmp_ln307_fu_1389_p2  |      icmp|   0|  0|   9|           4|           4|
+    |ap_block_state1        |        or|   0|  0|   2|           1|           1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0|  58|          21|          17|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------------------------------+----+-----------+-----+-----------+
+    |               Name              | LUT| Input Size| Bits| Total Bits|
+    +---------------------------------+----+-----------+-----+-----------+
+    |EncoderWeights_0_copy_0_fu_282   |  14|          3|    1|          3|
+    |EncoderWeights_0_out             |   9|          2|    1|          2|
+    |EncoderWeights_10_copy_0_fu_322  |  14|          3|    1|          3|
+    |EncoderWeights_10_out            |   9|          2|    1|          2|
+    |EncoderWeights_11_copy_0_fu_326  |  14|          3|    1|          3|
+    |EncoderWeights_11_out            |   9|          2|    1|          2|
+    |EncoderWeights_12_copy_0_fu_330  |  14|          3|    1|          3|
+    |EncoderWeights_12_out            |   9|          2|    1|          2|
+    |EncoderWeights_13_copy_0_fu_334  |  14|          3|    1|          3|
+    |EncoderWeights_13_out            |   9|          2|    1|          2|
+    |EncoderWeights_14_copy_0_fu_338  |  14|          3|    1|          3|
+    |EncoderWeights_14_out            |   9|          2|    1|          2|
+    |EncoderWeights_15_copy_0_fu_342  |  14|          3|    1|          3|
+    |EncoderWeights_15_out            |   9|          2|    1|          2|
+    |EncoderWeights_16_copy_0_fu_346  |  14|          3|    1|          3|
+    |EncoderWeights_16_out            |   9|          2|    1|          2|
+    |EncoderWeights_17_copy_0_fu_350  |  14|          3|    1|          3|
+    |EncoderWeights_17_out            |   9|          2|    1|          2|
+    |EncoderWeights_18_copy_0_fu_354  |  14|          3|    1|          3|
+    |EncoderWeights_18_out            |   9|          2|    1|          2|
+    |EncoderWeights_19_copy_0_fu_358  |  14|          3|    1|          3|
+    |EncoderWeights_19_out            |   9|          2|    1|          2|
+    |EncoderWeights_1_copy_0_fu_286   |  14|          3|    1|          3|
+    |EncoderWeights_1_out             |   9|          2|    1|          2|
+    |EncoderWeights_20_copy_0_fu_362  |  14|          3|    1|          3|
+    |EncoderWeights_20_out            |   9|          2|    1|          2|
+    |EncoderWeights_21_copy_0_fu_366  |  14|          3|    1|          3|
+    |EncoderWeights_21_out            |   9|          2|    1|          2|
+    |EncoderWeights_22_copy_0_fu_370  |  14|          3|    1|          3|
+    |EncoderWeights_22_out            |   9|          2|    1|          2|
+    |EncoderWeights_23_copy_0_fu_374  |  14|          3|    1|          3|
+    |EncoderWeights_23_out            |   9|          2|    1|          2|
+    |EncoderWeights_24_copy_0_fu_378  |  14|          3|    1|          3|
+    |EncoderWeights_24_out            |   9|          2|    1|          2|
+    |EncoderWeights_25_copy_0_fu_382  |  14|          3|    1|          3|
+    |EncoderWeights_25_out            |   9|          2|    1|          2|
+    |EncoderWeights_26_copy_0_fu_386  |  14|          3|    1|          3|
+    |EncoderWeights_26_out            |   9|          2|    1|          2|
+    |EncoderWeights_27_copy_0_fu_390  |  14|          3|    1|          3|
+    |EncoderWeights_27_out            |   9|          2|    1|          2|
+    |EncoderWeights_28_copy_0_fu_394  |  14|          3|    1|          3|
+    |EncoderWeights_28_out            |   9|          2|    1|          2|
+    |EncoderWeights_29_copy_0_fu_398  |  14|          3|    1|          3|
+    |EncoderWeights_29_out            |   9|          2|    1|          2|
+    |EncoderWeights_2_copy_0_fu_290   |  14|          3|    1|          3|
+    |EncoderWeights_2_out             |   9|          2|    1|          2|
+    |EncoderWeights_30_copy_0_fu_402  |  14|          3|    1|          3|
+    |EncoderWeights_30_out            |   9|          2|    1|          2|
+    |EncoderWeights_31_copy_0_fu_406  |  14|          3|    1|          3|
+    |EncoderWeights_31_out            |   9|          2|    1|          2|
+    |EncoderWeights_32_copy_0_fu_410  |  14|          3|    1|          3|
+    |EncoderWeights_32_out            |   9|          2|    1|          2|
+    |EncoderWeights_33_copy_0_fu_414  |  14|          3|    1|          3|
+    |EncoderWeights_33_out            |   9|          2|    1|          2|
+    |EncoderWeights_34_copy_0_fu_418  |  14|          3|    1|          3|
+    |EncoderWeights_34_out            |   9|          2|    1|          2|
+    |EncoderWeights_35_copy_0_fu_422  |  14|          3|    1|          3|
+    |EncoderWeights_35_out            |   9|          2|    1|          2|
+    |EncoderWeights_36_copy_0_fu_426  |  14|          3|    1|          3|
+    |EncoderWeights_36_out            |   9|          2|    1|          2|
+    |EncoderWeights_37_copy_0_fu_430  |  14|          3|    1|          3|
+    |EncoderWeights_37_out            |   9|          2|    1|          2|
+    |EncoderWeights_38_copy_0_fu_434  |  14|          3|    1|          3|
+    |EncoderWeights_38_out            |   9|          2|    1|          2|
+    |EncoderWeights_39_copy_0_fu_438  |  14|          3|    1|          3|
+    |EncoderWeights_39_out            |   9|          2|    1|          2|
+    |EncoderWeights_3_copy_0_fu_294   |  14|          3|    1|          3|
+    |EncoderWeights_3_out             |   9|          2|    1|          2|
+    |EncoderWeights_4_copy_0_fu_298   |  14|          3|    1|          3|
+    |EncoderWeights_4_out             |   9|          2|    1|          2|
+    |EncoderWeights_5_copy_0_fu_302   |  14|          3|    1|          3|
+    |EncoderWeights_5_out             |   9|          2|    1|          2|
+    |EncoderWeights_6_copy_0_fu_306   |  14|          3|    1|          3|
+    |EncoderWeights_6_out             |   9|          2|    1|          2|
+    |EncoderWeights_7_copy_0_fu_310   |  14|          3|    1|          3|
+    |EncoderWeights_7_out             |   9|          2|    1|          2|
+    |EncoderWeights_8_copy_0_fu_314   |  14|          3|    1|          3|
+    |EncoderWeights_8_out             |   9|          2|    1|          2|
+    |EncoderWeights_9_copy_0_fu_318   |  14|          3|    1|          3|
+    |EncoderWeights_9_out             |   9|          2|    1|          2|
+    |ap_NS_fsm                        |  20|          4|    1|          4|
+    |ap_done                          |   9|          2|    1|          2|
+    |d_fu_278                         |   9|          2|    3|          6|
+    |h_reg_976                        |   9|          2|    4|          8|
+    +---------------------------------+----+-----------+-----+-----------+
+    |Total                            | 967|        210|   89|        220|
+    +---------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +---------------------------------+---+----+-----+-----------+
+    |               Name              | FF| LUT| Bits| Const Bits|
+    +---------------------------------+---+----+-----+-----------+
+    |EncoderWeights_0_copy_0_fu_282   |  1|   0|    1|          0|
+    |EncoderWeights_0_out_preg        |  1|   0|    1|          0|
+    |EncoderWeights_10_copy_0_fu_322  |  1|   0|    1|          0|
+    |EncoderWeights_10_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_11_copy_0_fu_326  |  1|   0|    1|          0|
+    |EncoderWeights_11_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_12_copy_0_fu_330  |  1|   0|    1|          0|
+    |EncoderWeights_12_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_13_copy_0_fu_334  |  1|   0|    1|          0|
+    |EncoderWeights_13_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_14_copy_0_fu_338  |  1|   0|    1|          0|
+    |EncoderWeights_14_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_15_copy_0_fu_342  |  1|   0|    1|          0|
+    |EncoderWeights_15_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_16_copy_0_fu_346  |  1|   0|    1|          0|
+    |EncoderWeights_16_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_17_copy_0_fu_350  |  1|   0|    1|          0|
+    |EncoderWeights_17_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_18_copy_0_fu_354  |  1|   0|    1|          0|
+    |EncoderWeights_18_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_19_copy_0_fu_358  |  1|   0|    1|          0|
+    |EncoderWeights_19_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_1_copy_0_fu_286   |  1|   0|    1|          0|
+    |EncoderWeights_1_out_preg        |  1|   0|    1|          0|
+    |EncoderWeights_20_copy_0_fu_362  |  1|   0|    1|          0|
+    |EncoderWeights_20_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_21_copy_0_fu_366  |  1|   0|    1|          0|
+    |EncoderWeights_21_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_22_copy_0_fu_370  |  1|   0|    1|          0|
+    |EncoderWeights_22_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_23_copy_0_fu_374  |  1|   0|    1|          0|
+    |EncoderWeights_23_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_24_copy_0_fu_378  |  1|   0|    1|          0|
+    |EncoderWeights_24_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_25_copy_0_fu_382  |  1|   0|    1|          0|
+    |EncoderWeights_25_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_26_copy_0_fu_386  |  1|   0|    1|          0|
+    |EncoderWeights_26_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_27_copy_0_fu_390  |  1|   0|    1|          0|
+    |EncoderWeights_27_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_28_copy_0_fu_394  |  1|   0|    1|          0|
+    |EncoderWeights_28_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_29_copy_0_fu_398  |  1|   0|    1|          0|
+    |EncoderWeights_29_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_2_copy_0_fu_290   |  1|   0|    1|          0|
+    |EncoderWeights_2_out_preg        |  1|   0|    1|          0|
+    |EncoderWeights_30_copy_0_fu_402  |  1|   0|    1|          0|
+    |EncoderWeights_30_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_31_copy_0_fu_406  |  1|   0|    1|          0|
+    |EncoderWeights_31_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_32_copy_0_fu_410  |  1|   0|    1|          0|
+    |EncoderWeights_32_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_33_copy_0_fu_414  |  1|   0|    1|          0|
+    |EncoderWeights_33_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_34_copy_0_fu_418  |  1|   0|    1|          0|
+    |EncoderWeights_34_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_35_copy_0_fu_422  |  1|   0|    1|          0|
+    |EncoderWeights_35_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_36_copy_0_fu_426  |  1|   0|    1|          0|
+    |EncoderWeights_36_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_37_copy_0_fu_430  |  1|   0|    1|          0|
+    |EncoderWeights_37_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_38_copy_0_fu_434  |  1|   0|    1|          0|
+    |EncoderWeights_38_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_39_copy_0_fu_438  |  1|   0|    1|          0|
+    |EncoderWeights_39_out_preg       |  1|   0|    1|          0|
+    |EncoderWeights_3_copy_0_fu_294   |  1|   0|    1|          0|
+    |EncoderWeights_3_out_preg        |  1|   0|    1|          0|
+    |EncoderWeights_4_copy_0_fu_298   |  1|   0|    1|          0|
+    |EncoderWeights_4_out_preg        |  1|   0|    1|          0|
+    |EncoderWeights_5_copy_0_fu_302   |  1|   0|    1|          0|
+    |EncoderWeights_5_out_preg        |  1|   0|    1|          0|
+    |EncoderWeights_6_copy_0_fu_306   |  1|   0|    1|          0|
+    |EncoderWeights_6_out_preg        |  1|   0|    1|          0|
+    |EncoderWeights_7_copy_0_fu_310   |  1|   0|    1|          0|
+    |EncoderWeights_7_out_preg        |  1|   0|    1|          0|
+    |EncoderWeights_8_copy_0_fu_314   |  1|   0|    1|          0|
+    |EncoderWeights_8_out_preg        |  1|   0|    1|          0|
+    |EncoderWeights_9_copy_0_fu_318   |  1|   0|    1|          0|
+    |EncoderWeights_9_out_preg        |  1|   0|    1|          0|
+    |add_ln304_reg_2231               |  3|   0|    3|          0|
+    |ap_CS_fsm                        |  3|   0|    3|          0|
+    |ap_done_reg                      |  1|   0|    1|          0|
+    |d_fu_278                         |  3|   0|    3|          0|
+    |h_reg_976                        |  4|   0|    4|          0|
+    |zext_ln307_reg_2236              |  4|   0|    6|          2|
+    +---------------------------------+---+----+-----+-----------+
+    |Total                            | 98|   0|  100|          2|
+    +---------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------+-----+-----+------------+-----------------------------+--------------+
+|             RTL Ports             | Dir | Bits|  Protocol  |        Source Object        |    C Type    |
++-----------------------------------+-----+-----+------------+-----------------------------+--------------+
+|ap_clk                             |   in|    1|  ap_ctrl_hs|  BackPropagateEncoderWeights|  return value|
+|ap_rst                             |   in|    1|  ap_ctrl_hs|  BackPropagateEncoderWeights|  return value|
+|ap_start                           |   in|    1|  ap_ctrl_hs|  BackPropagateEncoderWeights|  return value|
+|ap_done                            |  out|    1|  ap_ctrl_hs|  BackPropagateEncoderWeights|  return value|
+|ap_continue                        |   in|    1|  ap_ctrl_hs|  BackPropagateEncoderWeights|  return value|
+|ap_idle                            |  out|    1|  ap_ctrl_hs|  BackPropagateEncoderWeights|  return value|
+|ap_ready                           |  out|    1|  ap_ctrl_hs|  BackPropagateEncoderWeights|  return value|
+|p_read                             |   in|    1|     ap_none|                       p_read|        scalar|
+|EncoderWeights_0_out               |  out|    1|      ap_vld|         EncoderWeights_0_out|       pointer|
+|EncoderWeights_0_out_ap_vld        |  out|    1|      ap_vld|         EncoderWeights_0_out|       pointer|
+|p_read1                            |   in|    1|     ap_none|                      p_read1|        scalar|
+|EncoderWeights_1_out               |  out|    1|      ap_vld|         EncoderWeights_1_out|       pointer|
+|EncoderWeights_1_out_ap_vld        |  out|    1|      ap_vld|         EncoderWeights_1_out|       pointer|
+|p_read2                            |   in|    1|     ap_none|                      p_read2|        scalar|
+|EncoderWeights_2_out               |  out|    1|      ap_vld|         EncoderWeights_2_out|       pointer|
+|EncoderWeights_2_out_ap_vld        |  out|    1|      ap_vld|         EncoderWeights_2_out|       pointer|
+|p_read3                            |   in|    1|     ap_none|                      p_read3|        scalar|
+|EncoderWeights_3_out               |  out|    1|      ap_vld|         EncoderWeights_3_out|       pointer|
+|EncoderWeights_3_out_ap_vld        |  out|    1|      ap_vld|         EncoderWeights_3_out|       pointer|
+|p_read4                            |   in|    1|     ap_none|                      p_read4|        scalar|
+|EncoderWeights_4_out               |  out|    1|      ap_vld|         EncoderWeights_4_out|       pointer|
+|EncoderWeights_4_out_ap_vld        |  out|    1|      ap_vld|         EncoderWeights_4_out|       pointer|
+|p_read5                            |   in|    1|     ap_none|                      p_read5|        scalar|
+|EncoderWeights_5_out               |  out|    1|      ap_vld|         EncoderWeights_5_out|       pointer|
+|EncoderWeights_5_out_ap_vld        |  out|    1|      ap_vld|         EncoderWeights_5_out|       pointer|
+|p_read6                            |   in|    1|     ap_none|                      p_read6|        scalar|
+|EncoderWeights_6_out               |  out|    1|      ap_vld|         EncoderWeights_6_out|       pointer|
+|EncoderWeights_6_out_ap_vld        |  out|    1|      ap_vld|         EncoderWeights_6_out|       pointer|
+|p_read7                            |   in|    1|     ap_none|                      p_read7|        scalar|
+|EncoderWeights_7_out               |  out|    1|      ap_vld|         EncoderWeights_7_out|       pointer|
+|EncoderWeights_7_out_ap_vld        |  out|    1|      ap_vld|         EncoderWeights_7_out|       pointer|
+|p_read8                            |   in|    1|     ap_none|                      p_read8|        scalar|
+|EncoderWeights_8_out               |  out|    1|      ap_vld|         EncoderWeights_8_out|       pointer|
+|EncoderWeights_8_out_ap_vld        |  out|    1|      ap_vld|         EncoderWeights_8_out|       pointer|
+|p_read9                            |   in|    1|     ap_none|                      p_read9|        scalar|
+|EncoderWeights_9_out               |  out|    1|      ap_vld|         EncoderWeights_9_out|       pointer|
+|EncoderWeights_9_out_ap_vld        |  out|    1|      ap_vld|         EncoderWeights_9_out|       pointer|
+|p_read10                           |   in|    1|     ap_none|                     p_read10|        scalar|
+|EncoderWeights_10_out              |  out|    1|      ap_vld|        EncoderWeights_10_out|       pointer|
+|EncoderWeights_10_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_10_out|       pointer|
+|p_read11                           |   in|    1|     ap_none|                     p_read11|        scalar|
+|EncoderWeights_11_out              |  out|    1|      ap_vld|        EncoderWeights_11_out|       pointer|
+|EncoderWeights_11_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_11_out|       pointer|
+|p_read12                           |   in|    1|     ap_none|                     p_read12|        scalar|
+|EncoderWeights_12_out              |  out|    1|      ap_vld|        EncoderWeights_12_out|       pointer|
+|EncoderWeights_12_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_12_out|       pointer|
+|p_read13                           |   in|    1|     ap_none|                     p_read13|        scalar|
+|EncoderWeights_13_out              |  out|    1|      ap_vld|        EncoderWeights_13_out|       pointer|
+|EncoderWeights_13_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_13_out|       pointer|
+|p_read14                           |   in|    1|     ap_none|                     p_read14|        scalar|
+|EncoderWeights_14_out              |  out|    1|      ap_vld|        EncoderWeights_14_out|       pointer|
+|EncoderWeights_14_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_14_out|       pointer|
+|p_read15                           |   in|    1|     ap_none|                     p_read15|        scalar|
+|EncoderWeights_15_out              |  out|    1|      ap_vld|        EncoderWeights_15_out|       pointer|
+|EncoderWeights_15_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_15_out|       pointer|
+|p_read16                           |   in|    1|     ap_none|                     p_read16|        scalar|
+|EncoderWeights_16_out              |  out|    1|      ap_vld|        EncoderWeights_16_out|       pointer|
+|EncoderWeights_16_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_16_out|       pointer|
+|p_read17                           |   in|    1|     ap_none|                     p_read17|        scalar|
+|EncoderWeights_17_out              |  out|    1|      ap_vld|        EncoderWeights_17_out|       pointer|
+|EncoderWeights_17_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_17_out|       pointer|
+|p_read18                           |   in|    1|     ap_none|                     p_read18|        scalar|
+|EncoderWeights_18_out              |  out|    1|      ap_vld|        EncoderWeights_18_out|       pointer|
+|EncoderWeights_18_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_18_out|       pointer|
+|p_read19                           |   in|    1|     ap_none|                     p_read19|        scalar|
+|EncoderWeights_19_out              |  out|    1|      ap_vld|        EncoderWeights_19_out|       pointer|
+|EncoderWeights_19_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_19_out|       pointer|
+|p_read20                           |   in|    1|     ap_none|                     p_read20|        scalar|
+|EncoderWeights_20_out              |  out|    1|      ap_vld|        EncoderWeights_20_out|       pointer|
+|EncoderWeights_20_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_20_out|       pointer|
+|p_read21                           |   in|    1|     ap_none|                     p_read21|        scalar|
+|EncoderWeights_21_out              |  out|    1|      ap_vld|        EncoderWeights_21_out|       pointer|
+|EncoderWeights_21_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_21_out|       pointer|
+|p_read22                           |   in|    1|     ap_none|                     p_read22|        scalar|
+|EncoderWeights_22_out              |  out|    1|      ap_vld|        EncoderWeights_22_out|       pointer|
+|EncoderWeights_22_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_22_out|       pointer|
+|p_read23                           |   in|    1|     ap_none|                     p_read23|        scalar|
+|EncoderWeights_23_out              |  out|    1|      ap_vld|        EncoderWeights_23_out|       pointer|
+|EncoderWeights_23_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_23_out|       pointer|
+|p_read24                           |   in|    1|     ap_none|                     p_read24|        scalar|
+|EncoderWeights_24_out              |  out|    1|      ap_vld|        EncoderWeights_24_out|       pointer|
+|EncoderWeights_24_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_24_out|       pointer|
+|p_read25                           |   in|    1|     ap_none|                     p_read25|        scalar|
+|EncoderWeights_25_out              |  out|    1|      ap_vld|        EncoderWeights_25_out|       pointer|
+|EncoderWeights_25_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_25_out|       pointer|
+|p_read26                           |   in|    1|     ap_none|                     p_read26|        scalar|
+|EncoderWeights_26_out              |  out|    1|      ap_vld|        EncoderWeights_26_out|       pointer|
+|EncoderWeights_26_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_26_out|       pointer|
+|p_read27                           |   in|    1|     ap_none|                     p_read27|        scalar|
+|EncoderWeights_27_out              |  out|    1|      ap_vld|        EncoderWeights_27_out|       pointer|
+|EncoderWeights_27_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_27_out|       pointer|
+|p_read28                           |   in|    1|     ap_none|                     p_read28|        scalar|
+|EncoderWeights_28_out              |  out|    1|      ap_vld|        EncoderWeights_28_out|       pointer|
+|EncoderWeights_28_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_28_out|       pointer|
+|p_read29                           |   in|    1|     ap_none|                     p_read29|        scalar|
+|EncoderWeights_29_out              |  out|    1|      ap_vld|        EncoderWeights_29_out|       pointer|
+|EncoderWeights_29_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_29_out|       pointer|
+|p_read30                           |   in|    1|     ap_none|                     p_read30|        scalar|
+|EncoderWeights_30_out              |  out|    1|      ap_vld|        EncoderWeights_30_out|       pointer|
+|EncoderWeights_30_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_30_out|       pointer|
+|p_read31                           |   in|    1|     ap_none|                     p_read31|        scalar|
+|EncoderWeights_31_out              |  out|    1|      ap_vld|        EncoderWeights_31_out|       pointer|
+|EncoderWeights_31_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_31_out|       pointer|
+|p_read32                           |   in|    1|     ap_none|                     p_read32|        scalar|
+|EncoderWeights_32_out              |  out|    1|      ap_vld|        EncoderWeights_32_out|       pointer|
+|EncoderWeights_32_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_32_out|       pointer|
+|p_read33                           |   in|    1|     ap_none|                     p_read33|        scalar|
+|EncoderWeights_33_out              |  out|    1|      ap_vld|        EncoderWeights_33_out|       pointer|
+|EncoderWeights_33_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_33_out|       pointer|
+|p_read34                           |   in|    1|     ap_none|                     p_read34|        scalar|
+|EncoderWeights_34_out              |  out|    1|      ap_vld|        EncoderWeights_34_out|       pointer|
+|EncoderWeights_34_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_34_out|       pointer|
+|p_read35                           |   in|    1|     ap_none|                     p_read35|        scalar|
+|EncoderWeights_35_out              |  out|    1|      ap_vld|        EncoderWeights_35_out|       pointer|
+|EncoderWeights_35_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_35_out|       pointer|
+|p_read36                           |   in|    1|     ap_none|                     p_read36|        scalar|
+|EncoderWeights_36_out              |  out|    1|      ap_vld|        EncoderWeights_36_out|       pointer|
+|EncoderWeights_36_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_36_out|       pointer|
+|p_read37                           |   in|    1|     ap_none|                     p_read37|        scalar|
+|EncoderWeights_37_out              |  out|    1|      ap_vld|        EncoderWeights_37_out|       pointer|
+|EncoderWeights_37_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_37_out|       pointer|
+|p_read38                           |   in|    1|     ap_none|                     p_read38|        scalar|
+|EncoderWeights_38_out              |  out|    1|      ap_vld|        EncoderWeights_38_out|       pointer|
+|EncoderWeights_38_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_38_out|       pointer|
+|p_read39                           |   in|    1|     ap_none|                     p_read39|        scalar|
+|EncoderWeights_39_out              |  out|    1|      ap_vld|        EncoderWeights_39_out|       pointer|
+|EncoderWeights_39_out_ap_vld       |  out|    1|      ap_vld|        EncoderWeights_39_out|       pointer|
+|PrevEncoderWeightChanges_address0  |  out|    6|   ap_memory|     PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_ce0       |  out|    1|   ap_memory|     PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_we0       |  out|    1|   ap_memory|     PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_d0        |  out|    1|   ap_memory|     PrevEncoderWeightChanges|         array|
++-----------------------------------+-----+-----+------------+-----------------------------+--------------+
+

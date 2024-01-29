@@ -1,0 +1,537 @@
+
+
+================================================================
+== Vitis HLS Report for 'BackPropagate'
+================================================================
+* Date:           Thu Jul 13 23:01:29 2023
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        HLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.692 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+----------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline |
+    |   min   |   max   |    min   |    max   | min | max |   Type   |
+    +---------+---------+----------+----------+-----+-----+----------+
+    |       60|       60|  0.600 us|  0.600 us|   61|   61|  dataflow|
+    +---------+---------+----------+----------+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        +---------------------------------------+------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |                                       |                                    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+        |                Instance               |               Module               |   min   |   max   |    min   |    max   | min | max |   Type  |
+        +---------------------------------------+------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+        |BackPropagateDecoderWeightChanges_U0   |BackPropagateDecoderWeightChanges   |       57|       57|  0.570 us|  0.570 us|   57|   57|       no|
+        |BackPropagateEncoderWeightsChanges_U0  |BackPropagateEncoderWeightsChanges  |       60|       60|  0.600 us|  0.600 us|   60|   60|       no|
+        |BackPropagateEncoderWeights_U0         |BackPropagateEncoderWeights         |       49|       49|  0.490 us|  0.490 us|   49|   49|       no|
+        |BackPropagateDecoderWeights_U0         |BackPropagateDecoderWeights         |       49|       49|  0.490 us|  0.490 us|   49|   49|       no|
+        +---------------------------------------+------------------------------------+---------+---------+----------+----------+-----+-----+---------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     24|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|     237|   2668|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|     36|    -|
+|Register         |        -|    -|       4|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     241|   2728|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|      5|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +---------------------------------------+------------------------------------+---------+----+----+------+-----+
+    |                Instance               |               Module               | BRAM_18K| DSP| FF |  LUT | URAM|
+    +---------------------------------------+------------------------------------+---------+----+----+------+-----+
+    |BackPropagateDecoderWeightChanges_U0   |BackPropagateDecoderWeightChanges   |        0|   0|  18|   123|    0|
+    |BackPropagateDecoderWeights_U0         |BackPropagateDecoderWeights         |        0|   0|  98|  1202|    0|
+    |BackPropagateEncoderWeights_U0         |BackPropagateEncoderWeights         |        0|   0|  98|  1202|    0|
+    |BackPropagateEncoderWeightsChanges_U0  |BackPropagateEncoderWeightsChanges  |        0|   0|  23|   141|    0|
+    +---------------------------------------+------------------------------------+---------+----+----+------+-----+
+    |Total                                  |                                    |        0|   0| 237|  2668|    0|
+    +---------------------------------------+------------------------------------+---------+----+----+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------------------------------------+----------+----+---+----+------------+------------+
+    |                      Variable Name                     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------------------------------------+----------+----+---+----+------------+------------+
+    |BackPropagateDecoderWeightChanges_U0_ap_start           |       and|   0|  0|   2|           1|           1|
+    |BackPropagateDecoderWeights_U0_ap_start                 |       and|   0|  0|   2|           1|           1|
+    |BackPropagateEncoderWeightsChanges_U0_ap_start          |       and|   0|  0|   2|           1|           1|
+    |BackPropagateEncoderWeights_U0_ap_start                 |       and|   0|  0|   2|           1|           1|
+    |ap_idle                                                 |       and|   0|  0|   2|           1|           1|
+    |ap_sync_continue                                        |       and|   0|  0|   2|           1|           1|
+    |ap_sync_done                                            |       and|   0|  0|   2|           1|           1|
+    |ap_sync_ready                                           |       and|   0|  0|   2|           1|           1|
+    |ap_sync_BackPropagateDecoderWeightChanges_U0_ap_ready   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_BackPropagateDecoderWeights_U0_ap_ready         |        or|   0|  0|   2|           1|           1|
+    |ap_sync_BackPropagateEncoderWeightsChanges_U0_ap_ready  |        or|   0|  0|   2|           1|           1|
+    |ap_sync_BackPropagateEncoderWeights_U0_ap_ready         |        or|   0|  0|   2|           1|           1|
+    +--------------------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                                   |          |   0|  0|  24|          12|          12|
+    +--------------------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------------------------------------------+----+-----------+-----+-----------+
+    |                            Name                            | LUT| Input Size| Bits| Total Bits|
+    +------------------------------------------------------------+----+-----------+-----+-----------+
+    |ap_sync_reg_BackPropagateDecoderWeightChanges_U0_ap_ready   |   9|          2|    1|          2|
+    |ap_sync_reg_BackPropagateDecoderWeights_U0_ap_ready         |   9|          2|    1|          2|
+    |ap_sync_reg_BackPropagateEncoderWeightsChanges_U0_ap_ready  |   9|          2|    1|          2|
+    |ap_sync_reg_BackPropagateEncoderWeights_U0_ap_ready         |   9|          2|    1|          2|
+    +------------------------------------------------------------+----+-----------+-----+-----------+
+    |Total                                                       |  36|          8|    4|          8|
+    +------------------------------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------------------------------+---+----+-----+-----------+
+    |                            Name                            | FF| LUT| Bits| Const Bits|
+    +------------------------------------------------------------+---+----+-----+-----------+
+    |ap_sync_reg_BackPropagateDecoderWeightChanges_U0_ap_ready   |  1|   0|    1|          0|
+    |ap_sync_reg_BackPropagateDecoderWeights_U0_ap_ready         |  1|   0|    1|          0|
+    |ap_sync_reg_BackPropagateEncoderWeightsChanges_U0_ap_ready  |  1|   0|    1|          0|
+    |ap_sync_reg_BackPropagateEncoderWeights_U0_ap_ready         |  1|   0|    1|          0|
+    +------------------------------------------------------------+---+----+-----+-----------+
+    |Total                                                       |  4|   0|    4|          0|
+    +------------------------------------------------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------------------+-----+-----+------------+--------------------------+--------------+
+|             RTL Ports             | Dir | Bits|  Protocol  |       Source Object      |    C Type    |
++-----------------------------------+-----+-----+------------+--------------------------+--------------+
+|p_read                             |   in|    1|     ap_none|                    p_read|        scalar|
+|p_read_ap_vld                      |   in|    1|     ap_none|                    p_read|        scalar|
+|EncoderWeights_0_out               |  out|    1|      ap_vld|      EncoderWeights_0_out|       pointer|
+|EncoderWeights_0_out_ap_vld        |  out|    1|      ap_vld|      EncoderWeights_0_out|       pointer|
+|p_read1                            |   in|    1|     ap_none|                   p_read1|        scalar|
+|p_read1_ap_vld                     |   in|    1|     ap_none|                   p_read1|        scalar|
+|EncoderWeights_1_out               |  out|    1|      ap_vld|      EncoderWeights_1_out|       pointer|
+|EncoderWeights_1_out_ap_vld        |  out|    1|      ap_vld|      EncoderWeights_1_out|       pointer|
+|p_read2                            |   in|    1|     ap_none|                   p_read2|        scalar|
+|p_read2_ap_vld                     |   in|    1|     ap_none|                   p_read2|        scalar|
+|EncoderWeights_2_out               |  out|    1|      ap_vld|      EncoderWeights_2_out|       pointer|
+|EncoderWeights_2_out_ap_vld        |  out|    1|      ap_vld|      EncoderWeights_2_out|       pointer|
+|p_read3                            |   in|    1|     ap_none|                   p_read3|        scalar|
+|p_read3_ap_vld                     |   in|    1|     ap_none|                   p_read3|        scalar|
+|EncoderWeights_3_out               |  out|    1|      ap_vld|      EncoderWeights_3_out|       pointer|
+|EncoderWeights_3_out_ap_vld        |  out|    1|      ap_vld|      EncoderWeights_3_out|       pointer|
+|p_read4                            |   in|    1|     ap_none|                   p_read4|        scalar|
+|p_read4_ap_vld                     |   in|    1|     ap_none|                   p_read4|        scalar|
+|EncoderWeights_4_out               |  out|    1|      ap_vld|      EncoderWeights_4_out|       pointer|
+|EncoderWeights_4_out_ap_vld        |  out|    1|      ap_vld|      EncoderWeights_4_out|       pointer|
+|p_read5                            |   in|    1|     ap_none|                   p_read5|        scalar|
+|p_read5_ap_vld                     |   in|    1|     ap_none|                   p_read5|        scalar|
+|EncoderWeights_5_out               |  out|    1|      ap_vld|      EncoderWeights_5_out|       pointer|
+|EncoderWeights_5_out_ap_vld        |  out|    1|      ap_vld|      EncoderWeights_5_out|       pointer|
+|p_read6                            |   in|    1|     ap_none|                   p_read6|        scalar|
+|p_read6_ap_vld                     |   in|    1|     ap_none|                   p_read6|        scalar|
+|EncoderWeights_6_out               |  out|    1|      ap_vld|      EncoderWeights_6_out|       pointer|
+|EncoderWeights_6_out_ap_vld        |  out|    1|      ap_vld|      EncoderWeights_6_out|       pointer|
+|p_read7                            |   in|    1|     ap_none|                   p_read7|        scalar|
+|p_read7_ap_vld                     |   in|    1|     ap_none|                   p_read7|        scalar|
+|EncoderWeights_7_out               |  out|    1|      ap_vld|      EncoderWeights_7_out|       pointer|
+|EncoderWeights_7_out_ap_vld        |  out|    1|      ap_vld|      EncoderWeights_7_out|       pointer|
+|p_read8                            |   in|    1|     ap_none|                   p_read8|        scalar|
+|p_read8_ap_vld                     |   in|    1|     ap_none|                   p_read8|        scalar|
+|EncoderWeights_8_out               |  out|    1|      ap_vld|      EncoderWeights_8_out|       pointer|
+|EncoderWeights_8_out_ap_vld        |  out|    1|      ap_vld|      EncoderWeights_8_out|       pointer|
+|p_read9                            |   in|    1|     ap_none|                   p_read9|        scalar|
+|p_read9_ap_vld                     |   in|    1|     ap_none|                   p_read9|        scalar|
+|EncoderWeights_9_out               |  out|    1|      ap_vld|      EncoderWeights_9_out|       pointer|
+|EncoderWeights_9_out_ap_vld        |  out|    1|      ap_vld|      EncoderWeights_9_out|       pointer|
+|p_read10                           |   in|    1|     ap_none|                  p_read10|        scalar|
+|p_read10_ap_vld                    |   in|    1|     ap_none|                  p_read10|        scalar|
+|EncoderWeights_10_out              |  out|    1|      ap_vld|     EncoderWeights_10_out|       pointer|
+|EncoderWeights_10_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_10_out|       pointer|
+|p_read11                           |   in|    1|     ap_none|                  p_read11|        scalar|
+|p_read11_ap_vld                    |   in|    1|     ap_none|                  p_read11|        scalar|
+|EncoderWeights_11_out              |  out|    1|      ap_vld|     EncoderWeights_11_out|       pointer|
+|EncoderWeights_11_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_11_out|       pointer|
+|p_read12                           |   in|    1|     ap_none|                  p_read12|        scalar|
+|p_read12_ap_vld                    |   in|    1|     ap_none|                  p_read12|        scalar|
+|EncoderWeights_12_out              |  out|    1|      ap_vld|     EncoderWeights_12_out|       pointer|
+|EncoderWeights_12_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_12_out|       pointer|
+|p_read13                           |   in|    1|     ap_none|                  p_read13|        scalar|
+|p_read13_ap_vld                    |   in|    1|     ap_none|                  p_read13|        scalar|
+|EncoderWeights_13_out              |  out|    1|      ap_vld|     EncoderWeights_13_out|       pointer|
+|EncoderWeights_13_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_13_out|       pointer|
+|p_read14                           |   in|    1|     ap_none|                  p_read14|        scalar|
+|p_read14_ap_vld                    |   in|    1|     ap_none|                  p_read14|        scalar|
+|EncoderWeights_14_out              |  out|    1|      ap_vld|     EncoderWeights_14_out|       pointer|
+|EncoderWeights_14_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_14_out|       pointer|
+|p_read15                           |   in|    1|     ap_none|                  p_read15|        scalar|
+|p_read15_ap_vld                    |   in|    1|     ap_none|                  p_read15|        scalar|
+|EncoderWeights_15_out              |  out|    1|      ap_vld|     EncoderWeights_15_out|       pointer|
+|EncoderWeights_15_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_15_out|       pointer|
+|p_read16                           |   in|    1|     ap_none|                  p_read16|        scalar|
+|p_read16_ap_vld                    |   in|    1|     ap_none|                  p_read16|        scalar|
+|EncoderWeights_16_out              |  out|    1|      ap_vld|     EncoderWeights_16_out|       pointer|
+|EncoderWeights_16_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_16_out|       pointer|
+|p_read17                           |   in|    1|     ap_none|                  p_read17|        scalar|
+|p_read17_ap_vld                    |   in|    1|     ap_none|                  p_read17|        scalar|
+|EncoderWeights_17_out              |  out|    1|      ap_vld|     EncoderWeights_17_out|       pointer|
+|EncoderWeights_17_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_17_out|       pointer|
+|p_read18                           |   in|    1|     ap_none|                  p_read18|        scalar|
+|p_read18_ap_vld                    |   in|    1|     ap_none|                  p_read18|        scalar|
+|EncoderWeights_18_out              |  out|    1|      ap_vld|     EncoderWeights_18_out|       pointer|
+|EncoderWeights_18_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_18_out|       pointer|
+|p_read19                           |   in|    1|     ap_none|                  p_read19|        scalar|
+|p_read19_ap_vld                    |   in|    1|     ap_none|                  p_read19|        scalar|
+|EncoderWeights_19_out              |  out|    1|      ap_vld|     EncoderWeights_19_out|       pointer|
+|EncoderWeights_19_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_19_out|       pointer|
+|p_read20                           |   in|    1|     ap_none|                  p_read20|        scalar|
+|p_read20_ap_vld                    |   in|    1|     ap_none|                  p_read20|        scalar|
+|EncoderWeights_20_out              |  out|    1|      ap_vld|     EncoderWeights_20_out|       pointer|
+|EncoderWeights_20_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_20_out|       pointer|
+|p_read21                           |   in|    1|     ap_none|                  p_read21|        scalar|
+|p_read21_ap_vld                    |   in|    1|     ap_none|                  p_read21|        scalar|
+|EncoderWeights_21_out              |  out|    1|      ap_vld|     EncoderWeights_21_out|       pointer|
+|EncoderWeights_21_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_21_out|       pointer|
+|p_read22                           |   in|    1|     ap_none|                  p_read22|        scalar|
+|p_read22_ap_vld                    |   in|    1|     ap_none|                  p_read22|        scalar|
+|EncoderWeights_22_out              |  out|    1|      ap_vld|     EncoderWeights_22_out|       pointer|
+|EncoderWeights_22_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_22_out|       pointer|
+|p_read23                           |   in|    1|     ap_none|                  p_read23|        scalar|
+|p_read23_ap_vld                    |   in|    1|     ap_none|                  p_read23|        scalar|
+|EncoderWeights_23_out              |  out|    1|      ap_vld|     EncoderWeights_23_out|       pointer|
+|EncoderWeights_23_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_23_out|       pointer|
+|p_read24                           |   in|    1|     ap_none|                  p_read24|        scalar|
+|p_read24_ap_vld                    |   in|    1|     ap_none|                  p_read24|        scalar|
+|EncoderWeights_24_out              |  out|    1|      ap_vld|     EncoderWeights_24_out|       pointer|
+|EncoderWeights_24_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_24_out|       pointer|
+|p_read25                           |   in|    1|     ap_none|                  p_read25|        scalar|
+|p_read25_ap_vld                    |   in|    1|     ap_none|                  p_read25|        scalar|
+|EncoderWeights_25_out              |  out|    1|      ap_vld|     EncoderWeights_25_out|       pointer|
+|EncoderWeights_25_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_25_out|       pointer|
+|p_read26                           |   in|    1|     ap_none|                  p_read26|        scalar|
+|p_read26_ap_vld                    |   in|    1|     ap_none|                  p_read26|        scalar|
+|EncoderWeights_26_out              |  out|    1|      ap_vld|     EncoderWeights_26_out|       pointer|
+|EncoderWeights_26_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_26_out|       pointer|
+|p_read27                           |   in|    1|     ap_none|                  p_read27|        scalar|
+|p_read27_ap_vld                    |   in|    1|     ap_none|                  p_read27|        scalar|
+|EncoderWeights_27_out              |  out|    1|      ap_vld|     EncoderWeights_27_out|       pointer|
+|EncoderWeights_27_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_27_out|       pointer|
+|p_read28                           |   in|    1|     ap_none|                  p_read28|        scalar|
+|p_read28_ap_vld                    |   in|    1|     ap_none|                  p_read28|        scalar|
+|EncoderWeights_28_out              |  out|    1|      ap_vld|     EncoderWeights_28_out|       pointer|
+|EncoderWeights_28_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_28_out|       pointer|
+|p_read29                           |   in|    1|     ap_none|                  p_read29|        scalar|
+|p_read29_ap_vld                    |   in|    1|     ap_none|                  p_read29|        scalar|
+|EncoderWeights_29_out              |  out|    1|      ap_vld|     EncoderWeights_29_out|       pointer|
+|EncoderWeights_29_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_29_out|       pointer|
+|p_read30                           |   in|    1|     ap_none|                  p_read30|        scalar|
+|p_read30_ap_vld                    |   in|    1|     ap_none|                  p_read30|        scalar|
+|EncoderWeights_30_out              |  out|    1|      ap_vld|     EncoderWeights_30_out|       pointer|
+|EncoderWeights_30_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_30_out|       pointer|
+|p_read31                           |   in|    1|     ap_none|                  p_read31|        scalar|
+|p_read31_ap_vld                    |   in|    1|     ap_none|                  p_read31|        scalar|
+|EncoderWeights_31_out              |  out|    1|      ap_vld|     EncoderWeights_31_out|       pointer|
+|EncoderWeights_31_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_31_out|       pointer|
+|p_read32                           |   in|    1|     ap_none|                  p_read32|        scalar|
+|p_read32_ap_vld                    |   in|    1|     ap_none|                  p_read32|        scalar|
+|EncoderWeights_32_out              |  out|    1|      ap_vld|     EncoderWeights_32_out|       pointer|
+|EncoderWeights_32_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_32_out|       pointer|
+|p_read33                           |   in|    1|     ap_none|                  p_read33|        scalar|
+|p_read33_ap_vld                    |   in|    1|     ap_none|                  p_read33|        scalar|
+|EncoderWeights_33_out              |  out|    1|      ap_vld|     EncoderWeights_33_out|       pointer|
+|EncoderWeights_33_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_33_out|       pointer|
+|p_read34                           |   in|    1|     ap_none|                  p_read34|        scalar|
+|p_read34_ap_vld                    |   in|    1|     ap_none|                  p_read34|        scalar|
+|EncoderWeights_34_out              |  out|    1|      ap_vld|     EncoderWeights_34_out|       pointer|
+|EncoderWeights_34_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_34_out|       pointer|
+|p_read35                           |   in|    1|     ap_none|                  p_read35|        scalar|
+|p_read35_ap_vld                    |   in|    1|     ap_none|                  p_read35|        scalar|
+|EncoderWeights_35_out              |  out|    1|      ap_vld|     EncoderWeights_35_out|       pointer|
+|EncoderWeights_35_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_35_out|       pointer|
+|p_read36                           |   in|    1|     ap_none|                  p_read36|        scalar|
+|p_read36_ap_vld                    |   in|    1|     ap_none|                  p_read36|        scalar|
+|EncoderWeights_36_out              |  out|    1|      ap_vld|     EncoderWeights_36_out|       pointer|
+|EncoderWeights_36_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_36_out|       pointer|
+|p_read37                           |   in|    1|     ap_none|                  p_read37|        scalar|
+|p_read37_ap_vld                    |   in|    1|     ap_none|                  p_read37|        scalar|
+|EncoderWeights_37_out              |  out|    1|      ap_vld|     EncoderWeights_37_out|       pointer|
+|EncoderWeights_37_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_37_out|       pointer|
+|p_read38                           |   in|    1|     ap_none|                  p_read38|        scalar|
+|p_read38_ap_vld                    |   in|    1|     ap_none|                  p_read38|        scalar|
+|EncoderWeights_38_out              |  out|    1|      ap_vld|     EncoderWeights_38_out|       pointer|
+|EncoderWeights_38_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_38_out|       pointer|
+|p_read39                           |   in|    1|     ap_none|                  p_read39|        scalar|
+|p_read39_ap_vld                    |   in|    1|     ap_none|                  p_read39|        scalar|
+|EncoderWeights_39_out              |  out|    1|      ap_vld|     EncoderWeights_39_out|       pointer|
+|EncoderWeights_39_out_ap_vld       |  out|    1|      ap_vld|     EncoderWeights_39_out|       pointer|
+|p_read40                           |   in|    1|     ap_none|                  p_read40|        scalar|
+|p_read40_ap_vld                    |   in|    1|     ap_none|                  p_read40|        scalar|
+|DecoderWeights_0_out               |  out|    1|      ap_vld|      DecoderWeights_0_out|       pointer|
+|DecoderWeights_0_out_ap_vld        |  out|    1|      ap_vld|      DecoderWeights_0_out|       pointer|
+|p_read41                           |   in|    1|     ap_none|                  p_read41|        scalar|
+|p_read41_ap_vld                    |   in|    1|     ap_none|                  p_read41|        scalar|
+|DecoderWeights_1_out               |  out|    1|      ap_vld|      DecoderWeights_1_out|       pointer|
+|DecoderWeights_1_out_ap_vld        |  out|    1|      ap_vld|      DecoderWeights_1_out|       pointer|
+|p_read42                           |   in|    1|     ap_none|                  p_read42|        scalar|
+|p_read42_ap_vld                    |   in|    1|     ap_none|                  p_read42|        scalar|
+|DecoderWeights_2_out               |  out|    1|      ap_vld|      DecoderWeights_2_out|       pointer|
+|DecoderWeights_2_out_ap_vld        |  out|    1|      ap_vld|      DecoderWeights_2_out|       pointer|
+|p_read43                           |   in|    1|     ap_none|                  p_read43|        scalar|
+|p_read43_ap_vld                    |   in|    1|     ap_none|                  p_read43|        scalar|
+|DecoderWeights_3_out               |  out|    1|      ap_vld|      DecoderWeights_3_out|       pointer|
+|DecoderWeights_3_out_ap_vld        |  out|    1|      ap_vld|      DecoderWeights_3_out|       pointer|
+|p_read44                           |   in|    1|     ap_none|                  p_read44|        scalar|
+|p_read44_ap_vld                    |   in|    1|     ap_none|                  p_read44|        scalar|
+|DecoderWeights_4_out               |  out|    1|      ap_vld|      DecoderWeights_4_out|       pointer|
+|DecoderWeights_4_out_ap_vld        |  out|    1|      ap_vld|      DecoderWeights_4_out|       pointer|
+|p_read45                           |   in|    1|     ap_none|                  p_read45|        scalar|
+|p_read45_ap_vld                    |   in|    1|     ap_none|                  p_read45|        scalar|
+|DecoderWeights_5_out               |  out|    1|      ap_vld|      DecoderWeights_5_out|       pointer|
+|DecoderWeights_5_out_ap_vld        |  out|    1|      ap_vld|      DecoderWeights_5_out|       pointer|
+|p_read46                           |   in|    1|     ap_none|                  p_read46|        scalar|
+|p_read46_ap_vld                    |   in|    1|     ap_none|                  p_read46|        scalar|
+|DecoderWeights_6_out               |  out|    1|      ap_vld|      DecoderWeights_6_out|       pointer|
+|DecoderWeights_6_out_ap_vld        |  out|    1|      ap_vld|      DecoderWeights_6_out|       pointer|
+|p_read47                           |   in|    1|     ap_none|                  p_read47|        scalar|
+|p_read47_ap_vld                    |   in|    1|     ap_none|                  p_read47|        scalar|
+|DecoderWeights_7_out               |  out|    1|      ap_vld|      DecoderWeights_7_out|       pointer|
+|DecoderWeights_7_out_ap_vld        |  out|    1|      ap_vld|      DecoderWeights_7_out|       pointer|
+|p_read48                           |   in|    1|     ap_none|                  p_read48|        scalar|
+|p_read48_ap_vld                    |   in|    1|     ap_none|                  p_read48|        scalar|
+|DecoderWeights_8_out               |  out|    1|      ap_vld|      DecoderWeights_8_out|       pointer|
+|DecoderWeights_8_out_ap_vld        |  out|    1|      ap_vld|      DecoderWeights_8_out|       pointer|
+|p_read49                           |   in|    1|     ap_none|                  p_read49|        scalar|
+|p_read49_ap_vld                    |   in|    1|     ap_none|                  p_read49|        scalar|
+|DecoderWeights_9_out               |  out|    1|      ap_vld|      DecoderWeights_9_out|       pointer|
+|DecoderWeights_9_out_ap_vld        |  out|    1|      ap_vld|      DecoderWeights_9_out|       pointer|
+|p_read50                           |   in|    1|     ap_none|                  p_read50|        scalar|
+|p_read50_ap_vld                    |   in|    1|     ap_none|                  p_read50|        scalar|
+|DecoderWeights_10_out              |  out|    1|      ap_vld|     DecoderWeights_10_out|       pointer|
+|DecoderWeights_10_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_10_out|       pointer|
+|p_read51                           |   in|    1|     ap_none|                  p_read51|        scalar|
+|p_read51_ap_vld                    |   in|    1|     ap_none|                  p_read51|        scalar|
+|DecoderWeights_11_out              |  out|    1|      ap_vld|     DecoderWeights_11_out|       pointer|
+|DecoderWeights_11_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_11_out|       pointer|
+|p_read52                           |   in|    1|     ap_none|                  p_read52|        scalar|
+|p_read52_ap_vld                    |   in|    1|     ap_none|                  p_read52|        scalar|
+|DecoderWeights_12_out              |  out|    1|      ap_vld|     DecoderWeights_12_out|       pointer|
+|DecoderWeights_12_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_12_out|       pointer|
+|p_read53                           |   in|    1|     ap_none|                  p_read53|        scalar|
+|p_read53_ap_vld                    |   in|    1|     ap_none|                  p_read53|        scalar|
+|DecoderWeights_13_out              |  out|    1|      ap_vld|     DecoderWeights_13_out|       pointer|
+|DecoderWeights_13_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_13_out|       pointer|
+|p_read54                           |   in|    1|     ap_none|                  p_read54|        scalar|
+|p_read54_ap_vld                    |   in|    1|     ap_none|                  p_read54|        scalar|
+|DecoderWeights_14_out              |  out|    1|      ap_vld|     DecoderWeights_14_out|       pointer|
+|DecoderWeights_14_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_14_out|       pointer|
+|p_read55                           |   in|    1|     ap_none|                  p_read55|        scalar|
+|p_read55_ap_vld                    |   in|    1|     ap_none|                  p_read55|        scalar|
+|DecoderWeights_15_out              |  out|    1|      ap_vld|     DecoderWeights_15_out|       pointer|
+|DecoderWeights_15_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_15_out|       pointer|
+|p_read56                           |   in|    1|     ap_none|                  p_read56|        scalar|
+|p_read56_ap_vld                    |   in|    1|     ap_none|                  p_read56|        scalar|
+|DecoderWeights_16_out              |  out|    1|      ap_vld|     DecoderWeights_16_out|       pointer|
+|DecoderWeights_16_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_16_out|       pointer|
+|p_read57                           |   in|    1|     ap_none|                  p_read57|        scalar|
+|p_read57_ap_vld                    |   in|    1|     ap_none|                  p_read57|        scalar|
+|DecoderWeights_17_out              |  out|    1|      ap_vld|     DecoderWeights_17_out|       pointer|
+|DecoderWeights_17_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_17_out|       pointer|
+|p_read58                           |   in|    1|     ap_none|                  p_read58|        scalar|
+|p_read58_ap_vld                    |   in|    1|     ap_none|                  p_read58|        scalar|
+|DecoderWeights_18_out              |  out|    1|      ap_vld|     DecoderWeights_18_out|       pointer|
+|DecoderWeights_18_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_18_out|       pointer|
+|p_read59                           |   in|    1|     ap_none|                  p_read59|        scalar|
+|p_read59_ap_vld                    |   in|    1|     ap_none|                  p_read59|        scalar|
+|DecoderWeights_19_out              |  out|    1|      ap_vld|     DecoderWeights_19_out|       pointer|
+|DecoderWeights_19_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_19_out|       pointer|
+|p_read60                           |   in|    1|     ap_none|                  p_read60|        scalar|
+|p_read60_ap_vld                    |   in|    1|     ap_none|                  p_read60|        scalar|
+|DecoderWeights_20_out              |  out|    1|      ap_vld|     DecoderWeights_20_out|       pointer|
+|DecoderWeights_20_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_20_out|       pointer|
+|p_read61                           |   in|    1|     ap_none|                  p_read61|        scalar|
+|p_read61_ap_vld                    |   in|    1|     ap_none|                  p_read61|        scalar|
+|DecoderWeights_21_out              |  out|    1|      ap_vld|     DecoderWeights_21_out|       pointer|
+|DecoderWeights_21_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_21_out|       pointer|
+|p_read62                           |   in|    1|     ap_none|                  p_read62|        scalar|
+|p_read62_ap_vld                    |   in|    1|     ap_none|                  p_read62|        scalar|
+|DecoderWeights_22_out              |  out|    1|      ap_vld|     DecoderWeights_22_out|       pointer|
+|DecoderWeights_22_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_22_out|       pointer|
+|p_read63                           |   in|    1|     ap_none|                  p_read63|        scalar|
+|p_read63_ap_vld                    |   in|    1|     ap_none|                  p_read63|        scalar|
+|DecoderWeights_23_out              |  out|    1|      ap_vld|     DecoderWeights_23_out|       pointer|
+|DecoderWeights_23_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_23_out|       pointer|
+|p_read64                           |   in|    1|     ap_none|                  p_read64|        scalar|
+|p_read64_ap_vld                    |   in|    1|     ap_none|                  p_read64|        scalar|
+|DecoderWeights_24_out              |  out|    1|      ap_vld|     DecoderWeights_24_out|       pointer|
+|DecoderWeights_24_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_24_out|       pointer|
+|p_read65                           |   in|    1|     ap_none|                  p_read65|        scalar|
+|p_read65_ap_vld                    |   in|    1|     ap_none|                  p_read65|        scalar|
+|DecoderWeights_25_out              |  out|    1|      ap_vld|     DecoderWeights_25_out|       pointer|
+|DecoderWeights_25_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_25_out|       pointer|
+|p_read66                           |   in|    1|     ap_none|                  p_read66|        scalar|
+|p_read66_ap_vld                    |   in|    1|     ap_none|                  p_read66|        scalar|
+|DecoderWeights_26_out              |  out|    1|      ap_vld|     DecoderWeights_26_out|       pointer|
+|DecoderWeights_26_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_26_out|       pointer|
+|p_read67                           |   in|    1|     ap_none|                  p_read67|        scalar|
+|p_read67_ap_vld                    |   in|    1|     ap_none|                  p_read67|        scalar|
+|DecoderWeights_27_out              |  out|    1|      ap_vld|     DecoderWeights_27_out|       pointer|
+|DecoderWeights_27_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_27_out|       pointer|
+|p_read68                           |   in|    1|     ap_none|                  p_read68|        scalar|
+|p_read68_ap_vld                    |   in|    1|     ap_none|                  p_read68|        scalar|
+|DecoderWeights_28_out              |  out|    1|      ap_vld|     DecoderWeights_28_out|       pointer|
+|DecoderWeights_28_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_28_out|       pointer|
+|p_read69                           |   in|    1|     ap_none|                  p_read69|        scalar|
+|p_read69_ap_vld                    |   in|    1|     ap_none|                  p_read69|        scalar|
+|DecoderWeights_29_out              |  out|    1|      ap_vld|     DecoderWeights_29_out|       pointer|
+|DecoderWeights_29_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_29_out|       pointer|
+|p_read70                           |   in|    1|     ap_none|                  p_read70|        scalar|
+|p_read70_ap_vld                    |   in|    1|     ap_none|                  p_read70|        scalar|
+|DecoderWeights_30_out              |  out|    1|      ap_vld|     DecoderWeights_30_out|       pointer|
+|DecoderWeights_30_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_30_out|       pointer|
+|p_read71                           |   in|    1|     ap_none|                  p_read71|        scalar|
+|p_read71_ap_vld                    |   in|    1|     ap_none|                  p_read71|        scalar|
+|DecoderWeights_31_out              |  out|    1|      ap_vld|     DecoderWeights_31_out|       pointer|
+|DecoderWeights_31_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_31_out|       pointer|
+|p_read72                           |   in|    1|     ap_none|                  p_read72|        scalar|
+|p_read72_ap_vld                    |   in|    1|     ap_none|                  p_read72|        scalar|
+|DecoderWeights_32_out              |  out|    1|      ap_vld|     DecoderWeights_32_out|       pointer|
+|DecoderWeights_32_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_32_out|       pointer|
+|p_read73                           |   in|    1|     ap_none|                  p_read73|        scalar|
+|p_read73_ap_vld                    |   in|    1|     ap_none|                  p_read73|        scalar|
+|DecoderWeights_33_out              |  out|    1|      ap_vld|     DecoderWeights_33_out|       pointer|
+|DecoderWeights_33_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_33_out|       pointer|
+|p_read74                           |   in|    1|     ap_none|                  p_read74|        scalar|
+|p_read74_ap_vld                    |   in|    1|     ap_none|                  p_read74|        scalar|
+|DecoderWeights_34_out              |  out|    1|      ap_vld|     DecoderWeights_34_out|       pointer|
+|DecoderWeights_34_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_34_out|       pointer|
+|p_read75                           |   in|    1|     ap_none|                  p_read75|        scalar|
+|p_read75_ap_vld                    |   in|    1|     ap_none|                  p_read75|        scalar|
+|DecoderWeights_35_out              |  out|    1|      ap_vld|     DecoderWeights_35_out|       pointer|
+|DecoderWeights_35_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_35_out|       pointer|
+|p_read76                           |   in|    1|     ap_none|                  p_read76|        scalar|
+|p_read76_ap_vld                    |   in|    1|     ap_none|                  p_read76|        scalar|
+|DecoderWeights_36_out              |  out|    1|      ap_vld|     DecoderWeights_36_out|       pointer|
+|DecoderWeights_36_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_36_out|       pointer|
+|p_read77                           |   in|    1|     ap_none|                  p_read77|        scalar|
+|p_read77_ap_vld                    |   in|    1|     ap_none|                  p_read77|        scalar|
+|DecoderWeights_37_out              |  out|    1|      ap_vld|     DecoderWeights_37_out|       pointer|
+|DecoderWeights_37_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_37_out|       pointer|
+|p_read78                           |   in|    1|     ap_none|                  p_read78|        scalar|
+|p_read78_ap_vld                    |   in|    1|     ap_none|                  p_read78|        scalar|
+|DecoderWeights_38_out              |  out|    1|      ap_vld|     DecoderWeights_38_out|       pointer|
+|DecoderWeights_38_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_38_out|       pointer|
+|p_read79                           |   in|    1|     ap_none|                  p_read79|        scalar|
+|p_read79_ap_vld                    |   in|    1|     ap_none|                  p_read79|        scalar|
+|DecoderWeights_39_out              |  out|    1|      ap_vld|     DecoderWeights_39_out|       pointer|
+|DecoderWeights_39_out_ap_vld       |  out|    1|      ap_vld|     DecoderWeights_39_out|       pointer|
+|PrevEncoderWeightChanges_address0  |  out|    6|   ap_memory|  PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_ce0       |  out|    1|   ap_memory|  PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_d0        |  out|    1|   ap_memory|  PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_q0        |   in|    1|   ap_memory|  PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_we0       |  out|    1|   ap_memory|  PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_address1  |  out|    6|   ap_memory|  PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_ce1       |  out|    1|   ap_memory|  PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_d1        |  out|    1|   ap_memory|  PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_q1        |   in|    1|   ap_memory|  PrevEncoderWeightChanges|         array|
+|PrevEncoderWeightChanges_we1       |  out|    1|   ap_memory|  PrevEncoderWeightChanges|         array|
+|EncoderWeightChanges_address0      |  out|    6|   ap_memory|      EncoderWeightChanges|         array|
+|EncoderWeightChanges_ce0           |  out|    1|   ap_memory|      EncoderWeightChanges|         array|
+|EncoderWeightChanges_d0            |  out|    1|   ap_memory|      EncoderWeightChanges|         array|
+|EncoderWeightChanges_q0            |   in|    1|   ap_memory|      EncoderWeightChanges|         array|
+|EncoderWeightChanges_we0           |  out|    1|   ap_memory|      EncoderWeightChanges|         array|
+|EncoderWeightChanges_address1      |  out|    6|   ap_memory|      EncoderWeightChanges|         array|
+|EncoderWeightChanges_ce1           |  out|    1|   ap_memory|      EncoderWeightChanges|         array|
+|EncoderWeightChanges_d1            |  out|    1|   ap_memory|      EncoderWeightChanges|         array|
+|EncoderWeightChanges_q1            |   in|    1|   ap_memory|      EncoderWeightChanges|         array|
+|EncoderWeightChanges_we1           |  out|    1|   ap_memory|      EncoderWeightChanges|         array|
+|PrevDecoderWeightChanges_address0  |  out|    6|   ap_memory|  PrevDecoderWeightChanges|         array|
+|PrevDecoderWeightChanges_ce0       |  out|    1|   ap_memory|  PrevDecoderWeightChanges|         array|
+|PrevDecoderWeightChanges_d0        |  out|    1|   ap_memory|  PrevDecoderWeightChanges|         array|
+|PrevDecoderWeightChanges_q0        |   in|    1|   ap_memory|  PrevDecoderWeightChanges|         array|
+|PrevDecoderWeightChanges_we0       |  out|    1|   ap_memory|  PrevDecoderWeightChanges|         array|
+|PrevDecoderWeightChanges_address1  |  out|    6|   ap_memory|  PrevDecoderWeightChanges|         array|
+|PrevDecoderWeightChanges_ce1       |  out|    1|   ap_memory|  PrevDecoderWeightChanges|         array|
+|PrevDecoderWeightChanges_d1        |  out|    1|   ap_memory|  PrevDecoderWeightChanges|         array|
+|PrevDecoderWeightChanges_q1        |   in|    1|   ap_memory|  PrevDecoderWeightChanges|         array|
+|PrevDecoderWeightChanges_we1       |  out|    1|   ap_memory|  PrevDecoderWeightChanges|         array|
+|DecoderWeightChanges_address0      |  out|    6|   ap_memory|      DecoderWeightChanges|         array|
+|DecoderWeightChanges_ce0           |  out|    1|   ap_memory|      DecoderWeightChanges|         array|
+|DecoderWeightChanges_d0            |  out|    1|   ap_memory|      DecoderWeightChanges|         array|
+|DecoderWeightChanges_q0            |   in|    1|   ap_memory|      DecoderWeightChanges|         array|
+|DecoderWeightChanges_we0           |  out|    1|   ap_memory|      DecoderWeightChanges|         array|
+|DecoderWeightChanges_address1      |  out|    6|   ap_memory|      DecoderWeightChanges|         array|
+|DecoderWeightChanges_ce1           |  out|    1|   ap_memory|      DecoderWeightChanges|         array|
+|DecoderWeightChanges_d1            |  out|    1|   ap_memory|      DecoderWeightChanges|         array|
+|DecoderWeightChanges_q1            |   in|    1|   ap_memory|      DecoderWeightChanges|         array|
+|DecoderWeightChanges_we1           |  out|    1|   ap_memory|      DecoderWeightChanges|         array|
+|TotalErrorDeltas_address0          |  out|    6|   ap_memory|          TotalErrorDeltas|         array|
+|TotalErrorDeltas_ce0               |  out|    1|   ap_memory|          TotalErrorDeltas|         array|
+|TotalErrorDeltas_d0                |  out|    1|   ap_memory|          TotalErrorDeltas|         array|
+|TotalErrorDeltas_q0                |   in|    1|   ap_memory|          TotalErrorDeltas|         array|
+|TotalErrorDeltas_we0               |  out|    1|   ap_memory|          TotalErrorDeltas|         array|
+|TotalErrorDeltas_address1          |  out|    6|   ap_memory|          TotalErrorDeltas|         array|
+|TotalErrorDeltas_ce1               |  out|    1|   ap_memory|          TotalErrorDeltas|         array|
+|TotalErrorDeltas_d1                |  out|    1|   ap_memory|          TotalErrorDeltas|         array|
+|TotalErrorDeltas_q1                |   in|    1|   ap_memory|          TotalErrorDeltas|         array|
+|TotalErrorDeltas_we1               |  out|    1|   ap_memory|          TotalErrorDeltas|         array|
+|Deltas_address0                    |  out|    2|   ap_memory|                    Deltas|         array|
+|Deltas_ce0                         |  out|    1|   ap_memory|                    Deltas|         array|
+|Deltas_d0                          |  out|    1|   ap_memory|                    Deltas|         array|
+|Deltas_q0                          |   in|    1|   ap_memory|                    Deltas|         array|
+|Deltas_we0                         |  out|    1|   ap_memory|                    Deltas|         array|
+|Deltas_address1                    |  out|    2|   ap_memory|                    Deltas|         array|
+|Deltas_ce1                         |  out|    1|   ap_memory|                    Deltas|         array|
+|Deltas_d1                          |  out|    1|   ap_memory|                    Deltas|         array|
+|Deltas_q1                          |   in|    1|   ap_memory|                    Deltas|         array|
+|Deltas_we1                         |  out|    1|   ap_memory|                    Deltas|         array|
+|ap_clk                             |   in|    1|  ap_ctrl_hs|             BackPropagate|  return value|
+|ap_rst                             |   in|    1|  ap_ctrl_hs|             BackPropagate|  return value|
+|ap_start                           |   in|    1|  ap_ctrl_hs|             BackPropagate|  return value|
+|ap_done                            |  out|    1|  ap_ctrl_hs|             BackPropagate|  return value|
+|ap_ready                           |  out|    1|  ap_ctrl_hs|             BackPropagate|  return value|
+|ap_idle                            |  out|    1|  ap_ctrl_hs|             BackPropagate|  return value|
+|ap_continue                        |   in|    1|  ap_ctrl_hs|             BackPropagate|  return value|
++-----------------------------------+-----+-----+------------+--------------------------+--------------+
+

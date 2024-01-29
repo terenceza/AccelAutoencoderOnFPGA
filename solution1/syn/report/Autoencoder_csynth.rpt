@@ -1,0 +1,556 @@
+
+
+================================================================
+== Vitis HLS Report for 'Autoencoder'
+================================================================
+* Date:           Thu Jul 13 23:01:32 2023
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        HLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +-----------+-----------+-----------+-----------+-----------+-----------+---------+
+    |    Latency (cycles)   |   Latency (absolute)  |        Interval       | Pipeline|
+    |    min    |    max    |    min    |    max    |    min    |    max    |   Type  |
+    +-----------+-----------+-----------+-----------+-----------+-----------+---------+
+    |  945200664|  945200664|  9.452 sec|  9.452 sec|  945200665|  945200665|       no|
+    +-----------+-----------+-----------+-----------+-----------+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------------------------------+--------------------------------------+---------+---------+-----------+-----------+-----+-----+----------+
+        |                                                 |                                      |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline |
+        |                     Instance                    |                Module                |   min   |   max   |    min    |    max    | min | max |   Type   |
+        +-------------------------------------------------+--------------------------------------+---------+---------+-----------+-----------+-----+-----+----------+
+        |grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542  |Autoencoder_Pipeline_VITIS_LOOP_52_1  |      602|      602|   6.020 us|   6.020 us|  602|  602|        no|
+        |grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549  |Autoencoder_Pipeline_VITIS_LOOP_58_2  |        6|        6|  60.000 ns|  60.000 ns|    6|    6|        no|
+        |grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557  |Autoencoder_Pipeline_VITIS_LOOP_63_3  |       43|       43|   0.430 us|   0.430 us|   43|   43|        no|
+        |grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604  |Autoencoder_Pipeline_VITIS_LOOP_69_4  |       43|       43|   0.430 us|   0.430 us|   43|   43|        no|
+        |grp_BackPropagate_fu_651                         |BackPropagate                         |       60|       60|   0.600 us|   0.600 us|   61|   61|  dataflow|
+        +-------------------------------------------------+--------------------------------------+---------+---------+-----------+-----------+-----+-----+----------+
+
+        * Loop: 
+        +--------------------+-----------+-----------+----------+-----------+-----------+--------+----------+
+        |                    |    Latency (cycles)   | Iteration|  Initiation Interval  |  Trip  |          |
+        |      Loop Name     |    min    |    max    |  Latency |  achieved |   target  |  Count | Pipelined|
+        +--------------------+-----------+-----------+----------+-----------+-----------+--------+----------+
+        |- VITIS_LOOP_88_5   |  945200000|  945200000|      9452|          -|          -|  100000|        no|
+        | + VITIS_LOOP_90_6  |       9450|       9450|        63|          -|          -|     150|        no|
+        +--------------------+-----------+-----------+----------+-----------+-----------+--------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     71|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        0|    -|    2258|   7720|    -|
+|Memory           |        0|    -|       6|      6|    0|
+|Multiplexer      |        -|    -|       -|    999|    -|
+|Register         |        -|    -|     432|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|    2696|   8796|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|       2|     16|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +-------------------------------------------------+--------------------------------------+---------+----+-----+------+-----+
+    |                     Instance                    |                Module                | BRAM_18K| DSP|  FF |  LUT | URAM|
+    +-------------------------------------------------+--------------------------------------+---------+----+-----+------+-----+
+    |grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542  |Autoencoder_Pipeline_VITIS_LOOP_52_1  |        0|   0|   13|    73|    0|
+    |grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549  |Autoencoder_Pipeline_VITIS_LOOP_58_2  |        0|   0|    5|    47|    0|
+    |grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557  |Autoencoder_Pipeline_VITIS_LOOP_63_3  |        0|   0|   24|   635|    0|
+    |grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604  |Autoencoder_Pipeline_VITIS_LOOP_69_4  |        0|   0|   24|   635|    0|
+    |grp_BackPropagate_fu_651                         |BackPropagate                         |        0|   0|  241|  2728|    0|
+    |CONTROL_BUS_s_axi_U                              |CONTROL_BUS_s_axi                     |        0|   0|  176|   296|    0|
+    |control_s_axi_U                                  |control_s_axi                         |        0|   0|  267|   430|    0|
+    |gmem0_m_axi_U                                    |gmem0_m_axi                           |        0|   0|  754|  1438|    0|
+    |gmem_m_axi_U                                     |gmem_m_axi                            |        0|   0|  754|  1438|    0|
+    +-------------------------------------------------+--------------------------------------+---------+----+-----+------+-----+
+    |Total                                            |                                      |        0|   0| 2258|  7720|    0|
+    +-------------------------------------------------+--------------------------------------+---------+----+-----+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +----------------------------+----------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |           Memory           |                 Module                 | BRAM_18K| FF| LUT| URAM| Words| Bits| Banks| W*Bits*Banks|
+    +----------------------------+----------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Deltas_V_U                  |Deltas_V_RAM_AUTO_0R0W                  |        0|  1|   1|    0|     4|    1|     1|            4|
+    |PrevEncoderWeightChanges_U  |PrevEncoderWeightChanges_RAM_AUTO_0R0W  |        0|  1|   1|    0|    40|    1|     1|           40|
+    |EncoderWeightChanges_U      |PrevEncoderWeightChanges_RAM_AUTO_0R0W  |        0|  1|   1|    0|    40|    1|     1|           40|
+    |PrevDecoderWeightChanges_U  |PrevEncoderWeightChanges_RAM_AUTO_0R0W  |        0|  1|   1|    0|    40|    1|     1|           40|
+    |DecoderWeightChanges_U      |PrevEncoderWeightChanges_RAM_AUTO_0R0W  |        0|  1|   1|    0|    40|    1|     1|           40|
+    |TotalErrorDeltas_U          |PrevEncoderWeightChanges_RAM_AUTO_0R0W  |        0|  1|   1|    0|    40|    1|     1|           40|
+    +----------------------------+----------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+    |Total                       |                                        |        0|  6|   6|    0|   204|    6|     6|          204|
+    +----------------------------+----------------------------------------+---------+---+----+-----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------------------------+----------+----+---+----+------------+------------+
+    |               Variable Name               | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------------------------+----------+----+---+----+------------+------------+
+    |add_ln90_fu_865_p2                         |         +|   0|  0|  15|           8|           1|
+    |epochs_2_fu_853_p2                         |         +|   0|  0|  24|          17|           1|
+    |icmp_ln88_fu_847_p2                        |      icmp|   0|  0|  13|          17|          16|
+    |icmp_ln90_fu_859_p2                        |      icmp|   0|  0|  11|           8|           8|
+    |ap_block_state10_on_subcall_done           |        or|   0|  0|   2|           1|           1|
+    |ap_block_state2_io                         |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_BackPropagate_fu_651_ap_done   |        or|   0|  0|   2|           1|           1|
+    |ap_sync_grp_BackPropagate_fu_651_ap_ready  |        or|   0|  0|   2|           1|           1|
+    +-------------------------------------------+----------+----+---+----+------------+------------+
+    |Total                                      |          |   0|  0|  71|          54|          30|
+    +-------------------------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------+-----+-----------+-----+-----------+
+    |            Name            | LUT | Input Size| Bits| Total Bits|
+    +----------------------------+-----+-----------+-----+-----------+
+    |DecoderWeights_V_10_fu_324  |    9|          2|    1|          2|
+    |DecoderWeights_V_11_fu_328  |    9|          2|    1|          2|
+    |DecoderWeights_V_12_fu_332  |    9|          2|    1|          2|
+    |DecoderWeights_V_13_fu_336  |    9|          2|    1|          2|
+    |DecoderWeights_V_14_fu_340  |    9|          2|    1|          2|
+    |DecoderWeights_V_15_fu_344  |    9|          2|    1|          2|
+    |DecoderWeights_V_16_fu_348  |    9|          2|    1|          2|
+    |DecoderWeights_V_17_fu_352  |    9|          2|    1|          2|
+    |DecoderWeights_V_18_fu_356  |    9|          2|    1|          2|
+    |DecoderWeights_V_19_fu_360  |    9|          2|    1|          2|
+    |DecoderWeights_V_1_fu_288   |    9|          2|    1|          2|
+    |DecoderWeights_V_20_fu_364  |    9|          2|    1|          2|
+    |DecoderWeights_V_21_fu_368  |    9|          2|    1|          2|
+    |DecoderWeights_V_22_fu_372  |    9|          2|    1|          2|
+    |DecoderWeights_V_23_fu_376  |    9|          2|    1|          2|
+    |DecoderWeights_V_24_fu_380  |    9|          2|    1|          2|
+    |DecoderWeights_V_25_fu_384  |    9|          2|    1|          2|
+    |DecoderWeights_V_26_fu_388  |    9|          2|    1|          2|
+    |DecoderWeights_V_27_fu_392  |    9|          2|    1|          2|
+    |DecoderWeights_V_28_fu_396  |    9|          2|    1|          2|
+    |DecoderWeights_V_29_fu_400  |    9|          2|    1|          2|
+    |DecoderWeights_V_2_fu_292   |    9|          2|    1|          2|
+    |DecoderWeights_V_30_fu_404  |    9|          2|    1|          2|
+    |DecoderWeights_V_31_fu_408  |    9|          2|    1|          2|
+    |DecoderWeights_V_32_fu_412  |    9|          2|    1|          2|
+    |DecoderWeights_V_33_fu_416  |    9|          2|    1|          2|
+    |DecoderWeights_V_34_fu_420  |    9|          2|    1|          2|
+    |DecoderWeights_V_35_fu_424  |    9|          2|    1|          2|
+    |DecoderWeights_V_36_fu_428  |    9|          2|    1|          2|
+    |DecoderWeights_V_37_fu_432  |    9|          2|    1|          2|
+    |DecoderWeights_V_38_fu_436  |    9|          2|    1|          2|
+    |DecoderWeights_V_39_fu_440  |    9|          2|    1|          2|
+    |DecoderWeights_V_3_fu_296   |    9|          2|    1|          2|
+    |DecoderWeights_V_4_fu_300   |    9|          2|    1|          2|
+    |DecoderWeights_V_5_fu_304   |    9|          2|    1|          2|
+    |DecoderWeights_V_6_fu_308   |    9|          2|    1|          2|
+    |DecoderWeights_V_7_fu_312   |    9|          2|    1|          2|
+    |DecoderWeights_V_8_fu_316   |    9|          2|    1|          2|
+    |DecoderWeights_V_9_fu_320   |    9|          2|    1|          2|
+    |DecoderWeights_V_fu_284     |    9|          2|    1|          2|
+    |EncoderWeights_V_10_fu_164  |    9|          2|    1|          2|
+    |EncoderWeights_V_11_fu_168  |    9|          2|    1|          2|
+    |EncoderWeights_V_12_fu_172  |    9|          2|    1|          2|
+    |EncoderWeights_V_13_fu_176  |    9|          2|    1|          2|
+    |EncoderWeights_V_14_fu_180  |    9|          2|    1|          2|
+    |EncoderWeights_V_15_fu_184  |    9|          2|    1|          2|
+    |EncoderWeights_V_16_fu_188  |    9|          2|    1|          2|
+    |EncoderWeights_V_17_fu_192  |    9|          2|    1|          2|
+    |EncoderWeights_V_18_fu_196  |    9|          2|    1|          2|
+    |EncoderWeights_V_19_fu_200  |    9|          2|    1|          2|
+    |EncoderWeights_V_1_fu_128   |    9|          2|    1|          2|
+    |EncoderWeights_V_20_fu_204  |    9|          2|    1|          2|
+    |EncoderWeights_V_21_fu_208  |    9|          2|    1|          2|
+    |EncoderWeights_V_22_fu_212  |    9|          2|    1|          2|
+    |EncoderWeights_V_23_fu_216  |    9|          2|    1|          2|
+    |EncoderWeights_V_24_fu_220  |    9|          2|    1|          2|
+    |EncoderWeights_V_25_fu_224  |    9|          2|    1|          2|
+    |EncoderWeights_V_26_fu_228  |    9|          2|    1|          2|
+    |EncoderWeights_V_27_fu_232  |    9|          2|    1|          2|
+    |EncoderWeights_V_28_fu_236  |    9|          2|    1|          2|
+    |EncoderWeights_V_29_fu_240  |    9|          2|    1|          2|
+    |EncoderWeights_V_2_fu_132   |    9|          2|    1|          2|
+    |EncoderWeights_V_30_fu_244  |    9|          2|    1|          2|
+    |EncoderWeights_V_31_fu_248  |    9|          2|    1|          2|
+    |EncoderWeights_V_32_fu_252  |    9|          2|    1|          2|
+    |EncoderWeights_V_33_fu_256  |    9|          2|    1|          2|
+    |EncoderWeights_V_34_fu_260  |    9|          2|    1|          2|
+    |EncoderWeights_V_35_fu_264  |    9|          2|    1|          2|
+    |EncoderWeights_V_36_fu_268  |    9|          2|    1|          2|
+    |EncoderWeights_V_37_fu_272  |    9|          2|    1|          2|
+    |EncoderWeights_V_38_fu_276  |    9|          2|    1|          2|
+    |EncoderWeights_V_39_fu_280  |    9|          2|    1|          2|
+    |EncoderWeights_V_3_fu_136   |    9|          2|    1|          2|
+    |EncoderWeights_V_4_fu_140   |    9|          2|    1|          2|
+    |EncoderWeights_V_5_fu_144   |    9|          2|    1|          2|
+    |EncoderWeights_V_6_fu_148   |    9|          2|    1|          2|
+    |EncoderWeights_V_7_fu_152   |    9|          2|    1|          2|
+    |EncoderWeights_V_8_fu_156   |    9|          2|    1|          2|
+    |EncoderWeights_V_9_fu_160   |    9|          2|    1|          2|
+    |EncoderWeights_V_fu_124     |    9|          2|    1|          2|
+    |ap_NS_fsm                   |  113|         24|    1|         24|
+    |epochs_fu_120               |    9|          2|   17|         34|
+    |gmem0_ARADDR                |   25|          5|   64|        320|
+    |gmem0_ARLEN                 |   20|          4|   32|        128|
+    |gmem0_ARVALID               |   20|          4|    1|          4|
+    |gmem0_RREADY                |   14|          3|    1|          3|
+    |gmem0_blk_n_AR              |    9|          2|    1|          2|
+    |gmem_ARADDR                 |   14|          3|   64|        192|
+    |gmem_ARLEN                  |   14|          3|   32|         96|
+    |gmem_ARVALID                |   14|          3|    1|          3|
+    |gmem_RREADY                 |    9|          2|    1|          2|
+    |gmem_blk_n_AR               |    9|          2|    1|          2|
+    |s_reg_531                   |    9|          2|    8|         16|
+    +----------------------------+-----+-----------+-----+-----------+
+    |Total                       |  999|        219|  304|        986|
+    +----------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +--------------------------------------------------------------+----+----+-----+-----------+
+    |                             Name                             | FF | LUT| Bits| Const Bits|
+    +--------------------------------------------------------------+----+----+-----+-----------+
+    |DataIn_read_reg_1694                                          |  64|   0|   64|          0|
+    |DecWeights_read_reg_1682                                      |  64|   0|   64|          0|
+    |DecoderWeights_V_10_fu_324                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_10_load_reg_2001                             |   1|   0|    1|          0|
+    |DecoderWeights_V_11_fu_328                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_11_load_reg_2006                             |   1|   0|    1|          0|
+    |DecoderWeights_V_12_fu_332                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_12_load_reg_2011                             |   1|   0|    1|          0|
+    |DecoderWeights_V_13_fu_336                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_13_load_reg_2016                             |   1|   0|    1|          0|
+    |DecoderWeights_V_14_fu_340                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_14_load_reg_2021                             |   1|   0|    1|          0|
+    |DecoderWeights_V_15_fu_344                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_15_load_reg_2026                             |   1|   0|    1|          0|
+    |DecoderWeights_V_16_fu_348                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_16_load_reg_2031                             |   1|   0|    1|          0|
+    |DecoderWeights_V_17_fu_352                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_17_load_reg_2036                             |   1|   0|    1|          0|
+    |DecoderWeights_V_18_fu_356                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_18_load_reg_2041                             |   1|   0|    1|          0|
+    |DecoderWeights_V_19_fu_360                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_19_load_reg_2046                             |   1|   0|    1|          0|
+    |DecoderWeights_V_1_fu_288                                     |   1|   0|    1|          0|
+    |DecoderWeights_V_1_load_reg_1956                              |   1|   0|    1|          0|
+    |DecoderWeights_V_20_fu_364                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_20_load_reg_2051                             |   1|   0|    1|          0|
+    |DecoderWeights_V_21_fu_368                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_21_load_reg_2056                             |   1|   0|    1|          0|
+    |DecoderWeights_V_22_fu_372                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_22_load_reg_2061                             |   1|   0|    1|          0|
+    |DecoderWeights_V_23_fu_376                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_23_load_reg_2066                             |   1|   0|    1|          0|
+    |DecoderWeights_V_24_fu_380                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_24_load_reg_2071                             |   1|   0|    1|          0|
+    |DecoderWeights_V_25_fu_384                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_25_load_reg_2076                             |   1|   0|    1|          0|
+    |DecoderWeights_V_26_fu_388                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_26_load_reg_2081                             |   1|   0|    1|          0|
+    |DecoderWeights_V_27_fu_392                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_27_load_reg_2086                             |   1|   0|    1|          0|
+    |DecoderWeights_V_28_fu_396                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_28_load_reg_2091                             |   1|   0|    1|          0|
+    |DecoderWeights_V_29_fu_400                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_29_load_reg_2096                             |   1|   0|    1|          0|
+    |DecoderWeights_V_2_fu_292                                     |   1|   0|    1|          0|
+    |DecoderWeights_V_2_load_reg_1961                              |   1|   0|    1|          0|
+    |DecoderWeights_V_30_fu_404                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_30_load_reg_2101                             |   1|   0|    1|          0|
+    |DecoderWeights_V_31_fu_408                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_31_load_reg_2106                             |   1|   0|    1|          0|
+    |DecoderWeights_V_32_fu_412                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_32_load_reg_2111                             |   1|   0|    1|          0|
+    |DecoderWeights_V_33_fu_416                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_33_load_reg_2116                             |   1|   0|    1|          0|
+    |DecoderWeights_V_34_fu_420                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_34_load_reg_2121                             |   1|   0|    1|          0|
+    |DecoderWeights_V_35_fu_424                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_35_load_reg_2126                             |   1|   0|    1|          0|
+    |DecoderWeights_V_36_fu_428                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_36_load_reg_2131                             |   1|   0|    1|          0|
+    |DecoderWeights_V_37_fu_432                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_37_load_reg_2136                             |   1|   0|    1|          0|
+    |DecoderWeights_V_38_fu_436                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_38_load_reg_2141                             |   1|   0|    1|          0|
+    |DecoderWeights_V_39_fu_440                                    |   1|   0|    1|          0|
+    |DecoderWeights_V_39_load_reg_2146                             |   1|   0|    1|          0|
+    |DecoderWeights_V_3_fu_296                                     |   1|   0|    1|          0|
+    |DecoderWeights_V_3_load_reg_1966                              |   1|   0|    1|          0|
+    |DecoderWeights_V_4_fu_300                                     |   1|   0|    1|          0|
+    |DecoderWeights_V_4_load_reg_1971                              |   1|   0|    1|          0|
+    |DecoderWeights_V_5_fu_304                                     |   1|   0|    1|          0|
+    |DecoderWeights_V_5_load_reg_1976                              |   1|   0|    1|          0|
+    |DecoderWeights_V_6_fu_308                                     |   1|   0|    1|          0|
+    |DecoderWeights_V_6_load_reg_1981                              |   1|   0|    1|          0|
+    |DecoderWeights_V_7_fu_312                                     |   1|   0|    1|          0|
+    |DecoderWeights_V_7_load_reg_1986                              |   1|   0|    1|          0|
+    |DecoderWeights_V_8_fu_316                                     |   1|   0|    1|          0|
+    |DecoderWeights_V_8_load_reg_1991                              |   1|   0|    1|          0|
+    |DecoderWeights_V_9_fu_320                                     |   1|   0|    1|          0|
+    |DecoderWeights_V_9_load_reg_1996                              |   1|   0|    1|          0|
+    |DecoderWeights_V_fu_284                                       |   1|   0|    1|          0|
+    |DecoderWeights_V_load_reg_1951                                |   1|   0|    1|          0|
+    |EncWeights_read_reg_1688                                      |  64|   0|   64|          0|
+    |EncoderWeights_V_10_fu_164                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_10_load_reg_1801                             |   1|   0|    1|          0|
+    |EncoderWeights_V_11_fu_168                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_11_load_reg_1806                             |   1|   0|    1|          0|
+    |EncoderWeights_V_12_fu_172                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_12_load_reg_1811                             |   1|   0|    1|          0|
+    |EncoderWeights_V_13_fu_176                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_13_load_reg_1816                             |   1|   0|    1|          0|
+    |EncoderWeights_V_14_fu_180                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_14_load_reg_1821                             |   1|   0|    1|          0|
+    |EncoderWeights_V_15_fu_184                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_15_load_reg_1826                             |   1|   0|    1|          0|
+    |EncoderWeights_V_16_fu_188                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_16_load_reg_1831                             |   1|   0|    1|          0|
+    |EncoderWeights_V_17_fu_192                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_17_load_reg_1836                             |   1|   0|    1|          0|
+    |EncoderWeights_V_18_fu_196                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_18_load_reg_1841                             |   1|   0|    1|          0|
+    |EncoderWeights_V_19_fu_200                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_19_load_reg_1846                             |   1|   0|    1|          0|
+    |EncoderWeights_V_1_fu_128                                     |   1|   0|    1|          0|
+    |EncoderWeights_V_1_load_reg_1756                              |   1|   0|    1|          0|
+    |EncoderWeights_V_20_fu_204                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_20_load_reg_1851                             |   1|   0|    1|          0|
+    |EncoderWeights_V_21_fu_208                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_21_load_reg_1856                             |   1|   0|    1|          0|
+    |EncoderWeights_V_22_fu_212                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_22_load_reg_1861                             |   1|   0|    1|          0|
+    |EncoderWeights_V_23_fu_216                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_23_load_reg_1866                             |   1|   0|    1|          0|
+    |EncoderWeights_V_24_fu_220                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_24_load_reg_1871                             |   1|   0|    1|          0|
+    |EncoderWeights_V_25_fu_224                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_25_load_reg_1876                             |   1|   0|    1|          0|
+    |EncoderWeights_V_26_fu_228                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_26_load_reg_1881                             |   1|   0|    1|          0|
+    |EncoderWeights_V_27_fu_232                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_27_load_reg_1886                             |   1|   0|    1|          0|
+    |EncoderWeights_V_28_fu_236                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_28_load_reg_1891                             |   1|   0|    1|          0|
+    |EncoderWeights_V_29_fu_240                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_29_load_reg_1896                             |   1|   0|    1|          0|
+    |EncoderWeights_V_2_fu_132                                     |   1|   0|    1|          0|
+    |EncoderWeights_V_2_load_reg_1761                              |   1|   0|    1|          0|
+    |EncoderWeights_V_30_fu_244                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_30_load_reg_1901                             |   1|   0|    1|          0|
+    |EncoderWeights_V_31_fu_248                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_31_load_reg_1906                             |   1|   0|    1|          0|
+    |EncoderWeights_V_32_fu_252                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_32_load_reg_1911                             |   1|   0|    1|          0|
+    |EncoderWeights_V_33_fu_256                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_33_load_reg_1916                             |   1|   0|    1|          0|
+    |EncoderWeights_V_34_fu_260                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_34_load_reg_1921                             |   1|   0|    1|          0|
+    |EncoderWeights_V_35_fu_264                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_35_load_reg_1926                             |   1|   0|    1|          0|
+    |EncoderWeights_V_36_fu_268                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_36_load_reg_1931                             |   1|   0|    1|          0|
+    |EncoderWeights_V_37_fu_272                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_37_load_reg_1936                             |   1|   0|    1|          0|
+    |EncoderWeights_V_38_fu_276                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_38_load_reg_1941                             |   1|   0|    1|          0|
+    |EncoderWeights_V_39_fu_280                                    |   1|   0|    1|          0|
+    |EncoderWeights_V_39_load_reg_1946                             |   1|   0|    1|          0|
+    |EncoderWeights_V_3_fu_136                                     |   1|   0|    1|          0|
+    |EncoderWeights_V_3_load_reg_1766                              |   1|   0|    1|          0|
+    |EncoderWeights_V_4_fu_140                                     |   1|   0|    1|          0|
+    |EncoderWeights_V_4_load_reg_1771                              |   1|   0|    1|          0|
+    |EncoderWeights_V_5_fu_144                                     |   1|   0|    1|          0|
+    |EncoderWeights_V_5_load_reg_1776                              |   1|   0|    1|          0|
+    |EncoderWeights_V_6_fu_148                                     |   1|   0|    1|          0|
+    |EncoderWeights_V_6_load_reg_1781                              |   1|   0|    1|          0|
+    |EncoderWeights_V_7_fu_152                                     |   1|   0|    1|          0|
+    |EncoderWeights_V_7_load_reg_1786                              |   1|   0|    1|          0|
+    |EncoderWeights_V_8_fu_156                                     |   1|   0|    1|          0|
+    |EncoderWeights_V_8_load_reg_1791                              |   1|   0|    1|          0|
+    |EncoderWeights_V_9_fu_160                                     |   1|   0|    1|          0|
+    |EncoderWeights_V_9_load_reg_1796                              |   1|   0|    1|          0|
+    |EncoderWeights_V_fu_124                                       |   1|   0|    1|          0|
+    |EncoderWeights_V_load_reg_1751                                |   1|   0|    1|          0|
+    |add_ln90_reg_1746                                             |   8|   0|    8|          0|
+    |ap_CS_fsm                                                     |  23|   0|   23|          0|
+    |ap_sync_reg_grp_BackPropagate_fu_651_ap_done                  |   1|   0|    1|          0|
+    |ap_sync_reg_grp_BackPropagate_fu_651_ap_ready                 |   1|   0|    1|          0|
+    |epochs_2_reg_1738                                             |  17|   0|   17|          0|
+    |epochs_fu_120                                                 |  17|   0|   17|          0|
+    |grp_Autoencoder_Pipeline_VITIS_LOOP_52_1_fu_542_ap_start_reg  |   1|   0|    1|          0|
+    |grp_Autoencoder_Pipeline_VITIS_LOOP_58_2_fu_549_ap_start_reg  |   1|   0|    1|          0|
+    |grp_Autoencoder_Pipeline_VITIS_LOOP_63_3_fu_557_ap_start_reg  |   1|   0|    1|          0|
+    |grp_Autoencoder_Pipeline_VITIS_LOOP_69_4_fu_604_ap_start_reg  |   1|   0|    1|          0|
+    |grp_BackPropagate_fu_651_ap_start_reg                         |   1|   0|    1|          0|
+    |s_reg_531                                                     |   8|   0|    8|          0|
+    +--------------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                         | 432|   0|  432|          0|
+    +--------------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------------+-----+-----+------------+--------------+--------------+
+|         RTL Ports         | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------------------+-----+-----+------------+--------------+--------------+
+|s_axi_CONTROL_BUS_AWVALID  |   in|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_AWREADY  |  out|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_AWADDR   |   in|    6|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_WVALID   |   in|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_WREADY   |  out|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_WDATA    |   in|   32|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_WSTRB    |   in|    4|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_ARVALID  |   in|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_ARREADY  |  out|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_ARADDR   |   in|    6|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_RVALID   |  out|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_RREADY   |   in|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_RDATA    |  out|   32|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_RRESP    |  out|    2|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_BVALID   |  out|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_BREADY   |   in|    1|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_CONTROL_BUS_BRESP    |  out|    2|       s_axi|   CONTROL_BUS|        scalar|
+|s_axi_control_AWVALID      |   in|    1|       s_axi|       control|       pointer|
+|s_axi_control_AWREADY      |  out|    1|       s_axi|       control|       pointer|
+|s_axi_control_AWADDR       |   in|    7|       s_axi|       control|       pointer|
+|s_axi_control_WVALID       |   in|    1|       s_axi|       control|       pointer|
+|s_axi_control_WREADY       |  out|    1|       s_axi|       control|       pointer|
+|s_axi_control_WDATA        |   in|   32|       s_axi|       control|       pointer|
+|s_axi_control_WSTRB        |   in|    4|       s_axi|       control|       pointer|
+|s_axi_control_ARVALID      |   in|    1|       s_axi|       control|       pointer|
+|s_axi_control_ARREADY      |  out|    1|       s_axi|       control|       pointer|
+|s_axi_control_ARADDR       |   in|    7|       s_axi|       control|       pointer|
+|s_axi_control_RVALID       |  out|    1|       s_axi|       control|       pointer|
+|s_axi_control_RREADY       |   in|    1|       s_axi|       control|       pointer|
+|s_axi_control_RDATA        |  out|   32|       s_axi|       control|       pointer|
+|s_axi_control_RRESP        |  out|    2|       s_axi|       control|       pointer|
+|s_axi_control_BVALID       |  out|    1|       s_axi|       control|       pointer|
+|s_axi_control_BREADY       |   in|    1|       s_axi|       control|       pointer|
+|s_axi_control_BRESP        |  out|    2|       s_axi|       control|       pointer|
+|ap_clk                     |   in|    1|  ap_ctrl_hs|   Autoencoder|  return value|
+|ap_rst_n                   |   in|    1|  ap_ctrl_hs|   Autoencoder|  return value|
+|interrupt                  |  out|    1|  ap_ctrl_hs|   Autoencoder|  return value|
+|m_axi_gmem_AWVALID         |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWREADY         |   in|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWADDR          |  out|   64|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWID            |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWLEN           |  out|    8|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWSIZE          |  out|    3|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWBURST         |  out|    2|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWLOCK          |  out|    2|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWCACHE         |  out|    4|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWPROT          |  out|    3|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWQOS           |  out|    4|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWREGION        |  out|    4|       m_axi|          gmem|       pointer|
+|m_axi_gmem_AWUSER          |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_WVALID          |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_WREADY          |   in|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_WDATA           |  out|   32|       m_axi|          gmem|       pointer|
+|m_axi_gmem_WSTRB           |  out|    4|       m_axi|          gmem|       pointer|
+|m_axi_gmem_WLAST           |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_WID             |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_WUSER           |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARVALID         |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARREADY         |   in|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARADDR          |  out|   64|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARID            |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARLEN           |  out|    8|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARSIZE          |  out|    3|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARBURST         |  out|    2|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARLOCK          |  out|    2|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARCACHE         |  out|    4|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARPROT          |  out|    3|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARQOS           |  out|    4|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARREGION        |  out|    4|       m_axi|          gmem|       pointer|
+|m_axi_gmem_ARUSER          |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_RVALID          |   in|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_RREADY          |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_RDATA           |   in|   32|       m_axi|          gmem|       pointer|
+|m_axi_gmem_RLAST           |   in|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_RID             |   in|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_RUSER           |   in|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_RRESP           |   in|    2|       m_axi|          gmem|       pointer|
+|m_axi_gmem_BVALID          |   in|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_BREADY          |  out|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_BRESP           |   in|    2|       m_axi|          gmem|       pointer|
+|m_axi_gmem_BID             |   in|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem_BUSER           |   in|    1|       m_axi|          gmem|       pointer|
+|m_axi_gmem0_AWVALID        |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWREADY        |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWADDR         |  out|   64|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWID           |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWLEN          |  out|    8|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWSIZE         |  out|    3|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWBURST        |  out|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWLOCK         |  out|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWCACHE        |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWPROT         |  out|    3|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWQOS          |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWREGION       |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_AWUSER         |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WVALID         |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WREADY         |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WDATA          |  out|   32|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WSTRB          |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WLAST          |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WID            |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_WUSER          |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARVALID        |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARREADY        |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARADDR         |  out|   64|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARID           |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARLEN          |  out|    8|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARSIZE         |  out|    3|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARBURST        |  out|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARLOCK         |  out|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARCACHE        |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARPROT         |  out|    3|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARQOS          |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARREGION       |  out|    4|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_ARUSER         |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RVALID         |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RREADY         |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RDATA          |   in|   32|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RLAST          |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RID            |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RUSER          |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_RRESP          |   in|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_BVALID         |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_BREADY         |  out|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_BRESP          |   in|    2|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_BID            |   in|    1|       m_axi|         gmem0|       pointer|
+|m_axi_gmem0_BUSER          |   in|    1|       m_axi|         gmem0|       pointer|
++---------------------------+-----+-----+------------+--------------+--------------+
+

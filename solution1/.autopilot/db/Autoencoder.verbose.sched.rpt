@@ -1,0 +1,547 @@
+
+
+================================================================
+== Vitis HLS Report for 'Autoencoder'
+================================================================
+* Date:           Thu Jul 13 23:01:15 2023
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        HLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +-----------+-----------+-----------+-----------+-----------+-----------+---------+
+    |    Latency (cycles)   |   Latency (absolute)  |        Interval       | Pipeline|
+    |    min    |    max    |    min    |    max    |    min    |    max    |   Type  |
+    +-----------+-----------+-----------+-----------+-----------+-----------+---------+
+    |  945200664|  945200664|  9.452 sec|  9.452 sec|  945200665|  945200665|       no|
+    +-----------+-----------+-----------+-----------+-----------+-----------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------+-----------+-----------+----------+-----------+-----------+--------+----------+
+        |                    |    Latency (cycles)   | Iteration|  Initiation Interval  |  Trip  |          |
+        |      Loop Name     |    min    |    max    |  Latency |  achieved |   target  |  Count | Pipelined|
+        +--------------------+-----------+-----------+----------+-----------+-----------+--------+----------+
+        |- VITIS_LOOP_88_5   |  945200000|  945200000|      9452|          -|          -|  100000|        no|
+        | + VITIS_LOOP_90_6  |       9450|       9450|        63|          -|          -|     150|        no|
+        +--------------------+-----------+-----------+----------+-----------+-----------+--------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 23
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 20 
+22 --> 23 
+23 --> 21 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%epochs = alloca i32 1"   --->   Operation 24 'alloca' 'epochs' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%EncoderWeights_V = alloca i32 1"   --->   Operation 25 'alloca' 'EncoderWeights_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%EncoderWeights_V_1 = alloca i32 1"   --->   Operation 26 'alloca' 'EncoderWeights_V_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%EncoderWeights_V_2 = alloca i32 1"   --->   Operation 27 'alloca' 'EncoderWeights_V_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%EncoderWeights_V_3 = alloca i32 1"   --->   Operation 28 'alloca' 'EncoderWeights_V_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%EncoderWeights_V_4 = alloca i32 1"   --->   Operation 29 'alloca' 'EncoderWeights_V_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%EncoderWeights_V_5 = alloca i32 1"   --->   Operation 30 'alloca' 'EncoderWeights_V_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%EncoderWeights_V_6 = alloca i32 1"   --->   Operation 31 'alloca' 'EncoderWeights_V_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%EncoderWeights_V_7 = alloca i32 1"   --->   Operation 32 'alloca' 'EncoderWeights_V_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%EncoderWeights_V_8 = alloca i32 1"   --->   Operation 33 'alloca' 'EncoderWeights_V_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%EncoderWeights_V_9 = alloca i32 1"   --->   Operation 34 'alloca' 'EncoderWeights_V_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%EncoderWeights_V_10 = alloca i32 1"   --->   Operation 35 'alloca' 'EncoderWeights_V_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%EncoderWeights_V_11 = alloca i32 1"   --->   Operation 36 'alloca' 'EncoderWeights_V_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%EncoderWeights_V_12 = alloca i32 1"   --->   Operation 37 'alloca' 'EncoderWeights_V_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%EncoderWeights_V_13 = alloca i32 1"   --->   Operation 38 'alloca' 'EncoderWeights_V_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%EncoderWeights_V_14 = alloca i32 1"   --->   Operation 39 'alloca' 'EncoderWeights_V_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%EncoderWeights_V_15 = alloca i32 1"   --->   Operation 40 'alloca' 'EncoderWeights_V_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%EncoderWeights_V_16 = alloca i32 1"   --->   Operation 41 'alloca' 'EncoderWeights_V_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%EncoderWeights_V_17 = alloca i32 1"   --->   Operation 42 'alloca' 'EncoderWeights_V_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%EncoderWeights_V_18 = alloca i32 1"   --->   Operation 43 'alloca' 'EncoderWeights_V_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%EncoderWeights_V_19 = alloca i32 1"   --->   Operation 44 'alloca' 'EncoderWeights_V_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%EncoderWeights_V_20 = alloca i32 1"   --->   Operation 45 'alloca' 'EncoderWeights_V_20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%EncoderWeights_V_21 = alloca i32 1"   --->   Operation 46 'alloca' 'EncoderWeights_V_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%EncoderWeights_V_22 = alloca i32 1"   --->   Operation 47 'alloca' 'EncoderWeights_V_22' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%EncoderWeights_V_23 = alloca i32 1"   --->   Operation 48 'alloca' 'EncoderWeights_V_23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%EncoderWeights_V_24 = alloca i32 1"   --->   Operation 49 'alloca' 'EncoderWeights_V_24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%EncoderWeights_V_25 = alloca i32 1"   --->   Operation 50 'alloca' 'EncoderWeights_V_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%EncoderWeights_V_26 = alloca i32 1"   --->   Operation 51 'alloca' 'EncoderWeights_V_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%EncoderWeights_V_27 = alloca i32 1"   --->   Operation 52 'alloca' 'EncoderWeights_V_27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%EncoderWeights_V_28 = alloca i32 1"   --->   Operation 53 'alloca' 'EncoderWeights_V_28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%EncoderWeights_V_29 = alloca i32 1"   --->   Operation 54 'alloca' 'EncoderWeights_V_29' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%EncoderWeights_V_30 = alloca i32 1"   --->   Operation 55 'alloca' 'EncoderWeights_V_30' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%EncoderWeights_V_31 = alloca i32 1"   --->   Operation 56 'alloca' 'EncoderWeights_V_31' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%EncoderWeights_V_32 = alloca i32 1"   --->   Operation 57 'alloca' 'EncoderWeights_V_32' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%EncoderWeights_V_33 = alloca i32 1"   --->   Operation 58 'alloca' 'EncoderWeights_V_33' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%EncoderWeights_V_34 = alloca i32 1"   --->   Operation 59 'alloca' 'EncoderWeights_V_34' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%EncoderWeights_V_35 = alloca i32 1"   --->   Operation 60 'alloca' 'EncoderWeights_V_35' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%EncoderWeights_V_36 = alloca i32 1"   --->   Operation 61 'alloca' 'EncoderWeights_V_36' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%EncoderWeights_V_37 = alloca i32 1"   --->   Operation 62 'alloca' 'EncoderWeights_V_37' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%EncoderWeights_V_38 = alloca i32 1"   --->   Operation 63 'alloca' 'EncoderWeights_V_38' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%EncoderWeights_V_39 = alloca i32 1"   --->   Operation 64 'alloca' 'EncoderWeights_V_39' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%DecoderWeights_V = alloca i32 1"   --->   Operation 65 'alloca' 'DecoderWeights_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%DecoderWeights_V_1 = alloca i32 1"   --->   Operation 66 'alloca' 'DecoderWeights_V_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%DecoderWeights_V_2 = alloca i32 1"   --->   Operation 67 'alloca' 'DecoderWeights_V_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%DecoderWeights_V_3 = alloca i32 1"   --->   Operation 68 'alloca' 'DecoderWeights_V_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%DecoderWeights_V_4 = alloca i32 1"   --->   Operation 69 'alloca' 'DecoderWeights_V_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%DecoderWeights_V_5 = alloca i32 1"   --->   Operation 70 'alloca' 'DecoderWeights_V_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%DecoderWeights_V_6 = alloca i32 1"   --->   Operation 71 'alloca' 'DecoderWeights_V_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%DecoderWeights_V_7 = alloca i32 1"   --->   Operation 72 'alloca' 'DecoderWeights_V_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%DecoderWeights_V_8 = alloca i32 1"   --->   Operation 73 'alloca' 'DecoderWeights_V_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%DecoderWeights_V_9 = alloca i32 1"   --->   Operation 74 'alloca' 'DecoderWeights_V_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%DecoderWeights_V_10 = alloca i32 1"   --->   Operation 75 'alloca' 'DecoderWeights_V_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%DecoderWeights_V_11 = alloca i32 1"   --->   Operation 76 'alloca' 'DecoderWeights_V_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%DecoderWeights_V_12 = alloca i32 1"   --->   Operation 77 'alloca' 'DecoderWeights_V_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%DecoderWeights_V_13 = alloca i32 1"   --->   Operation 78 'alloca' 'DecoderWeights_V_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%DecoderWeights_V_14 = alloca i32 1"   --->   Operation 79 'alloca' 'DecoderWeights_V_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%DecoderWeights_V_15 = alloca i32 1"   --->   Operation 80 'alloca' 'DecoderWeights_V_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%DecoderWeights_V_16 = alloca i32 1"   --->   Operation 81 'alloca' 'DecoderWeights_V_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%DecoderWeights_V_17 = alloca i32 1"   --->   Operation 82 'alloca' 'DecoderWeights_V_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%DecoderWeights_V_18 = alloca i32 1"   --->   Operation 83 'alloca' 'DecoderWeights_V_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%DecoderWeights_V_19 = alloca i32 1"   --->   Operation 84 'alloca' 'DecoderWeights_V_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%DecoderWeights_V_20 = alloca i32 1"   --->   Operation 85 'alloca' 'DecoderWeights_V_20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 86 [1/1] (0.00ns)   --->   "%DecoderWeights_V_21 = alloca i32 1"   --->   Operation 86 'alloca' 'DecoderWeights_V_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 87 [1/1] (0.00ns)   --->   "%DecoderWeights_V_22 = alloca i32 1"   --->   Operation 87 'alloca' 'DecoderWeights_V_22' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 88 [1/1] (0.00ns)   --->   "%DecoderWeights_V_23 = alloca i32 1"   --->   Operation 88 'alloca' 'DecoderWeights_V_23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 89 [1/1] (0.00ns)   --->   "%DecoderWeights_V_24 = alloca i32 1"   --->   Operation 89 'alloca' 'DecoderWeights_V_24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns)   --->   "%DecoderWeights_V_25 = alloca i32 1"   --->   Operation 90 'alloca' 'DecoderWeights_V_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns)   --->   "%DecoderWeights_V_26 = alloca i32 1"   --->   Operation 91 'alloca' 'DecoderWeights_V_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 92 [1/1] (0.00ns)   --->   "%DecoderWeights_V_27 = alloca i32 1"   --->   Operation 92 'alloca' 'DecoderWeights_V_27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 93 [1/1] (0.00ns)   --->   "%DecoderWeights_V_28 = alloca i32 1"   --->   Operation 93 'alloca' 'DecoderWeights_V_28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 94 [1/1] (0.00ns)   --->   "%DecoderWeights_V_29 = alloca i32 1"   --->   Operation 94 'alloca' 'DecoderWeights_V_29' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 95 [1/1] (0.00ns)   --->   "%DecoderWeights_V_30 = alloca i32 1"   --->   Operation 95 'alloca' 'DecoderWeights_V_30' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 96 [1/1] (0.00ns)   --->   "%DecoderWeights_V_31 = alloca i32 1"   --->   Operation 96 'alloca' 'DecoderWeights_V_31' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.00ns)   --->   "%DecoderWeights_V_32 = alloca i32 1"   --->   Operation 97 'alloca' 'DecoderWeights_V_32' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns)   --->   "%DecoderWeights_V_33 = alloca i32 1"   --->   Operation 98 'alloca' 'DecoderWeights_V_33' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 99 [1/1] (0.00ns)   --->   "%DecoderWeights_V_34 = alloca i32 1"   --->   Operation 99 'alloca' 'DecoderWeights_V_34' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 100 [1/1] (0.00ns)   --->   "%DecoderWeights_V_35 = alloca i32 1"   --->   Operation 100 'alloca' 'DecoderWeights_V_35' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%DecoderWeights_V_36 = alloca i32 1"   --->   Operation 101 'alloca' 'DecoderWeights_V_36' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%DecoderWeights_V_37 = alloca i32 1"   --->   Operation 102 'alloca' 'DecoderWeights_V_37' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.00ns)   --->   "%DecoderWeights_V_38 = alloca i32 1"   --->   Operation 103 'alloca' 'DecoderWeights_V_38' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%DecoderWeights_V_39 = alloca i32 1"   --->   Operation 104 'alloca' 'DecoderWeights_V_39' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (1.00ns)   --->   "%DecWeights_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %DecWeights"   --->   Operation 105 'read' 'DecWeights_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 106 [1/1] (1.00ns)   --->   "%EncWeights_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %EncWeights"   --->   Operation 106 'read' 'EncWeights_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 107 [1/1] (1.00ns)   --->   "%DataIn_read = read i64 @_ssdm_op_Read.s_axilite.i64, i64 %DataIn"   --->   Operation 107 'read' 'DataIn_read' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 108 [1/1] (0.00ns)   --->   "%OutputValues_V_loc = alloca i64 1"   --->   Operation 108 'alloca' 'OutputValues_V_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.00ns)   --->   "%OutputValues_V_1_loc = alloca i64 1"   --->   Operation 109 'alloca' 'OutputValues_V_1_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 110 [1/1] (0.00ns)   --->   "%OutputValues_V_2_loc = alloca i64 1"   --->   Operation 110 'alloca' 'OutputValues_V_2_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 111 [1/1] (0.00ns)   --->   "%OutputValues_V_3_loc = alloca i64 1"   --->   Operation 111 'alloca' 'OutputValues_V_3_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 112 [1/1] (0.00ns)   --->   "%PrevEncoderWeightChanges = alloca i64 1"   --->   Operation 112 'alloca' 'PrevEncoderWeightChanges' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 113 [1/1] (0.00ns)   --->   "%EncoderWeightChanges = alloca i64 1"   --->   Operation 113 'alloca' 'EncoderWeightChanges' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 114 [1/1] (0.00ns)   --->   "%PrevDecoderWeightChanges = alloca i64 1"   --->   Operation 114 'alloca' 'PrevDecoderWeightChanges' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 115 [1/1] (0.00ns)   --->   "%DecoderWeightChanges = alloca i64 1"   --->   Operation 115 'alloca' 'DecoderWeightChanges' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 116 [1/1] (0.00ns)   --->   "%TotalErrorDeltas = alloca i64 1"   --->   Operation 116 'alloca' 'TotalErrorDeltas' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns)   --->   "%Deltas_V = alloca i64 1"   --->   Operation 117 'alloca' 'Deltas_V' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 118 [1/1] (1.00ns)   --->   "%write_ln37 = write void @_ssdm_op_Write.s_axilite.i1P0A, i1 %ErrorP, i1 0" [HLS/src/AutoEncoder.cpp:37]   --->   Operation 118 'write' 'write_ln37' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_1 : Operation 119 [1/1] (1.58ns)   --->   "%store_ln88 = store i17 0, i17 %epochs" [HLS/src/AutoEncoder.cpp:88]   --->   Operation 119 'store' 'store_ln88' <Predicate = true> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 7.30>
+ST_2 : Operation 120 [1/1] (0.00ns)   --->   "%gmem_addr = getelementptr i8 %gmem, i64 %DataIn_read" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 120 'getelementptr' 'gmem_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 121 [7/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i32 600" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 121 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 122 [1/1] (0.00ns)   --->   "%gmem0_addr = getelementptr i8 %gmem0, i64 %EncWeights_read" [HLS/src/AutoEncoder.cpp:63]   --->   Operation 122 'getelementptr' 'gmem0_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 123 [7/7] (7.30ns)   --->   "%empty_53 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i32 40" [HLS/src/AutoEncoder.cpp:63]   --->   Operation 123 'readreq' 'empty_53' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 3 <SV = 2> <Delay = 7.30>
+ST_3 : Operation 124 [6/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i32 600" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 124 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_3 : Operation 125 [6/7] (7.30ns)   --->   "%empty_53 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i32 40" [HLS/src/AutoEncoder.cpp:63]   --->   Operation 125 'readreq' 'empty_53' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 4 <SV = 3> <Delay = 7.30>
+ST_4 : Operation 126 [5/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i32 600" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 126 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_4 : Operation 127 [5/7] (7.30ns)   --->   "%empty_53 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i32 40" [HLS/src/AutoEncoder.cpp:63]   --->   Operation 127 'readreq' 'empty_53' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 5 <SV = 4> <Delay = 7.30>
+ST_5 : Operation 128 [4/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i32 600" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 128 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_5 : Operation 129 [4/7] (7.30ns)   --->   "%empty_53 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i32 40" [HLS/src/AutoEncoder.cpp:63]   --->   Operation 129 'readreq' 'empty_53' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 6 <SV = 5> <Delay = 7.30>
+ST_6 : Operation 130 [3/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i32 600" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 130 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_6 : Operation 131 [3/7] (7.30ns)   --->   "%empty_53 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i32 40" [HLS/src/AutoEncoder.cpp:63]   --->   Operation 131 'readreq' 'empty_53' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 7 <SV = 6> <Delay = 7.30>
+ST_7 : Operation 132 [2/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i32 600" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 132 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_7 : Operation 133 [2/7] (7.30ns)   --->   "%empty_53 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i32 40" [HLS/src/AutoEncoder.cpp:63]   --->   Operation 133 'readreq' 'empty_53' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 8 <SV = 7> <Delay = 7.30>
+ST_8 : Operation 134 [1/7] (7.30ns)   --->   "%empty = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem_addr, i32 600" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 134 'readreq' 'empty' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_8 : Operation 135 [1/7] (7.30ns)   --->   "%empty_53 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr, i32 40" [HLS/src/AutoEncoder.cpp:63]   --->   Operation 135 'readreq' 'empty_53' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 9 <SV = 8> <Delay = 0.00>
+ST_9 : Operation 136 [2/2] (0.00ns)   --->   "%call_ln0 = call void @Autoencoder_Pipeline_VITIS_LOOP_52_1, i8 %gmem, i64 %DataIn_read"   --->   Operation 136 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 137 [2/2] (0.00ns)   --->   "%call_ln0 = call void @Autoencoder_Pipeline_VITIS_LOOP_58_2, i1 %OutputValues_V_3_loc, i1 %OutputValues_V_2_loc, i1 %OutputValues_V_1_loc, i1 %OutputValues_V_loc"   --->   Operation 137 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_9 : Operation 138 [2/2] (0.00ns)   --->   "%call_ln0 = call void @Autoencoder_Pipeline_VITIS_LOOP_63_3, i8 %gmem0, i64 %EncWeights_read, i1 %EncoderWeights_V_39, i1 %EncoderWeights_V, i1 %EncoderWeights_V_1, i1 %EncoderWeights_V_2, i1 %EncoderWeights_V_3, i1 %EncoderWeights_V_4, i1 %EncoderWeights_V_5, i1 %EncoderWeights_V_6, i1 %EncoderWeights_V_7, i1 %EncoderWeights_V_8, i1 %EncoderWeights_V_9, i1 %EncoderWeights_V_10, i1 %EncoderWeights_V_11, i1 %EncoderWeights_V_12, i1 %EncoderWeights_V_13, i1 %EncoderWeights_V_14, i1 %EncoderWeights_V_15, i1 %EncoderWeights_V_16, i1 %EncoderWeights_V_17, i1 %EncoderWeights_V_18, i1 %EncoderWeights_V_19, i1 %EncoderWeights_V_20, i1 %EncoderWeights_V_21, i1 %EncoderWeights_V_22, i1 %EncoderWeights_V_23, i1 %EncoderWeights_V_24, i1 %EncoderWeights_V_25, i1 %EncoderWeights_V_26, i1 %EncoderWeights_V_27, i1 %EncoderWeights_V_28, i1 %EncoderWeights_V_29, i1 %EncoderWeights_V_30, i1 %EncoderWeights_V_31, i1 %EncoderWeights_V_32, i1 %EncoderWeights_V_33, i1 %EncoderWeights_V_34, i1 %EncoderWeights_V_35, i1 %EncoderWeights_V_36, i1 %EncoderWeights_V_37, i1 %EncoderWeights_V_38"   --->   Operation 138 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 10 <SV = 9> <Delay = 2.71>
+ST_10 : Operation 139 [1/2] (0.00ns)   --->   "%call_ln0 = call void @Autoencoder_Pipeline_VITIS_LOOP_52_1, i8 %gmem, i64 %DataIn_read"   --->   Operation 139 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 140 [1/2] (2.71ns)   --->   "%call_ln0 = call void @Autoencoder_Pipeline_VITIS_LOOP_58_2, i1 %OutputValues_V_3_loc, i1 %OutputValues_V_2_loc, i1 %OutputValues_V_1_loc, i1 %OutputValues_V_loc"   --->   Operation 140 'call' 'call_ln0' <Predicate = true> <Delay = 2.71> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_10 : Operation 141 [1/2] (0.00ns)   --->   "%call_ln0 = call void @Autoencoder_Pipeline_VITIS_LOOP_63_3, i8 %gmem0, i64 %EncWeights_read, i1 %EncoderWeights_V_39, i1 %EncoderWeights_V, i1 %EncoderWeights_V_1, i1 %EncoderWeights_V_2, i1 %EncoderWeights_V_3, i1 %EncoderWeights_V_4, i1 %EncoderWeights_V_5, i1 %EncoderWeights_V_6, i1 %EncoderWeights_V_7, i1 %EncoderWeights_V_8, i1 %EncoderWeights_V_9, i1 %EncoderWeights_V_10, i1 %EncoderWeights_V_11, i1 %EncoderWeights_V_12, i1 %EncoderWeights_V_13, i1 %EncoderWeights_V_14, i1 %EncoderWeights_V_15, i1 %EncoderWeights_V_16, i1 %EncoderWeights_V_17, i1 %EncoderWeights_V_18, i1 %EncoderWeights_V_19, i1 %EncoderWeights_V_20, i1 %EncoderWeights_V_21, i1 %EncoderWeights_V_22, i1 %EncoderWeights_V_23, i1 %EncoderWeights_V_24, i1 %EncoderWeights_V_25, i1 %EncoderWeights_V_26, i1 %EncoderWeights_V_27, i1 %EncoderWeights_V_28, i1 %EncoderWeights_V_29, i1 %EncoderWeights_V_30, i1 %EncoderWeights_V_31, i1 %EncoderWeights_V_32, i1 %EncoderWeights_V_33, i1 %EncoderWeights_V_34, i1 %EncoderWeights_V_35, i1 %EncoderWeights_V_36, i1 %EncoderWeights_V_37, i1 %EncoderWeights_V_38"   --->   Operation 141 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 11 <SV = 10> <Delay = 7.30>
+ST_11 : Operation 142 [1/1] (0.00ns)   --->   "%gmem0_addr_1 = getelementptr i8 %gmem0, i64 %DecWeights_read" [HLS/src/AutoEncoder.cpp:69]   --->   Operation 142 'getelementptr' 'gmem0_addr_1' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 143 [7/7] (7.30ns)   --->   "%empty_54 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr_1, i32 40" [HLS/src/AutoEncoder.cpp:69]   --->   Operation 143 'readreq' 'empty_54' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 12 <SV = 11> <Delay = 7.30>
+ST_12 : Operation 144 [6/7] (7.30ns)   --->   "%empty_54 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr_1, i32 40" [HLS/src/AutoEncoder.cpp:69]   --->   Operation 144 'readreq' 'empty_54' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 13 <SV = 12> <Delay = 7.30>
+ST_13 : Operation 145 [5/7] (7.30ns)   --->   "%empty_54 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr_1, i32 40" [HLS/src/AutoEncoder.cpp:69]   --->   Operation 145 'readreq' 'empty_54' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 14 <SV = 13> <Delay = 7.30>
+ST_14 : Operation 146 [4/7] (7.30ns)   --->   "%empty_54 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr_1, i32 40" [HLS/src/AutoEncoder.cpp:69]   --->   Operation 146 'readreq' 'empty_54' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 15 <SV = 14> <Delay = 7.30>
+ST_15 : Operation 147 [3/7] (7.30ns)   --->   "%empty_54 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr_1, i32 40" [HLS/src/AutoEncoder.cpp:69]   --->   Operation 147 'readreq' 'empty_54' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 16 <SV = 15> <Delay = 7.30>
+ST_16 : Operation 148 [2/7] (7.30ns)   --->   "%empty_54 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr_1, i32 40" [HLS/src/AutoEncoder.cpp:69]   --->   Operation 148 'readreq' 'empty_54' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 17 <SV = 16> <Delay = 7.30>
+ST_17 : Operation 149 [1/7] (7.30ns)   --->   "%empty_54 = readreq i1 @_ssdm_op_ReadReq.m_axi.p1i8, i8 %gmem0_addr_1, i32 40" [HLS/src/AutoEncoder.cpp:69]   --->   Operation 149 'readreq' 'empty_54' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+
+State 18 <SV = 17> <Delay = 0.00>
+ST_18 : Operation 150 [2/2] (0.00ns)   --->   "%call_ln0 = call void @Autoencoder_Pipeline_VITIS_LOOP_69_4, i8 %gmem0, i64 %DecWeights_read, i1 %DecoderWeights_V_39, i1 %DecoderWeights_V, i1 %DecoderWeights_V_1, i1 %DecoderWeights_V_2, i1 %DecoderWeights_V_3, i1 %DecoderWeights_V_4, i1 %DecoderWeights_V_5, i1 %DecoderWeights_V_6, i1 %DecoderWeights_V_7, i1 %DecoderWeights_V_8, i1 %DecoderWeights_V_9, i1 %DecoderWeights_V_10, i1 %DecoderWeights_V_11, i1 %DecoderWeights_V_12, i1 %DecoderWeights_V_13, i1 %DecoderWeights_V_14, i1 %DecoderWeights_V_15, i1 %DecoderWeights_V_16, i1 %DecoderWeights_V_17, i1 %DecoderWeights_V_18, i1 %DecoderWeights_V_19, i1 %DecoderWeights_V_20, i1 %DecoderWeights_V_21, i1 %DecoderWeights_V_22, i1 %DecoderWeights_V_23, i1 %DecoderWeights_V_24, i1 %DecoderWeights_V_25, i1 %DecoderWeights_V_26, i1 %DecoderWeights_V_27, i1 %DecoderWeights_V_28, i1 %DecoderWeights_V_29, i1 %DecoderWeights_V_30, i1 %DecoderWeights_V_31, i1 %DecoderWeights_V_32, i1 %DecoderWeights_V_33, i1 %DecoderWeights_V_34, i1 %DecoderWeights_V_35, i1 %DecoderWeights_V_36, i1 %DecoderWeights_V_37, i1 %DecoderWeights_V_38"   --->   Operation 150 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 19 <SV = 18> <Delay = 0.00>
+ST_19 : Operation 151 [1/1] (0.00ns)   --->   "%spectopmodule_ln8 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_12" [HLS/src/AutoEncoder.cpp:8]   --->   Operation 151 'spectopmodule' 'spectopmodule_ln8' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 152 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem, void @empty_29, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_31, void @empty_32, void @empty_14, i32 16, i32 16, i32 16, i32 16, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 152 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 153 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %gmem"   --->   Operation 153 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 154 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem0, void @empty_29, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty, void @empty_32, void @empty_14, i32 16, i32 16, i32 16, i32 16, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 154 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 155 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %gmem0"   --->   Operation 155 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 156 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %DataIn, void @empty_0, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_1, void @empty_2, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_3, i32 4294967295, i32 0"   --->   Operation 156 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 157 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %DataIn, void @empty_4, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_3, i32 4294967295, i32 0"   --->   Operation 157 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 158 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %DataDimensionP"   --->   Operation 158 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 159 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %DataDimensionP, void @empty_0, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_1, void @empty_5, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 159 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 160 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %DataDimensionP, void @empty_4, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 160 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 161 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %HiddenDimensionP"   --->   Operation 161 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 162 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %HiddenDimensionP, void @empty_0, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_1, void @empty_6, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 162 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 163 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %HiddenDimensionP, void @empty_4, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 163 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 164 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %EncWeights, void @empty_0, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_7, void @empty_2, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_3, i32 4294967295, i32 0"   --->   Operation 164 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 165 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %EncWeights, void @empty_4, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_3, i32 4294967295, i32 0"   --->   Operation 165 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 166 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %DecWeights, void @empty_0, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_7, void @empty_5, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_3, i32 4294967295, i32 0"   --->   Operation 166 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 167 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %DecWeights, void @empty_4, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_3, i32 4294967295, i32 0"   --->   Operation 167 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 168 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %LearningRateP"   --->   Operation 168 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 169 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %LearningRateP, void @empty_0, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_1, void @empty_8, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 169 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 170 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %LearningRateP, void @empty_4, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 170 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 171 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %MomentumP"   --->   Operation 171 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 172 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %MomentumP, void @empty_0, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_1, void @empty_9, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 172 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 173 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %MomentumP, void @empty_4, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 173 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 174 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %DataOut, void @empty_0, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_1, void @empty_10, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_3, i32 4294967295, i32 0"   --->   Operation 174 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 175 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i64 %DataOut, void @empty_4, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_3, i32 4294967295, i32 0"   --->   Operation 175 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 176 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i1 %ErrorP"   --->   Operation 176 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 177 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %ErrorP, void @empty_0, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_1, void @empty_11, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 177 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 178 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i1 %ErrorP, void @empty_4, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_14, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 178 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 179 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 0, void @empty_0, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_7, void @empty_14, void @empty_14, i32 0, i32 0, i32 0, i32 0, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 179 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_19 : Operation 180 [1/2] (0.00ns)   --->   "%call_ln0 = call void @Autoencoder_Pipeline_VITIS_LOOP_69_4, i8 %gmem0, i64 %DecWeights_read, i1 %DecoderWeights_V_39, i1 %DecoderWeights_V, i1 %DecoderWeights_V_1, i1 %DecoderWeights_V_2, i1 %DecoderWeights_V_3, i1 %DecoderWeights_V_4, i1 %DecoderWeights_V_5, i1 %DecoderWeights_V_6, i1 %DecoderWeights_V_7, i1 %DecoderWeights_V_8, i1 %DecoderWeights_V_9, i1 %DecoderWeights_V_10, i1 %DecoderWeights_V_11, i1 %DecoderWeights_V_12, i1 %DecoderWeights_V_13, i1 %DecoderWeights_V_14, i1 %DecoderWeights_V_15, i1 %DecoderWeights_V_16, i1 %DecoderWeights_V_17, i1 %DecoderWeights_V_18, i1 %DecoderWeights_V_19, i1 %DecoderWeights_V_20, i1 %DecoderWeights_V_21, i1 %DecoderWeights_V_22, i1 %DecoderWeights_V_23, i1 %DecoderWeights_V_24, i1 %DecoderWeights_V_25, i1 %DecoderWeights_V_26, i1 %DecoderWeights_V_27, i1 %DecoderWeights_V_28, i1 %DecoderWeights_V_29, i1 %DecoderWeights_V_30, i1 %DecoderWeights_V_31, i1 %DecoderWeights_V_32, i1 %DecoderWeights_V_33, i1 %DecoderWeights_V_34, i1 %DecoderWeights_V_35, i1 %DecoderWeights_V_36, i1 %DecoderWeights_V_37, i1 %DecoderWeights_V_38"   --->   Operation 180 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_19 : Operation 181 [1/1] (0.00ns)   --->   "%br_ln88 = br void %VITIS_LOOP_90_6" [HLS/src/AutoEncoder.cpp:88]   --->   Operation 181 'br' 'br_ln88' <Predicate = true> <Delay = 0.00>
+
+State 20 <SV = 19> <Delay = 2.43>
+ST_20 : Operation 182 [1/1] (0.00ns)   --->   "%epochs_1 = load i17 %epochs" [HLS/src/AutoEncoder.cpp:88]   --->   Operation 182 'load' 'epochs_1' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 183 [1/1] (2.43ns)   --->   "%icmp_ln88 = icmp_eq  i17 %epochs_1, i17 100000" [HLS/src/AutoEncoder.cpp:88]   --->   Operation 183 'icmp' 'icmp_ln88' <Predicate = true> <Delay = 2.43> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 2.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 184 [1/1] (0.00ns)   --->   "%empty_55 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 100000, i64 100000, i64 100000"   --->   Operation 184 'speclooptripcount' 'empty_55' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 185 [1/1] (2.10ns)   --->   "%epochs_2 = add i17 %epochs_1, i17 1" [HLS/src/AutoEncoder.cpp:88]   --->   Operation 185 'add' 'epochs_2' <Predicate = true> <Delay = 2.10> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.10> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_20 : Operation 186 [1/1] (0.00ns)   --->   "%br_ln88 = br i1 %icmp_ln88, void %VITIS_LOOP_90_6.split, void %for.end140" [HLS/src/AutoEncoder.cpp:88]   --->   Operation 186 'br' 'br_ln88' <Predicate = true> <Delay = 0.00>
+ST_20 : Operation 187 [1/1] (0.00ns)   --->   "%specloopname_ln88 = specloopname void @_ssdm_op_SpecLoopName, void @empty_13" [HLS/src/AutoEncoder.cpp:88]   --->   Operation 187 'specloopname' 'specloopname_ln88' <Predicate = (!icmp_ln88)> <Delay = 0.00>
+ST_20 : Operation 188 [1/1] (1.58ns)   --->   "%br_ln90 = br void %for.inc135" [HLS/src/AutoEncoder.cpp:90]   --->   Operation 188 'br' 'br_ln90' <Predicate = (!icmp_ln88)> <Delay = 1.58>
+ST_20 : Operation 189 [1/1] (0.00ns)   --->   "%ret_ln130 = ret" [HLS/src/AutoEncoder.cpp:130]   --->   Operation 189 'ret' 'ret_ln130' <Predicate = (icmp_ln88)> <Delay = 0.00>
+
+State 21 <SV = 20> <Delay = 3.13>
+ST_21 : Operation 190 [1/1] (0.00ns)   --->   "%s = phi i8 0, void %VITIS_LOOP_90_6.split, i8 %add_ln90, void %for.inc135.split" [HLS/src/AutoEncoder.cpp:90]   --->   Operation 190 'phi' 's' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 191 [1/1] (1.55ns)   --->   "%icmp_ln90 = icmp_eq  i8 %s, i8 150" [HLS/src/AutoEncoder.cpp:90]   --->   Operation 191 'icmp' 'icmp_ln90' <Predicate = true> <Delay = 1.55> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 192 [1/1] (0.00ns)   --->   "%empty_56 = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 150, i64 150, i64 150"   --->   Operation 192 'speclooptripcount' 'empty_56' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 193 [1/1] (1.91ns)   --->   "%add_ln90 = add i8 %s, i8 1" [HLS/src/AutoEncoder.cpp:90]   --->   Operation 193 'add' 'add_ln90' <Predicate = true> <Delay = 1.91> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_21 : Operation 194 [1/1] (0.00ns)   --->   "%br_ln90 = br i1 %icmp_ln90, void %for.inc135.split, void %for.inc138" [HLS/src/AutoEncoder.cpp:90]   --->   Operation 194 'br' 'br_ln90' <Predicate = true> <Delay = 0.00>
+ST_21 : Operation 195 [1/1] (0.00ns)   --->   "%EncoderWeights_V_load = load i1 %EncoderWeights_V" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 195 'load' 'EncoderWeights_V_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 196 [1/1] (0.00ns)   --->   "%EncoderWeights_V_1_load = load i1 %EncoderWeights_V_1" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 196 'load' 'EncoderWeights_V_1_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 197 [1/1] (0.00ns)   --->   "%EncoderWeights_V_2_load = load i1 %EncoderWeights_V_2" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 197 'load' 'EncoderWeights_V_2_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 198 [1/1] (0.00ns)   --->   "%EncoderWeights_V_3_load = load i1 %EncoderWeights_V_3" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 198 'load' 'EncoderWeights_V_3_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 199 [1/1] (0.00ns)   --->   "%EncoderWeights_V_4_load = load i1 %EncoderWeights_V_4" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 199 'load' 'EncoderWeights_V_4_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 200 [1/1] (0.00ns)   --->   "%EncoderWeights_V_5_load = load i1 %EncoderWeights_V_5" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 200 'load' 'EncoderWeights_V_5_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 201 [1/1] (0.00ns)   --->   "%EncoderWeights_V_6_load = load i1 %EncoderWeights_V_6" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 201 'load' 'EncoderWeights_V_6_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 202 [1/1] (0.00ns)   --->   "%EncoderWeights_V_7_load = load i1 %EncoderWeights_V_7" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 202 'load' 'EncoderWeights_V_7_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 203 [1/1] (0.00ns)   --->   "%EncoderWeights_V_8_load = load i1 %EncoderWeights_V_8" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 203 'load' 'EncoderWeights_V_8_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 204 [1/1] (0.00ns)   --->   "%EncoderWeights_V_9_load = load i1 %EncoderWeights_V_9" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 204 'load' 'EncoderWeights_V_9_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 205 [1/1] (0.00ns)   --->   "%EncoderWeights_V_10_load = load i1 %EncoderWeights_V_10" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 205 'load' 'EncoderWeights_V_10_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 206 [1/1] (0.00ns)   --->   "%EncoderWeights_V_11_load = load i1 %EncoderWeights_V_11" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 206 'load' 'EncoderWeights_V_11_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 207 [1/1] (0.00ns)   --->   "%EncoderWeights_V_12_load = load i1 %EncoderWeights_V_12" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 207 'load' 'EncoderWeights_V_12_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 208 [1/1] (0.00ns)   --->   "%EncoderWeights_V_13_load = load i1 %EncoderWeights_V_13" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 208 'load' 'EncoderWeights_V_13_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 209 [1/1] (0.00ns)   --->   "%EncoderWeights_V_14_load = load i1 %EncoderWeights_V_14" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 209 'load' 'EncoderWeights_V_14_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 210 [1/1] (0.00ns)   --->   "%EncoderWeights_V_15_load = load i1 %EncoderWeights_V_15" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 210 'load' 'EncoderWeights_V_15_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 211 [1/1] (0.00ns)   --->   "%EncoderWeights_V_16_load = load i1 %EncoderWeights_V_16" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 211 'load' 'EncoderWeights_V_16_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 212 [1/1] (0.00ns)   --->   "%EncoderWeights_V_17_load = load i1 %EncoderWeights_V_17" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 212 'load' 'EncoderWeights_V_17_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 213 [1/1] (0.00ns)   --->   "%EncoderWeights_V_18_load = load i1 %EncoderWeights_V_18" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 213 'load' 'EncoderWeights_V_18_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 214 [1/1] (0.00ns)   --->   "%EncoderWeights_V_19_load = load i1 %EncoderWeights_V_19" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 214 'load' 'EncoderWeights_V_19_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 215 [1/1] (0.00ns)   --->   "%EncoderWeights_V_20_load = load i1 %EncoderWeights_V_20" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 215 'load' 'EncoderWeights_V_20_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 216 [1/1] (0.00ns)   --->   "%EncoderWeights_V_21_load = load i1 %EncoderWeights_V_21" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 216 'load' 'EncoderWeights_V_21_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 217 [1/1] (0.00ns)   --->   "%EncoderWeights_V_22_load = load i1 %EncoderWeights_V_22" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 217 'load' 'EncoderWeights_V_22_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 218 [1/1] (0.00ns)   --->   "%EncoderWeights_V_23_load = load i1 %EncoderWeights_V_23" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 218 'load' 'EncoderWeights_V_23_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 219 [1/1] (0.00ns)   --->   "%EncoderWeights_V_24_load = load i1 %EncoderWeights_V_24" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 219 'load' 'EncoderWeights_V_24_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 220 [1/1] (0.00ns)   --->   "%EncoderWeights_V_25_load = load i1 %EncoderWeights_V_25" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 220 'load' 'EncoderWeights_V_25_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 221 [1/1] (0.00ns)   --->   "%EncoderWeights_V_26_load = load i1 %EncoderWeights_V_26" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 221 'load' 'EncoderWeights_V_26_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 222 [1/1] (0.00ns)   --->   "%EncoderWeights_V_27_load = load i1 %EncoderWeights_V_27" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 222 'load' 'EncoderWeights_V_27_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 223 [1/1] (0.00ns)   --->   "%EncoderWeights_V_28_load = load i1 %EncoderWeights_V_28" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 223 'load' 'EncoderWeights_V_28_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 224 [1/1] (0.00ns)   --->   "%EncoderWeights_V_29_load = load i1 %EncoderWeights_V_29" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 224 'load' 'EncoderWeights_V_29_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 225 [1/1] (0.00ns)   --->   "%EncoderWeights_V_30_load = load i1 %EncoderWeights_V_30" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 225 'load' 'EncoderWeights_V_30_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 226 [1/1] (0.00ns)   --->   "%EncoderWeights_V_31_load = load i1 %EncoderWeights_V_31" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 226 'load' 'EncoderWeights_V_31_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 227 [1/1] (0.00ns)   --->   "%EncoderWeights_V_32_load = load i1 %EncoderWeights_V_32" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 227 'load' 'EncoderWeights_V_32_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 228 [1/1] (0.00ns)   --->   "%EncoderWeights_V_33_load = load i1 %EncoderWeights_V_33" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 228 'load' 'EncoderWeights_V_33_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 229 [1/1] (0.00ns)   --->   "%EncoderWeights_V_34_load = load i1 %EncoderWeights_V_34" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 229 'load' 'EncoderWeights_V_34_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 230 [1/1] (0.00ns)   --->   "%EncoderWeights_V_35_load = load i1 %EncoderWeights_V_35" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 230 'load' 'EncoderWeights_V_35_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 231 [1/1] (0.00ns)   --->   "%EncoderWeights_V_36_load = load i1 %EncoderWeights_V_36" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 231 'load' 'EncoderWeights_V_36_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 232 [1/1] (0.00ns)   --->   "%EncoderWeights_V_37_load = load i1 %EncoderWeights_V_37" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 232 'load' 'EncoderWeights_V_37_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 233 [1/1] (0.00ns)   --->   "%EncoderWeights_V_38_load = load i1 %EncoderWeights_V_38" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 233 'load' 'EncoderWeights_V_38_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 234 [1/1] (0.00ns)   --->   "%EncoderWeights_V_39_load = load i1 %EncoderWeights_V_39" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 234 'load' 'EncoderWeights_V_39_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 235 [1/1] (0.00ns)   --->   "%DecoderWeights_V_load = load i1 %DecoderWeights_V" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 235 'load' 'DecoderWeights_V_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 236 [1/1] (0.00ns)   --->   "%DecoderWeights_V_1_load = load i1 %DecoderWeights_V_1" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 236 'load' 'DecoderWeights_V_1_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 237 [1/1] (0.00ns)   --->   "%DecoderWeights_V_2_load = load i1 %DecoderWeights_V_2" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 237 'load' 'DecoderWeights_V_2_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 238 [1/1] (0.00ns)   --->   "%DecoderWeights_V_3_load = load i1 %DecoderWeights_V_3" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 238 'load' 'DecoderWeights_V_3_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 239 [1/1] (0.00ns)   --->   "%DecoderWeights_V_4_load = load i1 %DecoderWeights_V_4" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 239 'load' 'DecoderWeights_V_4_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 240 [1/1] (0.00ns)   --->   "%DecoderWeights_V_5_load = load i1 %DecoderWeights_V_5" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 240 'load' 'DecoderWeights_V_5_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 241 [1/1] (0.00ns)   --->   "%DecoderWeights_V_6_load = load i1 %DecoderWeights_V_6" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 241 'load' 'DecoderWeights_V_6_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 242 [1/1] (0.00ns)   --->   "%DecoderWeights_V_7_load = load i1 %DecoderWeights_V_7" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 242 'load' 'DecoderWeights_V_7_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 243 [1/1] (0.00ns)   --->   "%DecoderWeights_V_8_load = load i1 %DecoderWeights_V_8" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 243 'load' 'DecoderWeights_V_8_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 244 [1/1] (0.00ns)   --->   "%DecoderWeights_V_9_load = load i1 %DecoderWeights_V_9" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 244 'load' 'DecoderWeights_V_9_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 245 [1/1] (0.00ns)   --->   "%DecoderWeights_V_10_load = load i1 %DecoderWeights_V_10" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 245 'load' 'DecoderWeights_V_10_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 246 [1/1] (0.00ns)   --->   "%DecoderWeights_V_11_load = load i1 %DecoderWeights_V_11" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 246 'load' 'DecoderWeights_V_11_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 247 [1/1] (0.00ns)   --->   "%DecoderWeights_V_12_load = load i1 %DecoderWeights_V_12" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 247 'load' 'DecoderWeights_V_12_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 248 [1/1] (0.00ns)   --->   "%DecoderWeights_V_13_load = load i1 %DecoderWeights_V_13" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 248 'load' 'DecoderWeights_V_13_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 249 [1/1] (0.00ns)   --->   "%DecoderWeights_V_14_load = load i1 %DecoderWeights_V_14" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 249 'load' 'DecoderWeights_V_14_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 250 [1/1] (0.00ns)   --->   "%DecoderWeights_V_15_load = load i1 %DecoderWeights_V_15" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 250 'load' 'DecoderWeights_V_15_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 251 [1/1] (0.00ns)   --->   "%DecoderWeights_V_16_load = load i1 %DecoderWeights_V_16" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 251 'load' 'DecoderWeights_V_16_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 252 [1/1] (0.00ns)   --->   "%DecoderWeights_V_17_load = load i1 %DecoderWeights_V_17" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 252 'load' 'DecoderWeights_V_17_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 253 [1/1] (0.00ns)   --->   "%DecoderWeights_V_18_load = load i1 %DecoderWeights_V_18" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 253 'load' 'DecoderWeights_V_18_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 254 [1/1] (0.00ns)   --->   "%DecoderWeights_V_19_load = load i1 %DecoderWeights_V_19" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 254 'load' 'DecoderWeights_V_19_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 255 [1/1] (0.00ns)   --->   "%DecoderWeights_V_20_load = load i1 %DecoderWeights_V_20" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 255 'load' 'DecoderWeights_V_20_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 256 [1/1] (0.00ns)   --->   "%DecoderWeights_V_21_load = load i1 %DecoderWeights_V_21" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 256 'load' 'DecoderWeights_V_21_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 257 [1/1] (0.00ns)   --->   "%DecoderWeights_V_22_load = load i1 %DecoderWeights_V_22" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 257 'load' 'DecoderWeights_V_22_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 258 [1/1] (0.00ns)   --->   "%DecoderWeights_V_23_load = load i1 %DecoderWeights_V_23" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 258 'load' 'DecoderWeights_V_23_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 259 [1/1] (0.00ns)   --->   "%DecoderWeights_V_24_load = load i1 %DecoderWeights_V_24" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 259 'load' 'DecoderWeights_V_24_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 260 [1/1] (0.00ns)   --->   "%DecoderWeights_V_25_load = load i1 %DecoderWeights_V_25" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 260 'load' 'DecoderWeights_V_25_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 261 [1/1] (0.00ns)   --->   "%DecoderWeights_V_26_load = load i1 %DecoderWeights_V_26" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 261 'load' 'DecoderWeights_V_26_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 262 [1/1] (0.00ns)   --->   "%DecoderWeights_V_27_load = load i1 %DecoderWeights_V_27" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 262 'load' 'DecoderWeights_V_27_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 263 [1/1] (0.00ns)   --->   "%DecoderWeights_V_28_load = load i1 %DecoderWeights_V_28" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 263 'load' 'DecoderWeights_V_28_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 264 [1/1] (0.00ns)   --->   "%DecoderWeights_V_29_load = load i1 %DecoderWeights_V_29" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 264 'load' 'DecoderWeights_V_29_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 265 [1/1] (0.00ns)   --->   "%DecoderWeights_V_30_load = load i1 %DecoderWeights_V_30" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 265 'load' 'DecoderWeights_V_30_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 266 [1/1] (0.00ns)   --->   "%DecoderWeights_V_31_load = load i1 %DecoderWeights_V_31" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 266 'load' 'DecoderWeights_V_31_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 267 [1/1] (0.00ns)   --->   "%DecoderWeights_V_32_load = load i1 %DecoderWeights_V_32" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 267 'load' 'DecoderWeights_V_32_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 268 [1/1] (0.00ns)   --->   "%DecoderWeights_V_33_load = load i1 %DecoderWeights_V_33" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 268 'load' 'DecoderWeights_V_33_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 269 [1/1] (0.00ns)   --->   "%DecoderWeights_V_34_load = load i1 %DecoderWeights_V_34" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 269 'load' 'DecoderWeights_V_34_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 270 [1/1] (0.00ns)   --->   "%DecoderWeights_V_35_load = load i1 %DecoderWeights_V_35" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 270 'load' 'DecoderWeights_V_35_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 271 [1/1] (0.00ns)   --->   "%DecoderWeights_V_36_load = load i1 %DecoderWeights_V_36" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 271 'load' 'DecoderWeights_V_36_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 272 [1/1] (0.00ns)   --->   "%DecoderWeights_V_37_load = load i1 %DecoderWeights_V_37" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 272 'load' 'DecoderWeights_V_37_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 273 [1/1] (0.00ns)   --->   "%DecoderWeights_V_38_load = load i1 %DecoderWeights_V_38" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 273 'load' 'DecoderWeights_V_38_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 274 [1/1] (0.00ns)   --->   "%DecoderWeights_V_39_load = load i1 %DecoderWeights_V_39" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 274 'load' 'DecoderWeights_V_39_load' <Predicate = (!icmp_ln90)> <Delay = 0.00>
+ST_21 : Operation 275 [1/1] (1.58ns)   --->   "%store_ln88 = store i17 %epochs_2, i17 %epochs" [HLS/src/AutoEncoder.cpp:88]   --->   Operation 275 'store' 'store_ln88' <Predicate = (icmp_ln90)> <Delay = 1.58>
+ST_21 : Operation 276 [1/1] (0.00ns)   --->   "%br_ln88 = br void %VITIS_LOOP_90_6" [HLS/src/AutoEncoder.cpp:88]   --->   Operation 276 'br' 'br_ln88' <Predicate = (icmp_ln90)> <Delay = 0.00>
+
+State 22 <SV = 21> <Delay = 1.70>
+ST_22 : Operation 277 [2/2] (1.70ns)   --->   "%call_ln113 = call void @BackPropagate, i1 %EncoderWeights_V_load, i1 %EncoderWeights_V, i1 %EncoderWeights_V_1_load, i1 %EncoderWeights_V_1, i1 %EncoderWeights_V_2_load, i1 %EncoderWeights_V_2, i1 %EncoderWeights_V_3_load, i1 %EncoderWeights_V_3, i1 %EncoderWeights_V_4_load, i1 %EncoderWeights_V_4, i1 %EncoderWeights_V_5_load, i1 %EncoderWeights_V_5, i1 %EncoderWeights_V_6_load, i1 %EncoderWeights_V_6, i1 %EncoderWeights_V_7_load, i1 %EncoderWeights_V_7, i1 %EncoderWeights_V_8_load, i1 %EncoderWeights_V_8, i1 %EncoderWeights_V_9_load, i1 %EncoderWeights_V_9, i1 %EncoderWeights_V_10_load, i1 %EncoderWeights_V_10, i1 %EncoderWeights_V_11_load, i1 %EncoderWeights_V_11, i1 %EncoderWeights_V_12_load, i1 %EncoderWeights_V_12, i1 %EncoderWeights_V_13_load, i1 %EncoderWeights_V_13, i1 %EncoderWeights_V_14_load, i1 %EncoderWeights_V_14, i1 %EncoderWeights_V_15_load, i1 %EncoderWeights_V_15, i1 %EncoderWeights_V_16_load, i1 %EncoderWeights_V_16, i1 %EncoderWeights_V_17_load, i1 %EncoderWeights_V_17, i1 %EncoderWeights_V_18_load, i1 %EncoderWeights_V_18, i1 %EncoderWeights_V_19_load, i1 %EncoderWeights_V_19, i1 %EncoderWeights_V_20_load, i1 %EncoderWeights_V_20, i1 %EncoderWeights_V_21_load, i1 %EncoderWeights_V_21, i1 %EncoderWeights_V_22_load, i1 %EncoderWeights_V_22, i1 %EncoderWeights_V_23_load, i1 %EncoderWeights_V_23, i1 %EncoderWeights_V_24_load, i1 %EncoderWeights_V_24, i1 %EncoderWeights_V_25_load, i1 %EncoderWeights_V_25, i1 %EncoderWeights_V_26_load, i1 %EncoderWeights_V_26, i1 %EncoderWeights_V_27_load, i1 %EncoderWeights_V_27, i1 %EncoderWeights_V_28_load, i1 %EncoderWeights_V_28, i1 %EncoderWeights_V_29_load, i1 %EncoderWeights_V_29, i1 %EncoderWeights_V_30_load, i1 %EncoderWeights_V_30, i1 %EncoderWeights_V_31_load, i1 %EncoderWeights_V_31, i1 %EncoderWeights_V_32_load, i1 %EncoderWeights_V_32, i1 %EncoderWeights_V_33_load, i1 %EncoderWeights_V_33, i1 %EncoderWeights_V_34_load, i1 %EncoderWeights_V_34, i1 %EncoderWeights_V_35_load, i1 %EncoderWeights_V_35, i1 %EncoderWeights_V_36_load, i1 %EncoderWeights_V_36, i1 %EncoderWeights_V_37_load, i1 %EncoderWeights_V_37, i1 %EncoderWeights_V_38_load, i1 %EncoderWeights_V_38, i1 %EncoderWeights_V_39_load, i1 %EncoderWeights_V_39, i1 %DecoderWeights_V_load, i1 %DecoderWeights_V, i1 %DecoderWeights_V_1_load, i1 %DecoderWeights_V_1, i1 %DecoderWeights_V_2_load, i1 %DecoderWeights_V_2, i1 %DecoderWeights_V_3_load, i1 %DecoderWeights_V_3, i1 %DecoderWeights_V_4_load, i1 %DecoderWeights_V_4, i1 %DecoderWeights_V_5_load, i1 %DecoderWeights_V_5, i1 %DecoderWeights_V_6_load, i1 %DecoderWeights_V_6, i1 %DecoderWeights_V_7_load, i1 %DecoderWeights_V_7, i1 %DecoderWeights_V_8_load, i1 %DecoderWeights_V_8, i1 %DecoderWeights_V_9_load, i1 %DecoderWeights_V_9, i1 %DecoderWeights_V_10_load, i1 %DecoderWeights_V_10, i1 %DecoderWeights_V_11_load, i1 %DecoderWeights_V_11, i1 %DecoderWeights_V_12_load, i1 %DecoderWeights_V_12, i1 %DecoderWeights_V_13_load, i1 %DecoderWeights_V_13, i1 %DecoderWeights_V_14_load, i1 %DecoderWeights_V_14, i1 %DecoderWeights_V_15_load, i1 %DecoderWeights_V_15, i1 %DecoderWeights_V_16_load, i1 %DecoderWeights_V_16, i1 %DecoderWeights_V_17_load, i1 %DecoderWeights_V_17, i1 %DecoderWeights_V_18_load, i1 %DecoderWeights_V_18, i1 %DecoderWeights_V_19_load, i1 %DecoderWeights_V_19, i1 %DecoderWeights_V_20_load, i1 %DecoderWeights_V_20, i1 %DecoderWeights_V_21_load, i1 %DecoderWeights_V_21, i1 %DecoderWeights_V_22_load, i1 %DecoderWeights_V_22, i1 %DecoderWeights_V_23_load, i1 %DecoderWeights_V_23, i1 %DecoderWeights_V_24_load, i1 %DecoderWeights_V_24, i1 %DecoderWeights_V_25_load, i1 %DecoderWeights_V_25, i1 %DecoderWeights_V_26_load, i1 %DecoderWeights_V_26, i1 %DecoderWeights_V_27_load, i1 %DecoderWeights_V_27, i1 %DecoderWeights_V_28_load, i1 %DecoderWeights_V_28, i1 %DecoderWeights_V_29_load, i1 %DecoderWeights_V_29, i1 %DecoderWeights_V_30_load, i1 %DecoderWeights_V_30, i1 %DecoderWeights_V_31_load, i1 %DecoderWeights_V_31, i1 %DecoderWeights_V_32_load, i1 %DecoderWeights_V_32, i1 %DecoderWeights_V_33_load, i1 %DecoderWeights_V_33, i1 %DecoderWeights_V_34_load, i1 %DecoderWeights_V_34, i1 %DecoderWeights_V_35_load, i1 %DecoderWeights_V_35, i1 %DecoderWeights_V_36_load, i1 %DecoderWeights_V_36, i1 %DecoderWeights_V_37_load, i1 %DecoderWeights_V_37, i1 %DecoderWeights_V_38_load, i1 %DecoderWeights_V_38, i1 %DecoderWeights_V_39_load, i1 %DecoderWeights_V_39, i1 %PrevEncoderWeightChanges, i1 %EncoderWeightChanges, i1 %PrevDecoderWeightChanges, i1 %DecoderWeightChanges, i1 %TotalErrorDeltas, i1 %Deltas_V" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 277 'call' 'call_ln113' <Predicate = true> <Delay = 1.70> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 23 <SV = 22> <Delay = 1.00>
+ST_23 : Operation 278 [1/1] (0.00ns)   --->   "%specloopname_ln90 = specloopname void @_ssdm_op_SpecLoopName, void @empty_30" [HLS/src/AutoEncoder.cpp:90]   --->   Operation 278 'specloopname' 'specloopname_ln90' <Predicate = true> <Delay = 0.00>
+ST_23 : Operation 279 [1/1] (1.00ns)   --->   "%write_ln109 = write void @_ssdm_op_Write.s_axilite.i1P0A, i1 %ErrorP, i1 0" [HLS/src/AutoEncoder.cpp:109]   --->   Operation 279 'write' 'write_ln109' <Predicate = true> <Delay = 1.00> <CoreInst = "s_axilite">   --->   Core 114 's_axilite' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write'>
+ST_23 : Operation 280 [1/2] (0.00ns)   --->   "%call_ln113 = call void @BackPropagate, i1 %EncoderWeights_V_load, i1 %EncoderWeights_V, i1 %EncoderWeights_V_1_load, i1 %EncoderWeights_V_1, i1 %EncoderWeights_V_2_load, i1 %EncoderWeights_V_2, i1 %EncoderWeights_V_3_load, i1 %EncoderWeights_V_3, i1 %EncoderWeights_V_4_load, i1 %EncoderWeights_V_4, i1 %EncoderWeights_V_5_load, i1 %EncoderWeights_V_5, i1 %EncoderWeights_V_6_load, i1 %EncoderWeights_V_6, i1 %EncoderWeights_V_7_load, i1 %EncoderWeights_V_7, i1 %EncoderWeights_V_8_load, i1 %EncoderWeights_V_8, i1 %EncoderWeights_V_9_load, i1 %EncoderWeights_V_9, i1 %EncoderWeights_V_10_load, i1 %EncoderWeights_V_10, i1 %EncoderWeights_V_11_load, i1 %EncoderWeights_V_11, i1 %EncoderWeights_V_12_load, i1 %EncoderWeights_V_12, i1 %EncoderWeights_V_13_load, i1 %EncoderWeights_V_13, i1 %EncoderWeights_V_14_load, i1 %EncoderWeights_V_14, i1 %EncoderWeights_V_15_load, i1 %EncoderWeights_V_15, i1 %EncoderWeights_V_16_load, i1 %EncoderWeights_V_16, i1 %EncoderWeights_V_17_load, i1 %EncoderWeights_V_17, i1 %EncoderWeights_V_18_load, i1 %EncoderWeights_V_18, i1 %EncoderWeights_V_19_load, i1 %EncoderWeights_V_19, i1 %EncoderWeights_V_20_load, i1 %EncoderWeights_V_20, i1 %EncoderWeights_V_21_load, i1 %EncoderWeights_V_21, i1 %EncoderWeights_V_22_load, i1 %EncoderWeights_V_22, i1 %EncoderWeights_V_23_load, i1 %EncoderWeights_V_23, i1 %EncoderWeights_V_24_load, i1 %EncoderWeights_V_24, i1 %EncoderWeights_V_25_load, i1 %EncoderWeights_V_25, i1 %EncoderWeights_V_26_load, i1 %EncoderWeights_V_26, i1 %EncoderWeights_V_27_load, i1 %EncoderWeights_V_27, i1 %EncoderWeights_V_28_load, i1 %EncoderWeights_V_28, i1 %EncoderWeights_V_29_load, i1 %EncoderWeights_V_29, i1 %EncoderWeights_V_30_load, i1 %EncoderWeights_V_30, i1 %EncoderWeights_V_31_load, i1 %EncoderWeights_V_31, i1 %EncoderWeights_V_32_load, i1 %EncoderWeights_V_32, i1 %EncoderWeights_V_33_load, i1 %EncoderWeights_V_33, i1 %EncoderWeights_V_34_load, i1 %EncoderWeights_V_34, i1 %EncoderWeights_V_35_load, i1 %EncoderWeights_V_35, i1 %EncoderWeights_V_36_load, i1 %EncoderWeights_V_36, i1 %EncoderWeights_V_37_load, i1 %EncoderWeights_V_37, i1 %EncoderWeights_V_38_load, i1 %EncoderWeights_V_38, i1 %EncoderWeights_V_39_load, i1 %EncoderWeights_V_39, i1 %DecoderWeights_V_load, i1 %DecoderWeights_V, i1 %DecoderWeights_V_1_load, i1 %DecoderWeights_V_1, i1 %DecoderWeights_V_2_load, i1 %DecoderWeights_V_2, i1 %DecoderWeights_V_3_load, i1 %DecoderWeights_V_3, i1 %DecoderWeights_V_4_load, i1 %DecoderWeights_V_4, i1 %DecoderWeights_V_5_load, i1 %DecoderWeights_V_5, i1 %DecoderWeights_V_6_load, i1 %DecoderWeights_V_6, i1 %DecoderWeights_V_7_load, i1 %DecoderWeights_V_7, i1 %DecoderWeights_V_8_load, i1 %DecoderWeights_V_8, i1 %DecoderWeights_V_9_load, i1 %DecoderWeights_V_9, i1 %DecoderWeights_V_10_load, i1 %DecoderWeights_V_10, i1 %DecoderWeights_V_11_load, i1 %DecoderWeights_V_11, i1 %DecoderWeights_V_12_load, i1 %DecoderWeights_V_12, i1 %DecoderWeights_V_13_load, i1 %DecoderWeights_V_13, i1 %DecoderWeights_V_14_load, i1 %DecoderWeights_V_14, i1 %DecoderWeights_V_15_load, i1 %DecoderWeights_V_15, i1 %DecoderWeights_V_16_load, i1 %DecoderWeights_V_16, i1 %DecoderWeights_V_17_load, i1 %DecoderWeights_V_17, i1 %DecoderWeights_V_18_load, i1 %DecoderWeights_V_18, i1 %DecoderWeights_V_19_load, i1 %DecoderWeights_V_19, i1 %DecoderWeights_V_20_load, i1 %DecoderWeights_V_20, i1 %DecoderWeights_V_21_load, i1 %DecoderWeights_V_21, i1 %DecoderWeights_V_22_load, i1 %DecoderWeights_V_22, i1 %DecoderWeights_V_23_load, i1 %DecoderWeights_V_23, i1 %DecoderWeights_V_24_load, i1 %DecoderWeights_V_24, i1 %DecoderWeights_V_25_load, i1 %DecoderWeights_V_25, i1 %DecoderWeights_V_26_load, i1 %DecoderWeights_V_26, i1 %DecoderWeights_V_27_load, i1 %DecoderWeights_V_27, i1 %DecoderWeights_V_28_load, i1 %DecoderWeights_V_28, i1 %DecoderWeights_V_29_load, i1 %DecoderWeights_V_29, i1 %DecoderWeights_V_30_load, i1 %DecoderWeights_V_30, i1 %DecoderWeights_V_31_load, i1 %DecoderWeights_V_31, i1 %DecoderWeights_V_32_load, i1 %DecoderWeights_V_32, i1 %DecoderWeights_V_33_load, i1 %DecoderWeights_V_33, i1 %DecoderWeights_V_34_load, i1 %DecoderWeights_V_34, i1 %DecoderWeights_V_35_load, i1 %DecoderWeights_V_35, i1 %DecoderWeights_V_36_load, i1 %DecoderWeights_V_36, i1 %DecoderWeights_V_37_load, i1 %DecoderWeights_V_37, i1 %DecoderWeights_V_38_load, i1 %DecoderWeights_V_38, i1 %DecoderWeights_V_39_load, i1 %DecoderWeights_V_39, i1 %PrevEncoderWeightChanges, i1 %EncoderWeightChanges, i1 %PrevDecoderWeightChanges, i1 %DecoderWeightChanges, i1 %TotalErrorDeltas, i1 %Deltas_V" [HLS/src/AutoEncoder.cpp:113]   --->   Operation 280 'call' 'call_ln113' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_23 : Operation 281 [1/1] (0.00ns)   --->   "%br_ln90 = br void %for.inc135" [HLS/src/AutoEncoder.cpp:90]   --->   Operation 281 'br' 'br_ln90' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	'alloca' operation ('epochs') [12]  (0 ns)
+	'store' operation ('store_ln88', HLS/src/AutoEncoder.cpp:88) of constant 0 on local variable 'epochs' [146]  (1.59 ns)
+
+ <State 2>: 7.3ns
+The critical path consists of the following:
+	'getelementptr' operation ('gmem_addr', HLS/src/AutoEncoder.cpp:52) [136]  (0 ns)
+	bus request operation ('empty', HLS/src/AutoEncoder.cpp:52) on port 'gmem' (HLS/src/AutoEncoder.cpp:52) [137]  (7.3 ns)
+
+ <State 3>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty', HLS/src/AutoEncoder.cpp:52) on port 'gmem' (HLS/src/AutoEncoder.cpp:52) [137]  (7.3 ns)
+
+ <State 4>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty', HLS/src/AutoEncoder.cpp:52) on port 'gmem' (HLS/src/AutoEncoder.cpp:52) [137]  (7.3 ns)
+
+ <State 5>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty', HLS/src/AutoEncoder.cpp:52) on port 'gmem' (HLS/src/AutoEncoder.cpp:52) [137]  (7.3 ns)
+
+ <State 6>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty', HLS/src/AutoEncoder.cpp:52) on port 'gmem' (HLS/src/AutoEncoder.cpp:52) [137]  (7.3 ns)
+
+ <State 7>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty', HLS/src/AutoEncoder.cpp:52) on port 'gmem' (HLS/src/AutoEncoder.cpp:52) [137]  (7.3 ns)
+
+ <State 8>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty', HLS/src/AutoEncoder.cpp:52) on port 'gmem' (HLS/src/AutoEncoder.cpp:52) [137]  (7.3 ns)
+
+ <State 9>: 0ns
+The critical path consists of the following:
+
+ <State 10>: 2.72ns
+The critical path consists of the following:
+	'call' operation ('call_ln0') to 'Autoencoder_Pipeline_VITIS_LOOP_58_2' [139]  (2.72 ns)
+
+ <State 11>: 7.3ns
+The critical path consists of the following:
+	'getelementptr' operation ('gmem0_addr_1', HLS/src/AutoEncoder.cpp:69) [143]  (0 ns)
+	bus request operation ('empty_54', HLS/src/AutoEncoder.cpp:69) on port 'gmem0' (HLS/src/AutoEncoder.cpp:69) [144]  (7.3 ns)
+
+ <State 12>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty_54', HLS/src/AutoEncoder.cpp:69) on port 'gmem0' (HLS/src/AutoEncoder.cpp:69) [144]  (7.3 ns)
+
+ <State 13>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty_54', HLS/src/AutoEncoder.cpp:69) on port 'gmem0' (HLS/src/AutoEncoder.cpp:69) [144]  (7.3 ns)
+
+ <State 14>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty_54', HLS/src/AutoEncoder.cpp:69) on port 'gmem0' (HLS/src/AutoEncoder.cpp:69) [144]  (7.3 ns)
+
+ <State 15>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty_54', HLS/src/AutoEncoder.cpp:69) on port 'gmem0' (HLS/src/AutoEncoder.cpp:69) [144]  (7.3 ns)
+
+ <State 16>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty_54', HLS/src/AutoEncoder.cpp:69) on port 'gmem0' (HLS/src/AutoEncoder.cpp:69) [144]  (7.3 ns)
+
+ <State 17>: 7.3ns
+The critical path consists of the following:
+	bus request operation ('empty_54', HLS/src/AutoEncoder.cpp:69) on port 'gmem0' (HLS/src/AutoEncoder.cpp:69) [144]  (7.3 ns)
+
+ <State 18>: 0ns
+The critical path consists of the following:
+
+ <State 19>: 0ns
+The critical path consists of the following:
+
+ <State 20>: 2.43ns
+The critical path consists of the following:
+	'load' operation ('epochs', HLS/src/AutoEncoder.cpp:88) on local variable 'epochs' [149]  (0 ns)
+	'icmp' operation ('icmp_ln88', HLS/src/AutoEncoder.cpp:88) [150]  (2.43 ns)
+
+ <State 21>: 3.14ns
+The critical path consists of the following:
+	'phi' operation ('s', HLS/src/AutoEncoder.cpp:90) with incoming values : ('add_ln90', HLS/src/AutoEncoder.cpp:90) [158]  (0 ns)
+	'add' operation ('add_ln90', HLS/src/AutoEncoder.cpp:90) [161]  (1.92 ns)
+	blocking operation 1.22 ns on control path)
+
+ <State 22>: 1.71ns
+The critical path consists of the following:
+	'call' operation ('call_ln113', HLS/src/AutoEncoder.cpp:113) to 'BackPropagate' [246]  (1.71 ns)
+
+ <State 23>: 1ns
+The critical path consists of the following:
+	s_axi write operation ('write_ln109', HLS/src/AutoEncoder.cpp:109) on port 'ErrorP' (HLS/src/AutoEncoder.cpp:109) [245]  (1 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

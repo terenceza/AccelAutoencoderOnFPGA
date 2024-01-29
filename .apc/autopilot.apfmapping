@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="FromChatGPT.cpp" path="C:\Users\Terence\Desktop\AccelAutoencoder\FromChatGPT.cpp"/>
+    <originFiles name="AutoEncoder.hpp" path="C:\Users\Terence\Desktop\AccelAutoencoder\HLS\src\AutoEncoder.hpp"/>
+    <originFiles name="AutoEncoder.cpp" path="C:\Users\Terence\Desktop\AccelAutoencoder\HLS\src\AutoEncoder.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="TestAccelAutoencoder.cpp" path="C:\Users\Terence\Desktop\AccelAutoencoder\HLS\test\TestAccelAutoencoder.cpp"/>
+    <originFiles name="irisdata.txt" path="C:\Users\Terence\Desktop\AccelAutoencoder\HLS\test\irisdata.txt"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

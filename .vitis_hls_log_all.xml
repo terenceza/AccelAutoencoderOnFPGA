@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog>
+        <logs message="ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***" projectName="HLS" solutionName="solution1" date="2023-07-13T23:06:53.332-0600"/>
+      </simLog>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low." projectName="HLS" solutionName="solution1" date="2023-07-13T23:01:30.679-0600" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'Autoencoder_Pipeline_VITIS_LOOP_69_4/m_axi_gmem0_ARUSER' to 0." projectName="HLS" solutionName="solution1" date="2023-07-13T23:01:22.382-0600" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'Autoencoder_Pipeline_VITIS_LOOP_69_4/m_axi_gmem0_ARREGION' to 0." projectName="HLS" solutionName="solution1" date="2023-07-13T23:01:22.328-0600" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'Autoencoder_Pipeline_VITIS_LOOP_69_4/m_axi_gmem0_ARQOS' to 0." projectName="HLS" solutionName="solution1" date="2023-07-13T23:01:22.268-0600" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Setting dangling out port 'Autoencoder_Pipeline_VITIS_LOOP_69_4/m_axi_gmem0_ARPROT' to 0." projectName="HLS" solutionName="solution1" date="2023-07-13T23:01:22.214-0600" type="Warning"/>
+      </synLog>
+      <simLog>
+        <logs message="WARNING: [HLS 200-40] Cannot find design file 'FromChatGPT.cpp'" projectName="HLS" solutionName="solution1" date="2023-07-13T23:02:07.682-0600" type="Warning"/>
+      </simLog>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

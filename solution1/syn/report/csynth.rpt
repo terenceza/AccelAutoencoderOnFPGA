@@ -1,0 +1,265 @@
+
+
+================================================================
+== Synthesis Summary Report of 'Autoencoder'
+================================================================
++ General Information: 
+    * Date:           Thu Jul 13 23:01:33 2023
+    * Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+    * Project:        HLS
+    * Solution:       solution1 (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +-----------------------------------------------------------+------+------+-----------+-----------+----------+-----------+--------+----------+------+----+-----------+------------+-----+
+    |                          Modules                          | Issue|      |  Latency  |  Latency  | Iteration|           |  Trip  |          |      |    |           |            |     |
+    |                          & Loops                          | Type | Slack|  (cycles) |    (ns)   |  Latency |  Interval |  Count | Pipelined| BRAM | DSP|     FF    |     LUT    | URAM|
+    +-----------------------------------------------------------+------+------+-----------+-----------+----------+-----------+--------+----------+------+----+-----------+------------+-----+
+    |+ Autoencoder                                              |     -|  0.00|  945200664|  9.452e+09|         -|  945200665|       -|        no|     -|   -|  2696 (2%)|  8796 (16%)|    -|
+    | + Autoencoder_Pipeline_VITIS_LOOP_52_1                    |     -|  0.00|        602|  6.020e+03|         -|        602|       -|        no|     -|   -|   13 (~0%)|    73 (~0%)|    -|
+    |  o VITIS_LOOP_52_1                                        |     -|  7.30|        600|  6.000e+03|         2|          1|     600|       yes|     -|   -|          -|           -|    -|
+    | + Autoencoder_Pipeline_VITIS_LOOP_58_2                    |     -|  4.06|          6|     60.000|         -|          6|       -|        no|     -|   -|    5 (~0%)|    47 (~0%)|    -|
+    |  o VITIS_LOOP_58_2                                        |     -|  7.30|          4|     40.000|         1|          1|       4|       yes|     -|   -|          -|           -|    -|
+    | + Autoencoder_Pipeline_VITIS_LOOP_63_3                    |     -|  0.00|         43|    430.000|         -|         43|       -|        no|     -|   -|   24 (~0%)|    635 (1%)|    -|
+    |  o VITIS_LOOP_63_3                                        |     -|  7.30|         41|    410.000|         3|          1|      40|       yes|     -|   -|          -|           -|    -|
+    | + Autoencoder_Pipeline_VITIS_LOOP_69_4                    |     -|  0.00|         43|    430.000|         -|         43|       -|        no|     -|   -|   24 (~0%)|    635 (1%)|    -|
+    |  o VITIS_LOOP_69_4                                        |     -|  7.30|         41|    410.000|         3|          1|      40|       yes|     -|   -|          -|           -|    -|
+    | o VITIS_LOOP_88_5                                         |     -|  7.30|  945200000|  9.452e+09|      9452|          -|  100000|        no|     -|   -|          -|           -|    -|
+    |  o VITIS_LOOP_90_6                                        |     -|  7.30|       9450|  9.450e+04|        63|          -|     150|        no|     -|   -|          -|           -|    -|
+    |   + BackPropagate*                                        |     -|  0.61|         60|    600.000|         -|         61|       -|  dataflow|     -|   -|  241 (~0%)|   2728 (5%)|    -|
+    |    + BackPropagateDecoderWeightChanges                    |     -|  2.07|         57|    570.000|         -|         57|       -|        no|     -|   -|   18 (~0%)|   123 (~0%)|    -|
+    |     o Loop3                                               |     -|  7.30|         56|    560.000|        14|          -|       4|        no|     -|   -|          -|           -|    -|
+    |      + BackPropagateDecoderWeightChanges_Pipeline_Loop31  |     -|  3.20|         12|    120.000|         -|         12|       -|        no|     -|   -|    6 (~0%)|    63 (~0%)|    -|
+    |       o Loop31                                            |     -|  7.30|         10|    100.000|         1|          1|      10|       yes|     -|   -|          -|           -|    -|
+    |    + BackPropagateEncoderWeightsChanges                   |     -|  3.20|         60|    600.000|         -|         60|       -|        no|     -|   -|   23 (~0%)|   141 (~0%)|    -|
+    |     o VITIS_LOOP_265_1                                    |     -|  7.30|         10|    100.000|         1|          -|      10|        no|     -|   -|          -|           -|    -|
+    |     o Loop5                                               |     -|  7.30|         48|    480.000|        12|          -|       4|        no|     -|   -|          -|           -|    -|
+    |      o Loop51                                             |     -|  7.30|         10|    100.000|         1|          -|      10|        no|     -|   -|          -|           -|    -|
+    |    + BackPropagateEncoderWeights                          |     -|  0.61|         49|    490.000|         -|         49|       -|        no|     -|   -|   98 (~0%)|   1202 (2%)|    -|
+    |     o Loop6                                               |     -|  7.30|         48|    480.000|        12|          -|       4|        no|     -|   -|          -|           -|    -|
+    |      o Loop61                                             |     -|  7.30|         10|    100.000|         1|          -|      10|        no|     -|   -|          -|           -|    -|
+    |    + BackPropagateDecoderWeights                          |     -|  0.61|         49|    490.000|         -|         49|       -|        no|     -|   -|   98 (~0%)|   1202 (2%)|    -|
+    |     o Loop7                                               |     -|  7.30|         48|    480.000|        12|          -|       4|        no|     -|   -|          -|           -|    -|
+    |      o Loop71                                             |     -|  7.30|         10|    100.000|         1|          -|      10|        no|     -|   -|          -|           -|    -|
+    +-----------------------------------------------------------+------+------+-----------+-----------+----------+-----------+--------+----------+------+----+-----------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface   | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|             | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_gmem  | 8 -> 8     | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
+| m_axi_gmem0 | 8 -> 8     | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
++-------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+
+* S_AXILITE Interfaces
++-------------------+------------+---------------+--------+----------+
+| Interface         | Data Width | Address Width | Offset | Register |
++-------------------+------------+---------------+--------+----------+
+| s_axi_CONTROL_BUS | 32         | 6             | 16     | 0        |
+| s_axi_control     | 32         | 7             | 16     | 0        |
++-------------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++-------------------+------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface         | Register         | Offset | Width | Access | Description                      | Bit Fields                                                           |
++-------------------+------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CONTROL_BUS | CTRL             | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CONTROL_BUS | GIER             | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CONTROL_BUS | IP_IER           | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CONTROL_BUS | IP_ISR           | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CONTROL_BUS | EncWeights_1     | 0x10   | 32    | W      | Data signal of EncWeights        |                                                                      |
+| s_axi_CONTROL_BUS | EncWeights_2     | 0x14   | 32    | W      | Data signal of EncWeights        |                                                                      |
+| s_axi_CONTROL_BUS | DecWeights_1     | 0x1c   | 32    | W      | Data signal of DecWeights        |                                                                      |
+| s_axi_CONTROL_BUS | DecWeights_2     | 0x20   | 32    | W      | Data signal of DecWeights        |                                                                      |
+| s_axi_control     | DataIn_1         | 0x10   | 32    | W      | Data signal of DataIn            |                                                                      |
+| s_axi_control     | DataIn_2         | 0x14   | 32    | W      | Data signal of DataIn            |                                                                      |
+| s_axi_control     | DataDimensionP   | 0x1c   | 32    | W      | Data signal of DataDimensionP    |                                                                      |
+| s_axi_control     | HiddenDimensionP | 0x24   | 32    | W      | Data signal of HiddenDimensionP  |                                                                      |
+| s_axi_control     | LearningRateP    | 0x2c   | 32    | W      | Data signal of LearningRateP     |                                                                      |
+| s_axi_control     | MomentumP        | 0x34   | 32    | W      | Data signal of MomentumP         |                                                                      |
+| s_axi_control     | DataOut_1        | 0x3c   | 32    | W      | Data signal of DataOut           |                                                                      |
+| s_axi_control     | DataOut_2        | 0x40   | 32    | W      | Data signal of DataOut           |                                                                      |
+| s_axi_control     | ErrorP           | 0x48   | 32    | R      | Data signal of ErrorP            |                                                                      |
+| s_axi_control     | ErrorP_ctrl      | 0x4c   | 32    | R      | Control signal of ErrorP         | 0=ErrorP_ap_vld                                                      |
++-------------------+------------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++------------------+-----------+-------------------------------------------+
+| Argument         | Direction | Datatype                                  |
++------------------+-----------+-------------------------------------------+
+| DataIn           | in        | ap_fixed<1, 16, AP_RND_ZERO, AP_WRAP, 0>* |
+| DataDimensionP   | unused    | unsigned int*                             |
+| HiddenDimensionP | unused    | unsigned int*                             |
+| EncWeights       | in        | ap_fixed<1, 16, AP_RND_ZERO, AP_WRAP, 0>* |
+| DecWeights       | in        | ap_fixed<1, 16, AP_RND_ZERO, AP_WRAP, 0>* |
+| LearningRateP    | unused    | ap_fixed<1, 16, AP_RND_ZERO, AP_WRAP, 0>* |
+| MomentumP        | unused    | ap_fixed<1, 16, AP_RND_ZERO, AP_WRAP, 0>* |
+| DataOut          | in        | ap_fixed<1, 16, AP_RND_ZERO, AP_WRAP, 0>* |
+| ErrorP           | out       | ap_fixed<1, 16, AP_RND_ZERO, AP_WRAP, 0>* |
++------------------+-----------+-------------------------------------------+
+
+* SW-to-HW Mapping
++------------------+-------------------+-----------+----------+--------------------------------------------+
+| Argument         | HW Interface      | HW Type   | HW Usage | HW Info                                    |
++------------------+-------------------+-----------+----------+--------------------------------------------+
+| DataIn           | m_axi_gmem        | interface |          |                                            |
+| DataIn           | s_axi_control     | register  | offset   | name=DataIn_1 offset=0x10 range=32         |
+| DataIn           | s_axi_control     | register  | offset   | name=DataIn_2 offset=0x14 range=32         |
+| DataDimensionP   | s_axi_control     | register  |          | name=DataDimensionP offset=0x1c range=32   |
+| HiddenDimensionP | s_axi_control     | register  |          | name=HiddenDimensionP offset=0x24 range=32 |
+| EncWeights       | m_axi_gmem0       | interface |          |                                            |
+| EncWeights       | s_axi_CONTROL_BUS | register  | offset   | name=EncWeights_1 offset=0x10 range=32     |
+| EncWeights       | s_axi_CONTROL_BUS | register  | offset   | name=EncWeights_2 offset=0x14 range=32     |
+| DecWeights       | m_axi_gmem0       | interface |          |                                            |
+| DecWeights       | s_axi_CONTROL_BUS | register  | offset   | name=DecWeights_1 offset=0x1c range=32     |
+| DecWeights       | s_axi_CONTROL_BUS | register  | offset   | name=DecWeights_2 offset=0x20 range=32     |
+| LearningRateP    | s_axi_control     | register  |          | name=LearningRateP offset=0x2c range=32    |
+| MomentumP        | s_axi_control     | register  |          | name=MomentumP offset=0x34 range=32        |
+| DataOut          | m_axi_gmem        | interface |          |                                            |
+| DataOut          | s_axi_control     | register  | offset   | name=DataOut_1 offset=0x3c range=32        |
+| DataOut          | s_axi_control     | register  | offset   | name=DataOut_2 offset=0x40 range=32        |
+| ErrorP           | s_axi_control     | register  |          | name=ErrorP offset=0x48 range=32           |
+| ErrorP           | s_axi_control     | register  |          | name=ErrorP_ctrl offset=0x4c range=32      |
++------------------+-------------------+-----------+----------+--------------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------------+-----------+--------+-------+-------------------------------+
+| HW Interface | Loop            | Direction | Length | Width | Location                      |
++--------------+-----------------+-----------+--------+-------+-------------------------------+
+| m_axi_gmem   | VITIS_LOOP_52_1 | read      | 600    | 8     | HLS/src/AutoEncoder.cpp:52:19 |
+| m_axi_gmem0  | VITIS_LOOP_63_3 | read      | 40     | 8     | HLS/src/AutoEncoder.cpp:63:19 |
+| m_axi_gmem0  | VITIS_LOOP_69_4 | read      | 40     | 8     | HLS/src/AutoEncoder.cpp:69:19 |
++--------------+-----------------+-----------+--------+-------+-------------------------------+
+
+* Inferred Bursts and Widening Missed
++--------------+------------+-----------------+------------------------------------------------------------------------------------------------------+------------+-------------------------------+
+| HW Interface | Variable   | Loop            | Problem                                                                                              | Resolution | Location                      |
++--------------+------------+-----------------+------------------------------------------------------------------------------------------------------+------------+-------------------------------+
+| m_axi_gmem0  | DecWeights | VITIS_LOOP_69_4 | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 | 214-353    | HLS/src/AutoEncoder.cpp:69:19 |
+| m_axi_gmem0  | EncWeights | VITIS_LOOP_63_3 | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 | 214-353    | HLS/src/AutoEncoder.cpp:63:19 |
+| m_axi_gmem   | DataIn     | VITIS_LOOP_52_1 | Could not widen since type i8 size is greater than or equal to the max_widen_bitwidth threshold of 0 | 214-353    | HLS/src/AutoEncoder.cpp:52:19 |
++--------------+------------+-----------------+------------------------------------------------------------------------------------------------------+------------+-------------------------------+
+
+    * Resolution URL: www.xilinx.com/cgi-bin/docs/rdoc?v=2022.1;t=hls+guidance;d=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++--------------------------------------------------------+-----+--------+-----------+-----+--------+---------+
+| Name                                                   | DSP | Pragma | Variable  | Op  | Impl   | Latency |
++--------------------------------------------------------+-----+--------+-----------+-----+--------+---------+
+| + Autoencoder                                          | 0   |        |           |     |        |         |
+|   epochs_2_fu_853_p2                                   | -   |        | epochs_2  | add | fabric | 0       |
+|   add_ln90_fu_865_p2                                   | -   |        | add_ln90  | add | fabric | 0       |
+|  + Autoencoder_Pipeline_VITIS_LOOP_52_1                | 0   |        |           |     |        |         |
+|    add_ln52_fu_81_p2                                   | -   |        | add_ln52  | add | fabric | 0       |
+|  + Autoencoder_Pipeline_VITIS_LOOP_58_2                | 0   |        |           |     |        |         |
+|    add_ln58_fu_104_p2                                  | -   |        | add_ln58  | add | fabric | 0       |
+|  + Autoencoder_Pipeline_VITIS_LOOP_63_3                | 0   |        |           |     |        |         |
+|    add_ln63_fu_477_p2                                  | -   |        | add_ln63  | add | fabric | 0       |
+|  + Autoencoder_Pipeline_VITIS_LOOP_69_4                | 0   |        |           |     |        |         |
+|    add_ln69_fu_477_p2                                  | -   |        | add_ln69  | add | fabric | 0       |
+|  + BackPropagate                                       | 0   |        |           |     |        |         |
+|   + BackPropagateDecoderWeightChanges                  | 0   |        |           |     |        |         |
+|     add_ln236_fu_67_p2                                 | -   |        | add_ln236 | add | fabric | 0       |
+|    + BackPropagateDecoderWeightChanges_Pipeline_Loop31 | 0   |        |           |     |        |         |
+|      add_ln247_fu_76_p2                                | -   |        | add_ln247 | add | fabric | 0       |
+|      add_ln252_fu_86_p2                                | -   |        | add_ln252 | add | fabric | 0       |
+|   + BackPropagateEncoderWeightsChanges                 | 0   |        |           |     |        |         |
+|     add_ln265_fu_104_p2                                | -   |        | add_ln265 | add | fabric | 0       |
+|     add_ln282_fu_129_p2                                | -   |        | add_ln282 | add | fabric | 0       |
+|     add_ln285_fu_163_p2                                | -   |        | add_ln285 | add | fabric | 0       |
+|     add_ln291_fu_169_p2                                | -   |        | add_ln291 | add | fabric | 0       |
+|   + BackPropagateEncoderWeights                        | 0   |        |           |     |        |         |
+|     add_ln304_fu_1361_p2                               | -   |        | add_ln304 | add | fabric | 0       |
+|     add_ln307_fu_1395_p2                               | -   |        | add_ln307 | add | fabric | 0       |
+|     add_ln310_fu_1401_p2                               | -   |        | add_ln310 | add | fabric | 0       |
+|   + BackPropagateDecoderWeights                        | 0   |        |           |     |        |         |
+|     add_ln328_fu_1361_p2                               | -   |        | add_ln328 | add | fabric | 0       |
+|     add_ln331_fu_1395_p2                               | -   |        | add_ln331 | add | fabric | 0       |
+|     add_ln334_fu_1401_p2                               | -   |        | add_ln334 | add | fabric | 0       |
++--------------------------------------------------------+-----+--------+-----------+-----+--------+---------+
+
+
+================================================================
+== Bind Storage Report
+================================================================
++------------------------------+------+------+--------+--------------------------+---------+------+---------+
+| Name                         | BRAM | URAM | Pragma | Variable                 | Storage | Impl | Latency |
++------------------------------+------+------+--------+--------------------------+---------+------+---------+
+| + Autoencoder                | 0    | 0    |        |                          |         |      |         |
+|   PrevEncoderWeightChanges_U | -    | -    |        | PrevEncoderWeightChanges | ram_1p  | auto | 1       |
+|   EncoderWeightChanges_U     | -    | -    |        | EncoderWeightChanges     | ram_1p  | auto | 1       |
+|   PrevDecoderWeightChanges_U | -    | -    |        | PrevDecoderWeightChanges | ram_1p  | auto | 1       |
+|   DecoderWeightChanges_U     | -    | -    |        | DecoderWeightChanges     | ram_1p  | auto | 1       |
+|   TotalErrorDeltas_U         | -    | -    |        | TotalErrorDeltas         | ram_1p  | auto | 1       |
+|   Deltas_V_U                 | -    | -    |        | Deltas_V                 | ram_1p  | auto | 1       |
++------------------------------+------+------+--------+--------------------------+---------+------+---------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+--------------------------------------------------+------------------------------------------------------------------+
+| Type            | Options                                          | Location                                                         |
++-----------------+--------------------------------------------------+------------------------------------------------------------------+
+| interface       | s_axilite port=return bundle=CONTROL_BUS         | HLS/src/AutoEncoder.cpp:15 in autoencoder, return                |
+| interface       | mode=m_axi port=DataIn offset=slave bundle=gmem  | HLS/src/AutoEncoder.cpp:17 in autoencoder, DataIn                |
+| interface       | mode=m_axi port=DataOut offset=slave bundle=gmem | HLS/src/AutoEncoder.cpp:18 in autoencoder, DataOut               |
+| interface       | mode=m_axi port=EncWeights                       | HLS/src/AutoEncoder.cpp:19 in autoencoder, EncWeights            |
+| interface       | mode=m_axi port=DecWeights                       | HLS/src/AutoEncoder.cpp:20 in autoencoder, DecWeights            |
+| interface       | mode=s_axilite port=HiddenDimensionP             | HLS/src/AutoEncoder.cpp:21 in autoencoder, HiddenDimensionP      |
+| interface       | mode=s_axilite port=DataDimensionP               | HLS/src/AutoEncoder.cpp:22 in autoencoder, DataDimensionP        |
+| interface       | mode=s_axilite port=DataIn                       | HLS/src/AutoEncoder.cpp:23 in autoencoder, DataIn                |
+| interface       | mode=s_axilite port=DataOut                      | HLS/src/AutoEncoder.cpp:24 in autoencoder, DataOut               |
+| interface       | mode=s_axilite port=LearningRateP                | HLS/src/AutoEncoder.cpp:25 in autoencoder, LearningRateP         |
+| interface       | mode=s_axilite port=MomentumP                    | HLS/src/AutoEncoder.cpp:26 in autoencoder, MomentumP             |
+| interface       | mode=s_axilite port=ErrorP                       | HLS/src/AutoEncoder.cpp:27 in autoencoder, ErrorP                |
+| array_partition | variable=InputValues type=complete               | HLS/src/AutoEncoder.cpp:46 in autoencoder, InputValues           |
+| array_partition | variable=OutputValues type=complete              | HLS/src/AutoEncoder.cpp:47 in autoencoder, OutputValues          |
+| array_partition | variable=EncoderWeights type=complete            | HLS/src/AutoEncoder.cpp:48 in autoencoder, EncoderWeights        |
+| array_partition | variable=DecoderWeights type=complete            | HLS/src/AutoEncoder.cpp:49 in autoencoder, DecoderWeights        |
+| array_partition | variable=HiddenValues type=complete              | HLS/src/AutoEncoder.cpp:140 in feedforward, HiddenValues         |
+| array_partition | variable=EncoderWeights type=complete            | HLS/src/AutoEncoder.cpp:141 in feedforward, EncoderWeights       |
+| array_partition | variable=DecoderWeights type=complete            | HLS/src/AutoEncoder.cpp:142 in feedforward, DecoderWeights       |
+| array_partition | variable=InputValues type=complete               | HLS/src/AutoEncoder.cpp:143 in feedforward, InputValues          |
+| array_partition | variable=OutputValues type=complete              | HLS/src/AutoEncoder.cpp:144 in feedforward, OutputValues         |
+| pipeline        | off                                              | HLS/src/AutoEncoder.cpp:170 in feedforward                       |
+| pipeline        | off                                              | HLS/src/AutoEncoder.cpp:176 in feedforward                       |
+| pipeline        | off                                              | HLS/src/AutoEncoder.cpp:181 in feedforward                       |
+| dataflow        |                                                  | HLS/src/AutoEncoder.cpp:203 in backpropagate                     |
+| pipeline        | off                                              | HLS/src/AutoEncoder.cpp:238 in backpropagatedecoderweightchanges |
+| pipeline        |                                                  | HLS/src/AutoEncoder.cpp:249 in backpropagatedecoderweightchanges |
++-----------------+--------------------------------------------------+------------------------------------------------------------------+
+
+

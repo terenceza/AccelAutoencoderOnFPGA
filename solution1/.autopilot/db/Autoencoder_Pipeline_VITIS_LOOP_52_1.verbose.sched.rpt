@@ -1,0 +1,143 @@
+
+
+================================================================
+== Vitis HLS Report for 'Autoencoder_Pipeline_VITIS_LOOP_52_1'
+================================================================
+* Date:           Thu Jul 13 23:01:05 2023
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        HLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.300 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      602|      602|  6.020 us|  6.020 us|  602|  602|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_52_1  |      600|      600|         2|          1|          1|   600|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 3.35>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%d = alloca i32 1"   --->   Operation 5 'alloca' 'd' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %gmem, void @empty_29, i32 0, i32 0, void @empty_14, i32 0, i32 0, void @empty_31, void @empty_32, void @empty_14, i32 16, i32 16, i32 16, i32 16, void @empty_14, void @empty_14, i32 4294967295, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%DataIn_read = read i64 @_ssdm_op_Read.ap_auto.i64, i64 %DataIn"   --->   Operation 7 'read' 'DataIn_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (1.58ns)   --->   "%store_ln0 = store i10 0, i10 %d"   --->   Operation 8 'store' 'store_ln0' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc"   --->   Operation 9 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%d_5 = load i10 %d" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 10 'load' 'd_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %gmem"   --->   Operation 11 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%gmem_addr = getelementptr i8 %gmem, i64 %DataIn_read" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 12 'getelementptr' 'gmem_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 13 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (1.77ns)   --->   "%icmp_ln52 = icmp_eq  i10 %d_5, i10 600" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 14 'icmp' 'icmp_ln52' <Predicate = true> <Delay = 1.77> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 600, i64 600, i64 600"   --->   Operation 15 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (1.73ns)   --->   "%add_ln52 = add i10 %d_5, i10 1" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 16 'add' 'add_ln52' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%br_ln52 = br i1 %icmp_ln52, void %for.inc.split, void %for.inc34.preheader.exitStub" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 17 'br' 'br_ln52' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (1.58ns)   --->   "%store_ln52 = store i10 %add_ln52, i10 %d" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 18 'store' 'store_ln52' <Predicate = (!icmp_ln52)> <Delay = 1.58>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 22 'ret' 'ret_ln0' <Predicate = (icmp_ln52)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 7.30>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%specloopname_ln52 = specloopname void @_ssdm_op_SpecLoopName, void @empty_17" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 19 'specloopname' 'specloopname_ln52' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (7.30ns)   --->   "%empty_52 = read i8 @_ssdm_op_Read.m_axi.p1i8, i8 %gmem_addr" [HLS/src/AutoEncoder.cpp:54]   --->   Operation 20 'read' 'empty_52' <Predicate = true> <Delay = 7.30> <CoreInst = "m_axi">   --->   Core 113 'm_axi' <Latency = 0> <II = 1> <Delay = 1.00> <Adapter> <Opcode : 'read' 'write' 'readreq' 'writereq' 'writeresp'>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%br_ln52 = br void %for.inc" [HLS/src/AutoEncoder.cpp:52]   --->   Operation 21 'br' 'br_ln52' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 3.36ns
+The critical path consists of the following:
+	'alloca' operation ('d') [3]  (0 ns)
+	'load' operation ('d', HLS/src/AutoEncoder.cpp:52) on local variable 'd' [9]  (0 ns)
+	'add' operation ('add_ln52', HLS/src/AutoEncoder.cpp:52) [15]  (1.73 ns)
+	'store' operation ('store_ln52', HLS/src/AutoEncoder.cpp:52) of variable 'add_ln52', HLS/src/AutoEncoder.cpp:52 on local variable 'd' [20]  (1.59 ns)
+	blocking operation 0.0395 ns on control path)
+
+ <State 2>: 7.3ns
+The critical path consists of the following:
+	bus read operation ('empty_52', HLS/src/AutoEncoder.cpp:54) on port 'gmem' (HLS/src/AutoEncoder.cpp:54) [19]  (7.3 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

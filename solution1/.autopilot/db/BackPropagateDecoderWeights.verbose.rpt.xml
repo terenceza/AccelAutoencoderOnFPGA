@@ -1,0 +1,410 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'BackPropagateDecoderWeights'" level="0">
+<item name = "Date">Thu Jul 13 23:01:27 2023
+</item>
+<item name = "Version">2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)</item>
+<item name = "Project">HLS</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 6.692 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">49, 49, 0.490 us, 0.490 us, 49, 49, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- Loop7">48, 48, 12, -, -, 4, no</column>
+<column name=" + Loop71">10, 10, 1, -, -, 10, no</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 58, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, 0, 177, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 967, -</column>
+<column name="Register">-, -, 98, -, -</column>
+<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, 2, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="mux_406_1_1_1_U180">mux_406_1_1_1, 0, 0, 0, 177, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln328_fu_1361_p2">+, 0, 0, 11, 3, 1</column>
+<column name="add_ln331_fu_1395_p2">+, 0, 0, 13, 4, 1</column>
+<column name="add_ln334_fu_1401_p2">+, 0, 0, 14, 6, 6</column>
+<column name="icmp_ln328_fu_1355_p2">icmp, 0, 0, 9, 3, 4</column>
+<column name="icmp_ln331_fu_1389_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="DecoderWeights_0_copy_0_fu_282">14, 3, 1, 3</column>
+<column name="DecoderWeights_0_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_10_copy_0_fu_322">14, 3, 1, 3</column>
+<column name="DecoderWeights_10_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_11_copy_0_fu_326">14, 3, 1, 3</column>
+<column name="DecoderWeights_11_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_12_copy_0_fu_330">14, 3, 1, 3</column>
+<column name="DecoderWeights_12_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_13_copy_0_fu_334">14, 3, 1, 3</column>
+<column name="DecoderWeights_13_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_14_copy_0_fu_338">14, 3, 1, 3</column>
+<column name="DecoderWeights_14_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_15_copy_0_fu_342">14, 3, 1, 3</column>
+<column name="DecoderWeights_15_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_16_copy_0_fu_346">14, 3, 1, 3</column>
+<column name="DecoderWeights_16_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_17_copy_0_fu_350">14, 3, 1, 3</column>
+<column name="DecoderWeights_17_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_18_copy_0_fu_354">14, 3, 1, 3</column>
+<column name="DecoderWeights_18_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_19_copy_0_fu_358">14, 3, 1, 3</column>
+<column name="DecoderWeights_19_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_1_copy_0_fu_286">14, 3, 1, 3</column>
+<column name="DecoderWeights_1_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_20_copy_0_fu_362">14, 3, 1, 3</column>
+<column name="DecoderWeights_20_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_21_copy_0_fu_366">14, 3, 1, 3</column>
+<column name="DecoderWeights_21_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_22_copy_0_fu_370">14, 3, 1, 3</column>
+<column name="DecoderWeights_22_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_23_copy_0_fu_374">14, 3, 1, 3</column>
+<column name="DecoderWeights_23_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_24_copy_0_fu_378">14, 3, 1, 3</column>
+<column name="DecoderWeights_24_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_25_copy_0_fu_382">14, 3, 1, 3</column>
+<column name="DecoderWeights_25_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_26_copy_0_fu_386">14, 3, 1, 3</column>
+<column name="DecoderWeights_26_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_27_copy_0_fu_390">14, 3, 1, 3</column>
+<column name="DecoderWeights_27_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_28_copy_0_fu_394">14, 3, 1, 3</column>
+<column name="DecoderWeights_28_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_29_copy_0_fu_398">14, 3, 1, 3</column>
+<column name="DecoderWeights_29_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_2_copy_0_fu_290">14, 3, 1, 3</column>
+<column name="DecoderWeights_2_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_30_copy_0_fu_402">14, 3, 1, 3</column>
+<column name="DecoderWeights_30_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_31_copy_0_fu_406">14, 3, 1, 3</column>
+<column name="DecoderWeights_31_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_32_copy_0_fu_410">14, 3, 1, 3</column>
+<column name="DecoderWeights_32_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_33_copy_0_fu_414">14, 3, 1, 3</column>
+<column name="DecoderWeights_33_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_34_copy_0_fu_418">14, 3, 1, 3</column>
+<column name="DecoderWeights_34_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_35_copy_0_fu_422">14, 3, 1, 3</column>
+<column name="DecoderWeights_35_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_36_copy_0_fu_426">14, 3, 1, 3</column>
+<column name="DecoderWeights_36_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_37_copy_0_fu_430">14, 3, 1, 3</column>
+<column name="DecoderWeights_37_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_38_copy_0_fu_434">14, 3, 1, 3</column>
+<column name="DecoderWeights_38_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_39_copy_0_fu_438">14, 3, 1, 3</column>
+<column name="DecoderWeights_39_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_3_copy_0_fu_294">14, 3, 1, 3</column>
+<column name="DecoderWeights_3_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_4_copy_0_fu_298">14, 3, 1, 3</column>
+<column name="DecoderWeights_4_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_5_copy_0_fu_302">14, 3, 1, 3</column>
+<column name="DecoderWeights_5_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_6_copy_0_fu_306">14, 3, 1, 3</column>
+<column name="DecoderWeights_6_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_7_copy_0_fu_310">14, 3, 1, 3</column>
+<column name="DecoderWeights_7_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_8_copy_0_fu_314">14, 3, 1, 3</column>
+<column name="DecoderWeights_8_out">9, 2, 1, 2</column>
+<column name="DecoderWeights_9_copy_0_fu_318">14, 3, 1, 3</column>
+<column name="DecoderWeights_9_out">9, 2, 1, 2</column>
+<column name="ap_NS_fsm">20, 4, 1, 4</column>
+<column name="ap_done">9, 2, 1, 2</column>
+<column name="d_fu_278">9, 2, 3, 6</column>
+<column name="h_reg_976">9, 2, 4, 8</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="DecoderWeights_0_copy_0_fu_282">1, 0, 1, 0</column>
+<column name="DecoderWeights_0_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_10_copy_0_fu_322">1, 0, 1, 0</column>
+<column name="DecoderWeights_10_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_11_copy_0_fu_326">1, 0, 1, 0</column>
+<column name="DecoderWeights_11_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_12_copy_0_fu_330">1, 0, 1, 0</column>
+<column name="DecoderWeights_12_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_13_copy_0_fu_334">1, 0, 1, 0</column>
+<column name="DecoderWeights_13_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_14_copy_0_fu_338">1, 0, 1, 0</column>
+<column name="DecoderWeights_14_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_15_copy_0_fu_342">1, 0, 1, 0</column>
+<column name="DecoderWeights_15_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_16_copy_0_fu_346">1, 0, 1, 0</column>
+<column name="DecoderWeights_16_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_17_copy_0_fu_350">1, 0, 1, 0</column>
+<column name="DecoderWeights_17_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_18_copy_0_fu_354">1, 0, 1, 0</column>
+<column name="DecoderWeights_18_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_19_copy_0_fu_358">1, 0, 1, 0</column>
+<column name="DecoderWeights_19_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_1_copy_0_fu_286">1, 0, 1, 0</column>
+<column name="DecoderWeights_1_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_20_copy_0_fu_362">1, 0, 1, 0</column>
+<column name="DecoderWeights_20_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_21_copy_0_fu_366">1, 0, 1, 0</column>
+<column name="DecoderWeights_21_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_22_copy_0_fu_370">1, 0, 1, 0</column>
+<column name="DecoderWeights_22_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_23_copy_0_fu_374">1, 0, 1, 0</column>
+<column name="DecoderWeights_23_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_24_copy_0_fu_378">1, 0, 1, 0</column>
+<column name="DecoderWeights_24_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_25_copy_0_fu_382">1, 0, 1, 0</column>
+<column name="DecoderWeights_25_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_26_copy_0_fu_386">1, 0, 1, 0</column>
+<column name="DecoderWeights_26_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_27_copy_0_fu_390">1, 0, 1, 0</column>
+<column name="DecoderWeights_27_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_28_copy_0_fu_394">1, 0, 1, 0</column>
+<column name="DecoderWeights_28_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_29_copy_0_fu_398">1, 0, 1, 0</column>
+<column name="DecoderWeights_29_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_2_copy_0_fu_290">1, 0, 1, 0</column>
+<column name="DecoderWeights_2_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_30_copy_0_fu_402">1, 0, 1, 0</column>
+<column name="DecoderWeights_30_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_31_copy_0_fu_406">1, 0, 1, 0</column>
+<column name="DecoderWeights_31_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_32_copy_0_fu_410">1, 0, 1, 0</column>
+<column name="DecoderWeights_32_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_33_copy_0_fu_414">1, 0, 1, 0</column>
+<column name="DecoderWeights_33_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_34_copy_0_fu_418">1, 0, 1, 0</column>
+<column name="DecoderWeights_34_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_35_copy_0_fu_422">1, 0, 1, 0</column>
+<column name="DecoderWeights_35_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_36_copy_0_fu_426">1, 0, 1, 0</column>
+<column name="DecoderWeights_36_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_37_copy_0_fu_430">1, 0, 1, 0</column>
+<column name="DecoderWeights_37_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_38_copy_0_fu_434">1, 0, 1, 0</column>
+<column name="DecoderWeights_38_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_39_copy_0_fu_438">1, 0, 1, 0</column>
+<column name="DecoderWeights_39_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_3_copy_0_fu_294">1, 0, 1, 0</column>
+<column name="DecoderWeights_3_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_4_copy_0_fu_298">1, 0, 1, 0</column>
+<column name="DecoderWeights_4_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_5_copy_0_fu_302">1, 0, 1, 0</column>
+<column name="DecoderWeights_5_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_6_copy_0_fu_306">1, 0, 1, 0</column>
+<column name="DecoderWeights_6_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_7_copy_0_fu_310">1, 0, 1, 0</column>
+<column name="DecoderWeights_7_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_8_copy_0_fu_314">1, 0, 1, 0</column>
+<column name="DecoderWeights_8_out_preg">1, 0, 1, 0</column>
+<column name="DecoderWeights_9_copy_0_fu_318">1, 0, 1, 0</column>
+<column name="DecoderWeights_9_out_preg">1, 0, 1, 0</column>
+<column name="add_ln328_reg_2231">3, 0, 3, 0</column>
+<column name="ap_CS_fsm">3, 0, 3, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="d_fu_278">3, 0, 3, 0</column>
+<column name="h_reg_976">4, 0, 4, 0</column>
+<column name="zext_ln331_reg_2236">4, 0, 6, 2</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, BackPropagateDecoderWeights, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, BackPropagateDecoderWeights, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, BackPropagateDecoderWeights, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, BackPropagateDecoderWeights, return value</column>
+<column name="ap_continue">in, 1, ap_ctrl_hs, BackPropagateDecoderWeights, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, BackPropagateDecoderWeights, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, BackPropagateDecoderWeights, return value</column>
+<column name="p_read">in, 1, ap_none, p_read, scalar</column>
+<column name="DecoderWeights_0_out">out, 1, ap_vld, DecoderWeights_0_out, pointer</column>
+<column name="DecoderWeights_0_out_ap_vld">out, 1, ap_vld, DecoderWeights_0_out, pointer</column>
+<column name="p_read1">in, 1, ap_none, p_read1, scalar</column>
+<column name="DecoderWeights_1_out">out, 1, ap_vld, DecoderWeights_1_out, pointer</column>
+<column name="DecoderWeights_1_out_ap_vld">out, 1, ap_vld, DecoderWeights_1_out, pointer</column>
+<column name="p_read2">in, 1, ap_none, p_read2, scalar</column>
+<column name="DecoderWeights_2_out">out, 1, ap_vld, DecoderWeights_2_out, pointer</column>
+<column name="DecoderWeights_2_out_ap_vld">out, 1, ap_vld, DecoderWeights_2_out, pointer</column>
+<column name="p_read3">in, 1, ap_none, p_read3, scalar</column>
+<column name="DecoderWeights_3_out">out, 1, ap_vld, DecoderWeights_3_out, pointer</column>
+<column name="DecoderWeights_3_out_ap_vld">out, 1, ap_vld, DecoderWeights_3_out, pointer</column>
+<column name="p_read4">in, 1, ap_none, p_read4, scalar</column>
+<column name="DecoderWeights_4_out">out, 1, ap_vld, DecoderWeights_4_out, pointer</column>
+<column name="DecoderWeights_4_out_ap_vld">out, 1, ap_vld, DecoderWeights_4_out, pointer</column>
+<column name="p_read5">in, 1, ap_none, p_read5, scalar</column>
+<column name="DecoderWeights_5_out">out, 1, ap_vld, DecoderWeights_5_out, pointer</column>
+<column name="DecoderWeights_5_out_ap_vld">out, 1, ap_vld, DecoderWeights_5_out, pointer</column>
+<column name="p_read6">in, 1, ap_none, p_read6, scalar</column>
+<column name="DecoderWeights_6_out">out, 1, ap_vld, DecoderWeights_6_out, pointer</column>
+<column name="DecoderWeights_6_out_ap_vld">out, 1, ap_vld, DecoderWeights_6_out, pointer</column>
+<column name="p_read7">in, 1, ap_none, p_read7, scalar</column>
+<column name="DecoderWeights_7_out">out, 1, ap_vld, DecoderWeights_7_out, pointer</column>
+<column name="DecoderWeights_7_out_ap_vld">out, 1, ap_vld, DecoderWeights_7_out, pointer</column>
+<column name="p_read8">in, 1, ap_none, p_read8, scalar</column>
+<column name="DecoderWeights_8_out">out, 1, ap_vld, DecoderWeights_8_out, pointer</column>
+<column name="DecoderWeights_8_out_ap_vld">out, 1, ap_vld, DecoderWeights_8_out, pointer</column>
+<column name="p_read9">in, 1, ap_none, p_read9, scalar</column>
+<column name="DecoderWeights_9_out">out, 1, ap_vld, DecoderWeights_9_out, pointer</column>
+<column name="DecoderWeights_9_out_ap_vld">out, 1, ap_vld, DecoderWeights_9_out, pointer</column>
+<column name="p_read10">in, 1, ap_none, p_read10, scalar</column>
+<column name="DecoderWeights_10_out">out, 1, ap_vld, DecoderWeights_10_out, pointer</column>
+<column name="DecoderWeights_10_out_ap_vld">out, 1, ap_vld, DecoderWeights_10_out, pointer</column>
+<column name="p_read11">in, 1, ap_none, p_read11, scalar</column>
+<column name="DecoderWeights_11_out">out, 1, ap_vld, DecoderWeights_11_out, pointer</column>
+<column name="DecoderWeights_11_out_ap_vld">out, 1, ap_vld, DecoderWeights_11_out, pointer</column>
+<column name="p_read12">in, 1, ap_none, p_read12, scalar</column>
+<column name="DecoderWeights_12_out">out, 1, ap_vld, DecoderWeights_12_out, pointer</column>
+<column name="DecoderWeights_12_out_ap_vld">out, 1, ap_vld, DecoderWeights_12_out, pointer</column>
+<column name="p_read13">in, 1, ap_none, p_read13, scalar</column>
+<column name="DecoderWeights_13_out">out, 1, ap_vld, DecoderWeights_13_out, pointer</column>
+<column name="DecoderWeights_13_out_ap_vld">out, 1, ap_vld, DecoderWeights_13_out, pointer</column>
+<column name="p_read14">in, 1, ap_none, p_read14, scalar</column>
+<column name="DecoderWeights_14_out">out, 1, ap_vld, DecoderWeights_14_out, pointer</column>
+<column name="DecoderWeights_14_out_ap_vld">out, 1, ap_vld, DecoderWeights_14_out, pointer</column>
+<column name="p_read15">in, 1, ap_none, p_read15, scalar</column>
+<column name="DecoderWeights_15_out">out, 1, ap_vld, DecoderWeights_15_out, pointer</column>
+<column name="DecoderWeights_15_out_ap_vld">out, 1, ap_vld, DecoderWeights_15_out, pointer</column>
+<column name="p_read16">in, 1, ap_none, p_read16, scalar</column>
+<column name="DecoderWeights_16_out">out, 1, ap_vld, DecoderWeights_16_out, pointer</column>
+<column name="DecoderWeights_16_out_ap_vld">out, 1, ap_vld, DecoderWeights_16_out, pointer</column>
+<column name="p_read17">in, 1, ap_none, p_read17, scalar</column>
+<column name="DecoderWeights_17_out">out, 1, ap_vld, DecoderWeights_17_out, pointer</column>
+<column name="DecoderWeights_17_out_ap_vld">out, 1, ap_vld, DecoderWeights_17_out, pointer</column>
+<column name="p_read18">in, 1, ap_none, p_read18, scalar</column>
+<column name="DecoderWeights_18_out">out, 1, ap_vld, DecoderWeights_18_out, pointer</column>
+<column name="DecoderWeights_18_out_ap_vld">out, 1, ap_vld, DecoderWeights_18_out, pointer</column>
+<column name="p_read19">in, 1, ap_none, p_read19, scalar</column>
+<column name="DecoderWeights_19_out">out, 1, ap_vld, DecoderWeights_19_out, pointer</column>
+<column name="DecoderWeights_19_out_ap_vld">out, 1, ap_vld, DecoderWeights_19_out, pointer</column>
+<column name="p_read20">in, 1, ap_none, p_read20, scalar</column>
+<column name="DecoderWeights_20_out">out, 1, ap_vld, DecoderWeights_20_out, pointer</column>
+<column name="DecoderWeights_20_out_ap_vld">out, 1, ap_vld, DecoderWeights_20_out, pointer</column>
+<column name="p_read21">in, 1, ap_none, p_read21, scalar</column>
+<column name="DecoderWeights_21_out">out, 1, ap_vld, DecoderWeights_21_out, pointer</column>
+<column name="DecoderWeights_21_out_ap_vld">out, 1, ap_vld, DecoderWeights_21_out, pointer</column>
+<column name="p_read22">in, 1, ap_none, p_read22, scalar</column>
+<column name="DecoderWeights_22_out">out, 1, ap_vld, DecoderWeights_22_out, pointer</column>
+<column name="DecoderWeights_22_out_ap_vld">out, 1, ap_vld, DecoderWeights_22_out, pointer</column>
+<column name="p_read23">in, 1, ap_none, p_read23, scalar</column>
+<column name="DecoderWeights_23_out">out, 1, ap_vld, DecoderWeights_23_out, pointer</column>
+<column name="DecoderWeights_23_out_ap_vld">out, 1, ap_vld, DecoderWeights_23_out, pointer</column>
+<column name="p_read24">in, 1, ap_none, p_read24, scalar</column>
+<column name="DecoderWeights_24_out">out, 1, ap_vld, DecoderWeights_24_out, pointer</column>
+<column name="DecoderWeights_24_out_ap_vld">out, 1, ap_vld, DecoderWeights_24_out, pointer</column>
+<column name="p_read25">in, 1, ap_none, p_read25, scalar</column>
+<column name="DecoderWeights_25_out">out, 1, ap_vld, DecoderWeights_25_out, pointer</column>
+<column name="DecoderWeights_25_out_ap_vld">out, 1, ap_vld, DecoderWeights_25_out, pointer</column>
+<column name="p_read26">in, 1, ap_none, p_read26, scalar</column>
+<column name="DecoderWeights_26_out">out, 1, ap_vld, DecoderWeights_26_out, pointer</column>
+<column name="DecoderWeights_26_out_ap_vld">out, 1, ap_vld, DecoderWeights_26_out, pointer</column>
+<column name="p_read27">in, 1, ap_none, p_read27, scalar</column>
+<column name="DecoderWeights_27_out">out, 1, ap_vld, DecoderWeights_27_out, pointer</column>
+<column name="DecoderWeights_27_out_ap_vld">out, 1, ap_vld, DecoderWeights_27_out, pointer</column>
+<column name="p_read28">in, 1, ap_none, p_read28, scalar</column>
+<column name="DecoderWeights_28_out">out, 1, ap_vld, DecoderWeights_28_out, pointer</column>
+<column name="DecoderWeights_28_out_ap_vld">out, 1, ap_vld, DecoderWeights_28_out, pointer</column>
+<column name="p_read29">in, 1, ap_none, p_read29, scalar</column>
+<column name="DecoderWeights_29_out">out, 1, ap_vld, DecoderWeights_29_out, pointer</column>
+<column name="DecoderWeights_29_out_ap_vld">out, 1, ap_vld, DecoderWeights_29_out, pointer</column>
+<column name="p_read30">in, 1, ap_none, p_read30, scalar</column>
+<column name="DecoderWeights_30_out">out, 1, ap_vld, DecoderWeights_30_out, pointer</column>
+<column name="DecoderWeights_30_out_ap_vld">out, 1, ap_vld, DecoderWeights_30_out, pointer</column>
+<column name="p_read31">in, 1, ap_none, p_read31, scalar</column>
+<column name="DecoderWeights_31_out">out, 1, ap_vld, DecoderWeights_31_out, pointer</column>
+<column name="DecoderWeights_31_out_ap_vld">out, 1, ap_vld, DecoderWeights_31_out, pointer</column>
+<column name="p_read32">in, 1, ap_none, p_read32, scalar</column>
+<column name="DecoderWeights_32_out">out, 1, ap_vld, DecoderWeights_32_out, pointer</column>
+<column name="DecoderWeights_32_out_ap_vld">out, 1, ap_vld, DecoderWeights_32_out, pointer</column>
+<column name="p_read33">in, 1, ap_none, p_read33, scalar</column>
+<column name="DecoderWeights_33_out">out, 1, ap_vld, DecoderWeights_33_out, pointer</column>
+<column name="DecoderWeights_33_out_ap_vld">out, 1, ap_vld, DecoderWeights_33_out, pointer</column>
+<column name="p_read34">in, 1, ap_none, p_read34, scalar</column>
+<column name="DecoderWeights_34_out">out, 1, ap_vld, DecoderWeights_34_out, pointer</column>
+<column name="DecoderWeights_34_out_ap_vld">out, 1, ap_vld, DecoderWeights_34_out, pointer</column>
+<column name="p_read35">in, 1, ap_none, p_read35, scalar</column>
+<column name="DecoderWeights_35_out">out, 1, ap_vld, DecoderWeights_35_out, pointer</column>
+<column name="DecoderWeights_35_out_ap_vld">out, 1, ap_vld, DecoderWeights_35_out, pointer</column>
+<column name="p_read36">in, 1, ap_none, p_read36, scalar</column>
+<column name="DecoderWeights_36_out">out, 1, ap_vld, DecoderWeights_36_out, pointer</column>
+<column name="DecoderWeights_36_out_ap_vld">out, 1, ap_vld, DecoderWeights_36_out, pointer</column>
+<column name="p_read37">in, 1, ap_none, p_read37, scalar</column>
+<column name="DecoderWeights_37_out">out, 1, ap_vld, DecoderWeights_37_out, pointer</column>
+<column name="DecoderWeights_37_out_ap_vld">out, 1, ap_vld, DecoderWeights_37_out, pointer</column>
+<column name="p_read38">in, 1, ap_none, p_read38, scalar</column>
+<column name="DecoderWeights_38_out">out, 1, ap_vld, DecoderWeights_38_out, pointer</column>
+<column name="DecoderWeights_38_out_ap_vld">out, 1, ap_vld, DecoderWeights_38_out, pointer</column>
+<column name="p_read39">in, 1, ap_none, p_read39, scalar</column>
+<column name="DecoderWeights_39_out">out, 1, ap_vld, DecoderWeights_39_out, pointer</column>
+<column name="DecoderWeights_39_out_ap_vld">out, 1, ap_vld, DecoderWeights_39_out, pointer</column>
+<column name="PrevDecoderWeightChanges_address0">out, 6, ap_memory, PrevDecoderWeightChanges, array</column>
+<column name="PrevDecoderWeightChanges_ce0">out, 1, ap_memory, PrevDecoderWeightChanges, array</column>
+<column name="PrevDecoderWeightChanges_we0">out, 1, ap_memory, PrevDecoderWeightChanges, array</column>
+<column name="PrevDecoderWeightChanges_d0">out, 1, ap_memory, PrevDecoderWeightChanges, array</column>
+</table>
+</item>
+</section>
+</profile>

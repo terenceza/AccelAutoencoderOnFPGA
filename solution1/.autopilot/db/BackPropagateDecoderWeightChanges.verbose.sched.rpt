@@ -1,0 +1,146 @@
+
+
+================================================================
+== Vitis HLS Report for 'BackPropagateDecoderWeightChanges'
+================================================================
+* Date:           Thu Jul 13 23:01:09 2023
+
+* Version:        2022.1 (Build 3526262 on Mon Apr 18 15:48:16 MDT 2022)
+* Project:        HLS
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  5.232 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       57|       57|  0.570 us|  0.570 us|   57|   57|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop3   |       56|       56|        14|          -|          -|     4|        no|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.58>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%d = alloca i32 1"   --->   Operation 4 'alloca' 'd' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (1.58ns)   --->   "%store_ln236 = store i3 0, i3 %d" [HLS/src/AutoEncoder.cpp:236]   --->   Operation 5 'store' 'store_ln236' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%br_ln236 = br void %for.body" [HLS/src/AutoEncoder.cpp:236]   --->   Operation 6 'br' 'br_ln236' <Predicate = true> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 5.23>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%d_4 = load i3 %d"   --->   Operation 7 'load' 'd_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (1.13ns)   --->   "%icmp_ln236 = icmp_eq  i3 %d_4, i3 4" [HLS/src/AutoEncoder.cpp:236]   --->   Operation 8 'icmp' 'icmp_ln236' <Predicate = true> <Delay = 1.13> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.13> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 4, i64 4, i64 4"   --->   Operation 9 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (1.65ns)   --->   "%add_ln236 = add i3 %d_4, i3 1" [HLS/src/AutoEncoder.cpp:236]   --->   Operation 10 'add' 'add_ln236' <Predicate = true> <Delay = 1.65> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.65> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%br_ln236 = br i1 %icmp_ln236, void %for.body.split, void %for.end23" [HLS/src/AutoEncoder.cpp:236]   --->   Operation 11 'br' 'br_ln236' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%zext_ln236 = zext i3 %d_4" [HLS/src/AutoEncoder.cpp:236]   --->   Operation 12 'zext' 'zext_ln236' <Predicate = (!icmp_ln236)> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "%Deltas_addr = getelementptr i1 %Deltas, i64 0, i64 %zext_ln236" [HLS/src/AutoEncoder.cpp:244]   --->   Operation 13 'getelementptr' 'Deltas_addr' <Predicate = (!icmp_ln236)> <Delay = 0.00>
+ST_2 : Operation 14 [1/1] (2.32ns)   --->   "%store_ln244 = store i1 0, i2 %Deltas_addr" [HLS/src/AutoEncoder.cpp:244]   --->   Operation 14 'store' 'store_ln244' <Predicate = (!icmp_ln236)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 1> <Depth = 4> <RAM>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%empty_51 = trunc i3 %d_4"   --->   Operation 15 'trunc' 'empty_51' <Predicate = (!icmp_ln236)> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_6 = bitconcatenate i5 @_ssdm_op_BitConcatenate.i5.i2.i2.i1, i2 %empty_51, i2 %empty_51, i1 0"   --->   Operation 16 'bitconcatenate' 'tmp_6' <Predicate = (!icmp_ln236)> <Delay = 0.00>
+ST_2 : Operation 17 [2/2] (4.10ns)   --->   "%call_ln0 = call void @BackPropagateDecoderWeightChanges_Pipeline_Loop31, i5 %tmp_6, i1 %DecoderWeightChanges"   --->   Operation 17 'call' 'call_ln0' <Predicate = (!icmp_ln236)> <Delay = 4.10> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_2 : Operation 18 [1/1] (1.58ns)   --->   "%store_ln236 = store i3 %add_ln236, i3 %d" [HLS/src/AutoEncoder.cpp:236]   --->   Operation 18 'store' 'store_ln236' <Predicate = (!icmp_ln236)> <Delay = 1.58>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%ret_ln256 = ret" [HLS/src/AutoEncoder.cpp:256]   --->   Operation 19 'ret' 'ret_ln256' <Predicate = (icmp_ln236)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln236 = specloopname void @_ssdm_op_SpecLoopName, void @empty_19" [HLS/src/AutoEncoder.cpp:236]   --->   Operation 20 'specloopname' 'specloopname_ln236' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/2] (0.00ns)   --->   "%call_ln0 = call void @BackPropagateDecoderWeightChanges_Pipeline_Loop31, i5 %tmp_6, i1 %DecoderWeightChanges"   --->   Operation 21 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "%br_ln236 = br void %for.body" [HLS/src/AutoEncoder.cpp:236]   --->   Operation 22 'br' 'br_ln236' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 1.59ns
+The critical path consists of the following:
+	'alloca' operation ('d') [3]  (0 ns)
+	'store' operation ('store_ln236', HLS/src/AutoEncoder.cpp:236) of constant 0 on local variable 'd' [4]  (1.59 ns)
+
+ <State 2>: 5.23ns
+The critical path consists of the following:
+	'load' operation ('d') on local variable 'd' [7]  (0 ns)
+	'call' operation ('call_ln0') to 'BackPropagateDecoderWeightChanges_Pipeline_Loop31' [19]  (4.1 ns)
+	blocking operation 1.13 ns on control path)
+
+ <State 3>: 0ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
