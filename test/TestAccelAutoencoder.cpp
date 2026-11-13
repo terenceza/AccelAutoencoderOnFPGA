@@ -14,7 +14,7 @@
 using namespace std;
 
 #define RAND_MAX 0x7fff
-
+//Nov2026
 void FullPrint(	DataType* InputValues, DataType* HiddenValues,
 				unsigned int DataDimension, unsigned int HiddenDimension,
 				DataType* EncoderWeights, DataType* DecoderWeights,
@@ -79,7 +79,7 @@ vector<DataType *> ReadData(string path)
 	{
 		std::stringstream ss(str);
 		vector<string> tokens;
-		DataType *d = new DataType[4];
+		DataType *d = new DataType[5];
 		DataType *dptr = d;
 		DataType value;
 		for (string s; ss >> value;)
@@ -144,12 +144,13 @@ void Report(DataType Error)
 
 int  main()
 {
-	unsigned int DataDimension = MAX_DATA_SIZE;
-	unsigned int HiddenDimension = MAX_HIDDEN_SIZE;
+	unsigned int DataDimension = MAX_INPUT_DIMENSION ;
+	unsigned int HiddenDimension = MAX_HIDDEN_DIMENSION ;
 
+	DataType EpochErrors[MAX_EPOCHS] = {0};
 
-	DataType Input[MAX_DATA_SIZE];
-	DataType Output[MAX_DATA_SIZE];
+	DataType Input[MAX_INPUT_DIMENSION ];
+	DataType Output[MAX_INPUT_DIMENSION ];
 	DataType EncoderWeights[MAX_FULL_DIM];
 	DataType DecoderWeights[MAX_FULL_DIM];
 
@@ -184,9 +185,11 @@ int  main()
 
 	printf("\n");
 
+	//int epochs = 100000;
 	int epochs = 100000;
-	int TrainingSize = 150;
-	CoeffType LearningRate = 0.25;
+
+	int TrainingSize = 100;
+	CoeffType LearningRate = 0.01;
 	CoeffType Momentum = 0.9;
 
 	//for (auto i = 0; i < epochs; i++)
@@ -197,7 +200,7 @@ int  main()
 		for (int count = 0; count < TrainingSize; count++)
 		{
 			DataType *row = Data.at(count);
-			DataType Input[4] = {row[0], row[1], row[2], row[3]};
+			//DataType Input[4] = {row[0], row[1], row[2], row[3]};
 			DataVec.push_back(row[0]);
 			DataVec.push_back(row[1]);
 			DataVec.push_back(row[2]);
@@ -216,19 +219,24 @@ int  main()
 					EncoderWeights, DecoderWeights,
 					&LearningRate, &Momentum,
 					Output,
-					&Error);
+					EpochErrors);
 
 		auto stop = std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::high_resolution_clock::now()-start).count();
 		 std::cout << "RUNTIME : "
 				   << stop <<" ms " << std::endl;
 
-		//if (i % 1000 == 0)
+		for (int e = 0; e < MAX_EPOCHS; ++e)
 		{
-			//printf("i = %d Error = %f\n", i, Error);
-			Report(Error);
+    		printf("Epoch %3d | MSE = %.10f\n", e + 1, (double)EpochErrors[e]);
 		}
-	}
 
+		//if (i % 1000 == 0)
+		// {
+		// 	//printf("i = %d Error = %f\n", i, Error);
+		// 	Report(Error);
+		// }
+	}
+//
 //	FullPrint(	Input, Output,
 //				DataDimension,  HiddenDimension,
 //				EncoderWeights, DecoderWeights,
