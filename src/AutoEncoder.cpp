@@ -14,10 +14,11 @@ void Autoencoder(DataType* DataIn,
 {
 	#pragma HLS INTERFACE s_axilite port=return bundle=CONTROL_BUS
 
-	#pragma HLS INTERFACE mode=m_axi port=DataIn  offset=slave bundle=gmem
-    #pragma HLS INTERFACE mode=m_axi port=DataOut offset=slave bundle=gmem
-	#pragma HLS INTERFACE mode=m_axi port=EncWeights
-	#pragma HLS INTERFACE mode=m_axi port=DecWeights
+	#pragma HLS INTERFACE mode=m_axi port=DataIn  offset=slave bundle=gmem depth=600
+    #pragma HLS INTERFACE mode=m_axi port=DataOut offset=slave bundle=gmem depth=600
+	#pragma HLS INTERFACE mode=m_axi port=EncWeights offset=slave bundle=gmem depth=40
+	#pragma HLS INTERFACE mode=m_axi port=DecWeights offset=slave bundle=gmem depth=40
+
     #pragma HLS INTERFACE mode=s_axilite port=HiddenDimensionP
     #pragma HLS INTERFACE mode=s_axilite port=DataDimensionP
 	#pragma HLS INTERFACE mode=s_axilite port=DataIn
@@ -26,8 +27,8 @@ void Autoencoder(DataType* DataIn,
 	#pragma HLS INTERFACE mode=s_axilite port=MomentumP
 	#pragma HLS INTERFACE mode=s_axilite port=ErrorP
 
-	unsigned int DataDimension   = MAX_DATA_SIZE; //*DataDimensionP;
-	unsigned int HiddenDimension = MAX_HIDDEN_SIZE; //*HiddenDimensionP;
+	unsigned int DataDimension   = MAX_INPUT_DIMENSION ; //*DataDimensionP;
+	unsigned int HiddenDimension = MAX_HIDDEN_DIMENSION ; //*HiddenDimensionP;
 	unsigned int FullDimension = MAX_FULL_DIM; //DataDimension * HiddenDimension;
 	CoeffType LearningRate = 0.15; //*LearningRateP;
 	CoeffType Momentum = 0.9; //*MomentumP;
@@ -39,8 +40,8 @@ void Autoencoder(DataType* DataIn,
 	DataType EncoderWeights[MAX_WEIGHTS_SIZE];
 	DataType DecoderWeights[MAX_WEIGHTS_SIZE];
 
-	DataType InputValues[MAX_DATA_SIZE * 150]; //100 = number of samples
-	DataType OutputValues[MAX_DATA_SIZE * 150];
+	DataType InputValues[MAX_INPUT_DIMENSION  * 150]; //100 = number of samples
+	DataType OutputValues[MAX_INPUT_DIMENSION  * 150];
 	DataType Error = 0.0;
 
 	#pragma HLS ARRAY_PARTITION variable=InputValues  type=complete
@@ -74,15 +75,16 @@ void Autoencoder(DataType* DataIn,
 
 
 	//HiddenValues are needed for BackPropagate
-	DataType HiddenValues[MAX_HIDDEN_SIZE];
+	DataType HiddenValues[MAX_HIDDEN_DIMENSION ];
 
 	//Store the previous WeighsChanges for Encoder and Decoder across all layers
-	DataType PrevEncoderWeightChanges[MAX_FULL_DIM];
-	DataType EncoderWeightChanges[MAX_FULL_DIM];
-	DataType PrevDecoderWeightChanges[MAX_FULL_DIM];
-	DataType DecoderWeightChanges[MAX_FULL_DIM];
-	DataType TotalErrorDeltas[MAX_FULL_DIM];
-	DataType Deltas[MAX_DATA_SIZE];
+	DataType PrevEncoderWeightChanges[MAX_FULL_DIM] = {0};
+	DataType EncoderWeightChanges[MAX_FULL_DIM] = {0};
+	DataType PrevDecoderWeightChanges[MAX_FULL_DIM] = {0};
+	DataType DecoderWeightChanges[MAX_FULL_DIM] = {0};
+	DataType TotalErrorDeltas[MAX_FULL_DIM]= {0};
+	DataType Deltas[MAX_INPUT_DIMENSION ]= {0};
+
 
 	int Count = 0;
 	for (int epochs = 0; epochs < MAX_EPOCHS; ++epochs)
@@ -95,7 +97,7 @@ void Autoencoder(DataType* DataIn,
 //			}
 
 			//#pragma HLS PIPELINE off
-			FeedForward(&InputValues[s],
+			FeedForward(&InputValues[s * DataDimension],
 						DataDimension, HiddenDimension,
 						EncoderWeights, DecoderWeights,
 						OutputValues, HiddenValues,
@@ -110,7 +112,7 @@ void Autoencoder(DataType* DataIn,
 
 
 
-			BackPropagate(	&InputValues[s], HiddenValues,
+			BackPropagate(	&InputValues[s * DataDimension], HiddenValues,
 							DataDimension, HiddenDimension,
 							EncoderWeights, DecoderWeights,
 							PrevEncoderWeightChanges, EncoderWeightChanges,
@@ -119,14 +121,16 @@ void Autoencoder(DataType* DataIn,
 							LearningRate, Momentum,
 							OutputValues );
 		}
+		
 
 		#ifndef __SYNTHESIS__
-			//if ((epochs % 1) == 0) printf("%d %f \n", ++Count, Error);
+			//if ((epochs % 1000) == 0)
+				 printf("%d %f \n", epochs, Error);
 		#endif
 
 	}
 
-	printf("Delta %f \n", Error);
+	//printf("Delta %f \n", Error);
 }
 
 
@@ -147,42 +151,42 @@ void FeedForward(DataType InputValues[],
 
 	// encoder
 	Loop1:
-	for (int j = 0; j < HiddenDimension; j++)
+	for (int h = 0; h < HiddenDimension; h++)
 	{
 		DataType total = 0.0;
 		Loop11:
-		for (int i = 0; i < DataDimension; i++)
+		for (int d = 0; d < DataDimension; d++)
 		{
 			//#pragma HLS PIPELINE off
-			unsigned int Offset = j*DataDimension + i;
-			total += (EncoderWeights[Offset] * InputValues[i]);
+			unsigned int Offset = h*DataDimension + d;
+			total += (EncoderWeights[Offset] * InputValues[d]);
 			//printf("1. Offset = %d i = %d %f %f %f \n ", Offset, i, InputValues[i], EncoderWeights[Offset],  total);
 
 		}
-		HiddenValues[j] = static_cast<DataType>(sigmoid(total)); //total is a dependency - cannot be pipelined
+		HiddenValues[h] = static_cast<DataType>(sigmoid(total)); //total is a dependency - cannot be pipelined
 	}
 
 	// decoder
 	DataType TotalError = 0.0;
 	Loop2:
-	for (int j = 0; j < DataDimension; j++)
+	for (int d = 0; d < DataDimension; d++)
 	{
 		#pragma HLS PIPELINE off
 
 		DataType total = 0.0f;
 		Loop21:
-		for (int i = 0; i < HiddenDimension; i++)
+		for (int h = 0; h < HiddenDimension; h++)
 		{
 			#pragma HLS PIPELINE off
-			unsigned int Offset = j*HiddenDimension + i;
-			total += (DecoderWeights[Offset] * HiddenValues[i]);
+			unsigned int Offset = d*HiddenDimension + h;
+			total += (DecoderWeights[Offset] * HiddenValues[h]);
 			//printf("2. Offset = %d i = %d %f %f %f \n ", Offset, i, DecoderWeights[Offset], HiddenValues[i], total);
 		}
 		#pragma HLS PIPELINE off
-		OutputValues[j] = static_cast<DataType>(sigmoid(total)); //total is a dependency - cannot be pipelined
+		OutputValues[d] = static_cast<DataType>(sigmoid(total)); //total is a dependency - cannot be pipelined
 		//printf("Output[%d] = %f \n", j, OutputValues[j]);
-		TotalError += static_cast<DataType>(squareError(OutputValues[j], InputValues[j]));
-		//printf(" TotalError = %f j = %d ==> %f \n", TotalError, j , OutputValues[j]);
+		TotalError += static_cast<DataType>(squareError(OutputValues[d], InputValues[d]));
+		//printf(" TotalError = %f j = %d ==> %f \n", TotalError, d , OutputValues[d]);
 	}
 
 
@@ -279,14 +283,15 @@ void BackPropagateEncoderWeightsChanges(DataType InputValues[], DataType HiddenV
 	}
 
 	Loop5:
-	for (unsigned int d = 0; d < DataDimension; d++)
+	for (unsigned int h = 0; h < HiddenDimension; h++)
 	{
-		Loop51:
-		for (unsigned int h = 0; h < HiddenDimension; h++)
-		{
-			unsigned int Offset = d*HiddenDimension + h;
+		DataType dActivation = sigmoidDerivation(HiddenValues[h]);
 
-			DataType dActivation = sigmoidDerivation(HiddenValues[h]);
+		Loop51:
+		for (unsigned int d = 0; d < DataDimension; d++)
+		{
+			unsigned int Offset = h*DataDimension + d;
+
 			DataType change = TotalErrorDeltas[h] * InputValues[d] * dActivation;
 			EncoderWeightChanges[Offset] = change;
 			//printf("EncoderWeightChanges[%d] = %f \n", Offset, EncoderWeightChanges[Offset]);
@@ -294,24 +299,24 @@ void BackPropagateEncoderWeightsChanges(DataType InputValues[], DataType HiddenV
 	}
 }
 
-
+// revisit loop
 void BackPropagateEncoderWeights(unsigned int DataDimension, unsigned int HiddenDimension,
 								 DataType EncoderWeights[],
 								 DataType PrevEncoderWeightChanges[], DataType EncoderWeightChanges[],
 								 CoeffType  LearningRate, CoeffType Momentum)
 {
 	Loop6:
-	for (unsigned int d = 0; d < DataDimension; d++)
+	for (unsigned int h = 0; h < HiddenDimension; h++)
 	{
 		Loop61:
-		for (unsigned int h = 0; h < HiddenDimension; h++)
+		for (unsigned int d = 0; d < DataDimension; d++)
 		{
 			//#pragma HLS PIPELINE off
-			unsigned int Offset = d*HiddenDimension + h;
+			unsigned int Offset = h*DataDimension + d;
 			DataType prevWeightChange = PrevEncoderWeightChanges[Offset];
-			DataType weightChange = -LearningRate * EncoderWeightChanges[Offset] + Momentum * prevWeightChange;
+			DataType weightChange = LearningRate * EncoderWeightChanges[Offset] + Momentum * prevWeightChange;
 			PrevEncoderWeightChanges[Offset] = weightChange;
-			EncoderWeights[Offset] += weightChange;
+			EncoderWeights[Offset] -= weightChange;
 
 			//printf("!!! DecoderWeights[%d] = %f \n", Offset, DecoderWeights[Offset]);
 		}
@@ -333,9 +338,9 @@ void BackPropagateDecoderWeights(unsigned int DataDimension, unsigned int Hidden
 			//#pragma HLS PIPELINE off
 			unsigned int Offset = d*HiddenDimension + h;
 			DataType prevWeightChange = PrevDecoderWeightChanges[Offset];
-			DataType weightChange = -LearningRate * DecoderWeightChanges[Offset] + Momentum * prevWeightChange;
+			DataType weightChange = LearningRate * DecoderWeightChanges[Offset] + Momentum * prevWeightChange;
 			PrevDecoderWeightChanges[Offset] = weightChange;
-			DecoderWeights[Offset] += weightChange;
+			DecoderWeights[Offset] -= weightChange;
 
 			//printf("!!! DecoderWeights[%d] = %f \n", Offset, DecoderWeights[Offset]);
 		}
